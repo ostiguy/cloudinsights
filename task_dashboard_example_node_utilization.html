@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<!--[if IE 9]>         <html class="ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
+  <head>
+  <title>Dashboard Example: Storage Node Utilization with Variables | NetApp Cloud Docs</title>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation">
+  <meta http-equiv="nss-subtype" content="User Guide">
+
+  
+
+  <meta name="description" content="Dashboard example highlighting storage node utilization.">
+  <meta name="keywords" content=" dashboard, widget, custom, example, storage, node, utilization">
+
+  <!-- Icons -->
+  <link rel="icon" href="/cloudinsights/images/favicon.ico" type="image/x-icon">
+
+  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- LUCI CSS Content -->
+  <link rel="stylesheet" href="/cloudinsights/common/css/esb.min.css">
+  <link rel="stylesheet" href="/cloudinsights/common/css/netapp-library.min.css">
+  <link rel="stylesheet" href="/cloudinsights/common/css/doc.css">
+  <link rel="stylesheet" href="/cloudinsights/common/css/doc-components.css">
+
+  <link rel="stylesheet" href='/cloudinsights/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/cloudinsights/css/na-search.css' type='text/css'>
+  <link rel='stylesheet' href='/cloudinsights/css/clouddocs.css' type='text/css'>
+
+  <!-- Font awesome seems to affect our GitHub Icon and generic "arrow box" for external links. -->
+  <link rel="stylesheet" type="text/css" href="/cloudinsights/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="/cloudinsights/css/customstyles.css"> -->
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/cloudinsights/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel='stylesheet' href='/cloudinsights/css/netapp.css' type='text/css'>
+
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+  
+    <script src='/cloudinsights/js/na-search.js'></script>
+  
+
+  
+  <link rel='stylesheet' href='/cloudinsights/css/na-pagenav.css' type='text/css' id="pagenav-css">
+  <script src='/cloudinsights/js/na-pagenav.js'></script>
+  
+
+  <script src='/cloudinsights/js/clouddocs.js'></script>
+  <script src='/cloudinsights/js/s_code_impl.js'></script>
+  <script src='/cloudinsights/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+  <script src='/cloudinsights/js/toc.js'></script>
+  <script src='/cloudinsights/js/customscripts.js'></script>
+
+  <script>
+      $(document).ready(function() {
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco({
+              caretHtml: '',
+              accordion: true,
+              openClass: 'active', // open
+              save: false, // leave false or nav highlighting doesn't work right
+              cookie: {
+                  name: 'navgoco',
+                  expires: false,
+                  path: '/'
+              },
+              slide: {
+                  duration: 400,
+                  easing: 'swing'
+              }
+          });
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(function () {
+          $('[data-toggle="tooltip"]').tooltip()
+      })
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script>
+
+  <!-- Controls the i18n Browser Redirection -->
+  <script>
+    var siteLocales = [];
+    
+      siteLocales.push("zz");
+    
+      siteLocales.push("en");
+    
+      siteLocales.push("us-en");
+    
+
+    standardizeUrl(siteLocales, "clouddocs.netapp.com", "https://docs.netapp.com");
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+</head>
+
+
+  <body class="n-doc__component-detail">
+    <a href="#n-main-content" class="visually-hidden">Skip to main content</a>
+<div class="n-off-canvas-menu">
+  <div class="n-off-canvas-menu__menu">
+    <div class="n-off-canvas-menu__menu-inner">
+      <div class="n-off-canvas-menu__property-title">NetApp Cloud Docs</div>
+      <ul class="n-off-canvas-menu__property-navigation-list">
+        <li class="n-off-canvas-menu__property-navigation-list-item ">
+          <a href="https://docs.netapp.com/zz/" class="n-off-canvas-menu__property-navigation-link">
+            Home
+          </a>
+          <div class="n-off-canvas-menu__child-menu">
+            <ul class="n-menu__list">
+
+            </ul>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="n-off-canvas-menu__global-navigation-list">
+         <li class="n-off-canvas-menu__global-navigation-list-header">More From NetApp</li>
+         <li class="n-off-canvas-menu__global-navigation-list-item"><a href="#" class="n-off-canvas-menu__global-navigation-link">Netapp.com</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    <div class="n-off-canvas-menu__content-wrap">
+      <!-- Header -->
+      <header>
+  <!-- Top Hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+            <li class="n-top-hat__list-item">
+              <a href="http://www.netapp.com" class="n-top-hat__link">NetApp.com</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Property Bar -->
+  <div class="n-property-bar n-property-bar--v3">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link"><span class="n-property-bar__menu-toggle-text">Menu</span><svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+          <title>bars</title>
+          <use xlink:href="/cloudinsights/common/svg/sprite.svg#bars"></use>
+        </svg></a>
+      </div>
+      <div class="n-property-bar__property-mark n-property-bar__property-mark--has-property-name">
+        <a class="n-property-bar__property-link" href="https://docs.netapp.com/zz/">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/cloudinsights/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg viewBox="0 0 1008 181.537" class="n-property-bar__logo-svg" aria-labelledby="title">
+              <title>NetApp</title>
+              <use xlink:href="/cloudinsights/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+          <h2 class="n-property-bar__property-name">Cloud Docs</h2>
+        </a>
+      </div>
+
+      <!-- NetApp Search Bar -->
+      
+      <div id="search-demo-container" class="n-property-bar__search">
+        <div id="react-search"></div>
+      </div>
+      
+
+      <div id="ie-i18n-menu" class="n-property-bar__utils">
+        <ul class="n-property-navigation-bar__utils-list">
+          <li class="n-property-navigation-bar__utils-list-item">
+            <a href="#" class="n-property-navigation-bar__utils-link n-property-navigation-bar__nav-link n-property-navigation-bar__language-selector-toggle" data-menu-id="n-property-navigation-bar__menu--language-selector">
+              <svg class="n-icon-globe n-globe__icon" aria-labelledby="title">
+                <title>globe</title>
+                <use xlink:href="/cloudinsights/common/svg/sprite.svg#globe"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- End NetApp Search Bar -->
+    </div>
+
+    <div class="n-property-bar__menus">
+      <div id="n-property-navigation-bar__menu--language-selector" class="n-menu n-menu--v3">
+        <div class="n-language-selector-menu">
+          <div class="n-language-selector-menu__header">
+            <span class="n-language-selector-menu__title">Select Your Language</span>
+          </div>
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list">
+                <li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="/cloudinsights/us-en/" class="n-menu__header-text">English</a>
+                </li>
+                
+              </ul>
+            </li>
+          </ul>
+          <div class="menu__footer">
+            <p>Current Language: zz
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+      <!-- Content -->
+      <main role="main" id="n-main-content" class="n-main-content">
+        <div class="n-container">
+  <div class="n-row">
+    <div class="n-doc n-doc__component-list">
+      <!-- Sidebar Column -->
+      
+      <div class="col-md-3" >
+          
+
+<ul id="mysidebar" class="nav">
+  
+
+  
+    <li><a href="index.html">Cloud Insights documentation</a></li>
+  
+
+  
+    <li><a href="concept_whats_new.html">What's New</a></li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Getting started</a>
+      <ul>
+        
+
+  
+    <li><a href="task_cloud_insights_onboarding_1.html">Onboarding</a></li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Collecting Data</a>
+      <ul>
+        
+
+  
+    <li><a href="task_getting_started_with_cloud_insights.html">Overview</a></li>
+  
+
+  
+    <li><a href="concept_acquisition_unit_requirements.html">Acquisition Unit Requirements</a></li>
+  
+
+  
+    <li><a href="task_configure_acquisition_unit.html">Configuring an Acquisition Unit</a></li>
+  
+
+  
+    <li><a href="task_configure_data_collectors.html">Configuring Data Collectors</a></li>
+  
+
+  
+    <li><a href="concept_determining_data_collector_acq_status.html">Determining Data Collector Acquisition Status</a></li>
+  
+
+  
+    <li><a href="task_view_configured_data_collectors.html">Manage Configured Data Collectors</a></li>
+  
+
+  
+    <li><a href="task_research_failed_collector.html">Research data collector errors</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <li><a href="concept_user_roles.html">User Accounts and Roles</a></li>
+  
+
+  
+    <li><a href="concept_other_cloud_products.html">Switching to Other Cloud Central Products</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Data Collector Vendor Reference</a>
+      <ul>
+        
+
+  
+    <li><a href="concept_data_collector_reference.html">Vendor Reference Overview</a></li>
+  
+
+  
+    <li><a href="task_dc_aws_configure.html">AWS</a></li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">BROADCOM</a>
+      <ul>
+        
+
+  
+    <li><a href="task_dc_brocade_FC_Switch_configure.html">Brocade FC Switch</a></li>
+  
+
+  
+    <li><a href="task_dc_brocade_BNA.html">Brocade Network Advisor</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <li><a href="task_dc_ceph_configure.html">Ceph</a></li>
+  
+
+  
+    <li><a href="task_dc_cisco_fc_switch.html">Cisco</a></li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Dell EMC</a>
+      <ul>
+        
+
+  
+    <li><a href="task_dc_emc_celerra_configure.html">Celerra</a></li>
+  
+
+  
+    <li><a href="task_dc_emc_clariion_configure.html">CLARiiON</a></li>
+  
+
+  
+    <li><a href="task_dc_emc_datadomain_configure.html">Data Domain</a></li>
+  
+
+  
+    <li><a href="task_dc_Dell_Compellent.html">Dell Compellent</a></li>
+  
+
+  
+    <li><a href="task_dc_emc_isilon_configure.html">Isilon</a></li>
+  
+
+  
+    <li><a href="task_dc_emc_RecoverPoint_configure.html">RecoverPoint</a></li>
+  
+
+  
+    <li><a href="task_dc_emc_scaleio_configure.html">ScaleIO</a></li>
+  
+
+  
+    <li><a href="task_dc_emc_vmax.html">Symmetrix</a></li>
+  
+
+  
+    <li><a href="task_dc_emc_vnx_configure.html">VNX</a></li>
+  
+
+  
+    <li><a href="task_dc_emc_vnxe_configure.html">VNXe</a></li>
+  
+
+  
+    <li><a href="task_dc_emc_vplex_configure.html">VPLEX</a></li>
+  
+
+  
+    <li><a href="task_dc_emc_xio_configure.html">XtremIO</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <li><a href="task_dc_fujitsu_configure.html">Fujitsu</a></li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Hewlett Packard</a>
+      <ul>
+        
+
+  
+    <li><a href="task_dc_hp_3par.html">HPE 3PAR</a></li>
+  
+
+  
+    <li><a href="task_dc_HP_Enterprise_Command_View_configure.html">HP Command View AE</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Hitachi Data Systems</a>
+      <ul>
+        
+
+  
+    <li><a href="task_dc_hds_hicomm_configure.html">HDS HiCommand Device Manager HP Command View AE</a></li>
+  
+
+  
+    <li><a href="task_dc_hds_NAS_configure.html">HDS HNAS</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <li><a href="task_dc_infinidat_ifbx_configure.html">Infinidat</a></li>
+  
+
+  
+    <li><a href="task_dc_huawei_configure.html">Huawei</a></li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">IBM</a>
+      <ul>
+        
+
+  
+    <li><a href="task_dc_ibm_cs_configure.html">IBM CS</a></li>
+  
+
+  
+    <li><a href="task_dc_ibm_ds4000.html">IBM DS4000</a></li>
+  
+
+  
+    <li><a href="task_dc_IBM_DS_configure.html">IBM DS6xxx and DS8xxx</a></li>
+  
+
+  
+    <li><a href="task_dc_IBM_pwr_vm.html">IBM PowerVM</a></li>
+  
+
+  
+    <li><a href="task_dc_IBM_SVC.html">IBM San Volume Controller</a></li>
+  
+
+  
+    <li><a href="task_dc_IBM_XIV.html">IBM XIV</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <li><a href="task_dc_lenovo_configure.html">Lenovo</a></li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Microsoft</a>
+      <ul>
+        
+
+  
+    <li><a href="task_dc_azure_configure.html">Azure</a></li>
+  
+
+  
+    <li><a href="task_dc_ms_hypv_configure.html">Hyper-V</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">NetApp</a>
+      <ul>
+        
+
+  
+    <li><a href="task_dc_na_cdot.html">ONTAP Data Management Software</a></li>
+  
+
+  
+    <li><a href="task_dc_na_7mode.html">Data ONTAP 7-mode</a></li>
+  
+
+  
+    <li><a href="task_dc_na_eseries.html">E-Series</a></li>
+  
+
+  
+    <li><a href="task_dc_na_hostvm.html">Host and VM File System</a></li>
+  
+
+  
+    <li><a href="task_dc_na_solidfire.html">SolidFire</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <li><a href="task_dc_nutanix_configure.html">Nutanix</a></li>
+  
+
+  
+    <li><a href="task_dc_OpenStack.html">OpenStack</a></li>
+  
+
+  
+    <li><a href="task_dc_oracl_zfs_configure.html">Oracle</a></li>
+  
+
+  
+    <li><a href="task_dc_pure_configure.html">Pure Storage</a></li>
+  
+
+  
+    <li><a href="task_dc_red_hat_virt.html">Red Hat</a></li>
+  
+
+  
+    <li><a href="task_dc_vmware_configure.html">VMWare</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <li><a href="concept_subscribing_to_cloud_insights.html">Subscribing to Cloud Insights</a></li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Creating Dashboards</a>
+      <ul>
+        
+
+  
+    <li><a href="concept_dashboards_overview.html">Dashboard Overview</a></li>
+  
+
+  
+    <li><a href="concept_dashboard_features.html">Features of Dashboards</a></li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Sample Dashboards</a>
+      <ul>
+        
+
+  
+    <li><a href="task_dashboard_example_VM_performance.html">Virtual Machine Performance</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <li><a href="concept_dashboard_best_practices.html">Dashboard Best Practices</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Working with Queries</a>
+      <ul>
+        
+
+  
+    <li><a href="concept_querying_assets.html">Querying Assets</a></li>
+  
+
+  
+    <li><a href="task_create_query.html">Creating a Query</a></li>
+  
+
+  
+    <li><a href="task_view_queries.html">Viewing Available Queries</a></li>
+  
+
+  
+    <li><a href="task_export_query_results.html">Exporting Query Results to .CSV</a></li>
+  
+
+  
+    <li><a href="task_modify_delete_query.html">Modifying or Deleting a Query</a></li>
+  
+
+  
+    <li><a href="task_query_assign_multiple_applicationss.html">Assigning Multiple Applications/Annotations to Objects</a></li>
+  
+
+  
+    <li><a href="task_query_copy_table_values.html">Copying table values to the Clipboard</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">All About Annotations</a>
+      <ul>
+        
+
+  
+    <li><a href="task_defining_annotations.html">Using Annotations to Monitor Your Environment</a></li>
+  
+
+  
+    <li><a href="task_create_annotation.html">Using Annotations</a></li>
+  
+
+  
+    <li><a href="task_create_annotation_rules.html">Using Annotation Rules</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Working with Applications</a>
+      <ul>
+        
+
+  
+    <li><a href="concept_about_applications.html">Application Concepts</a></li>
+  
+
+  
+    <li><a href="task_create_application.html">Configuring Applications</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Performance Policies and Alerts</a>
+      <ul>
+        
+
+  
+    <li><a href="task_create_performance_policies.html">Alerting with Performance Policies</a></li>
+  
+
+  
+    <li><a href="concept_notifications_email.html">Configuring Notification Recipients</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Monitoring your Environment</a>
+      <ul>
+        
+
+  
+    <li><a href="concept_audit.html">Auditing Events</a></li>
+  
+
+  
+    <li><a href="concept_ttl_and_downsampling.html">TTL and Downsampling</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Asset Page Information</a>
+      <ul>
+        
+
+  
+    <li><a href="concept_asset_page_overview.html">Asset Page Overview</a></li>
+  
+
+  
+    <li><a href="concept_in_context_filters.html">In-Context Filtering for Objects</a></li>
+  
+
+  
+    <li><a href="concept_asset_summary_section.html">Summary & Topology Sections</a></li>
+  
+
+  
+    <li><a href="concept_asset_expert_view_section.html">Expert View Section</a></li>
+  
+
+  
+    <li><a href="concept_asset_user_data_section.html">User Data Section</a></li>
+  
+
+  
+    <li><a href="concept_asset_violation_section.html">Violations Section</a></li>
+  
+
+  
+    <li><a href="concept_searching_assets.html">Hints and Tips to Search for Assets</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Troubleshooting</a>
+      <ul>
+        
+
+  
+    <li><a href="concept_troubleshooting_overview.html">Troubleshooting Overview</a></li>
+  
+
+  
+    <li><a href="task_troubleshooting_linux_acquisition_unit_problems.html">Troubleshooting Linux Acquisition Unit Problems</a></li>
+  
+
+  
+    <li><a href="task_troubleshooting_windows_acquisition_unit_problems.html">Troubleshooting Windows Acquisition Unit Problems</a></li>
+  
+
+  
+    <li><a href="task_research_failed_collector.html">Researching Data Collector Errors</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Reference & Support</a>
+      <ul>
+        
+
+  
+    <li><a href="concept_requesting_support.html">Requesting Support</a></li>
+  
+
+  
+    <li><a href="reference_data_collector_support_matrix.html">Data Collector Support Matrix</a></li>
+  
+
+  
+    <li><a href="reference_object_icons.html">Object Icon Reference</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+      </div>
+      
+
+      <div class="n-doc__component-detail-content n-doc__component-detail-content--show-code">
+        <!-- Begin of page container -->
+        <article class="page-content">
+          
+
+<div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Dashboard Example: Storage Node Utilization with Variables
+    <span>
+      
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_dashboard_example_node_utilization.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Dashboard Example: Storage Node Utilization with Variables](https://docs.netapp.com/zz/cloudinsights/task_dashboard_example_node_utilization.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+      
+    </span>
+  </h1>
+</div>
+
+<div class="paragraph lead">
+<p>Create a custom dashboard for Storage Analysis which has variables for storage, storage pool, node, tier, utilization and latency.</p>
+</div>
+<div class="paragraph">
+<div class="title">Before you begin</div>
+<p>Familiarity with dashboards is recommended but not required.</p>
+</div>
+<div class="paragraph">
+<div class="title">About this task</div>
+<p>The following procedure will create a custom Storage Analysis Overview dashboard which uses variables for storage, storage pool, node, tier, utilization and latency. Variables in the example below will be used to filter the displayed assets or metrics across one or many widgets available on the dashboard. The widgets that use these variables as filters will be updated with filtered content on-demand according to the values entered in the variable fields on the dashboard, allowing you to quickly filter multiple charts and graphs to drill down to a specific area of interest.</p>
+</div>
+<div class="paragraph">
+<p>By following the steps in this example, you will create a dashboard like the following. You can change these widgets, or add any number of additional widgets, to highlight any data you choose.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Create a new dashboard, and name it "Analysis: Storage Overview", or something equally descriptive.</p>
+</li>
+<li>
+<p>Click on the Variable drop-down and select Text variable type. By default, the variable is named $var1. Click on $var1 to edit the name, and change it to $storage, then click the check mark to save the variable. Repeat to create text variables for $node, $pool, and $volume.</p>
+</li>
+<li>
+<p>Repeat the above process to create Number-type variables named $utilization and $latency.</p>
+</li>
+<li>
+<p>Click on the Variable drop-down and search for the Tier annotation. Select it to create a variable named $tier.</p>
+<div class="paragraph">
+<p>You can add variables at any time, however it is easier to create them up front and therefore make them available to all widgets as you create them.</p>
+</div>
+</li>
+<li>
+<p>Add a widget by clicking on the Widget drop-down and selecting either a line chart or area chart widget. Name the widget "Node Utilization". Click on the Storage asset type and change it to Storage Node. Select Utilization - Total for the chart data.</p>
+</li>
+<li>
+<p>Click on the Filter by + button to add a filter. Search for and select Storage, then click on Any and select the $storage variable.</p>
+</li>
+<li>
+<p>Click the + button to add another filter for Name. Set the variable to $node.</p>
+<div class="paragraph">
+<p>Different variables can be assigned to the annotation name filter. Use the name/variable pair at the lowest level depending on the object in the widget. For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You can assign the $node variable to the Name filter for a Node-focused widget.</p>
+</li>
+<li>
+<p>You can assign the $pool variable to the Name filter for a Pool-focused widget.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click the + button to add another filter for Utilization - Total (%). Set the variable to &gt;= $utilization.</p>
+</li>
+<li>
+<p>Click the X after the Roll up field to collapse the field.</p>
+</li>
+<li>
+<p>Select Show Top 5 and click Save to save the widget and return to your Dashboard.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Your widget should look something like this:</p>
+</div>
+<div class="paragraph">
+<p>Add another line or area chart widget to your dashboard. Select Storage Node as the asset type and Latency - Total as the metric to chart.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click on the Filter by + button to add filters for Storage: $storage and Name: $node.</p>
+</li>
+<li>
+<p>Add a filter for Latency - Total and select the $latency variable.</p>
+</li>
+<li>
+<p>Name the widget "Node Latency" and save it.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You can add supporting tables to show more details for the charts you created, for example, Max or Avg node utilization. Add a Table widget to the dashboard and select Storage Node as the asset type, and create filters for Storage: $storage, Name: $node, and Utilization - Total: $utilization.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Add columns to the table for Utilization - Max, Utilization - Total, or any other desired columns.</p>
+</li>
+<li>
+<p>Name the widget "Node Peak and Avg Utilization" and save it.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Repeat the steps to create a table for Node Latency, showing Latency - Max, Latency - Total, or other columns as desired.<br>
+To round out your dashboard, you might add additional chart and table widgets for some or all of the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Chart	Table</p>
+</li>
+<li>
+<p>Storage Pool Utilization	Storage Pool Peak and Avg Utilization</p>
+</li>
+<li>
+<p>Storage Pool Throughput	Storage Pool Peak and Avg Throughput</p>
+</li>
+<li>
+<p>Volume Latency	Volume Peak and Avg Latency</p>
+</li>
+<li>
+<p>Volume IOPS	Volume Peak and Avg IOPS</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can move and resize the widgets in whatever placement you want on your dashboard. When finished, be sure to Save the dashboard.</p>
+</div>
+<div class="paragraph">
+<p>Your final dashboard will look something like this:</p>
+</div>
+<div class="paragraph">
+<p>You can use the variables to focus on specific assets in your dashboard. As you enter values into the variable fields, your widgets update automatically to reflect those variables. For example, by entering "15" in the $utilization variable field, the widgets using that variable update to show only assets with total utilization &gt;= 15%.</p>
+</div>
+<div class="paragraph">
+<p>Node utilization widget showing top 5 of all nodes:</p>
+</div>
+<div class="paragraph">
+<p>Node utilization widget showing nodes with 15% or greater utilization:</p>
+</div>
+<div class="paragraph">
+<p>Keep in mind the following when creating your widgets:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The $tier variable will only impact resources that are annotated with the Tier annotation.</p>
+</li>
+<li>
+<p>Not all filters will impact all widgets, depending on whether the widget is designed to accept the variable(s) specified.</p>
+</li>
+<li>
+<p>Number variables are applied as "greater than or equal to" the value specified.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Note that any variable can be used as a filter on any widget at any level in a storage hierarchy, as long as the variable is valid for the asset against which the widget is running. As you move down from a Node level to Storage Pool to a Volume widget, more variables are present for assignment as filters. For example, at a Storage Node level widget, the Storage and Name variables can be assigned as filters. At a Storage Pool level, Storage, Nodes, Storage Pools and Name are all available. Assign your variables as appropriate and use the $name variable at the lowest level in the stack. Doing this will allow your $name variable to filter on the actual name of the asset against which the widget is running.</p>
+</div>
+
+        </article>
+        <!-- Page Container -->
+      </div>
+
+      
+      <div class="page-nav-container">
+        <nav class="page-nav-fixed">
+          <div class="page-nav-title">On this page:</div>
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </nav>
+      </div>
+      
+
+    </div>
+  </div>
+</div>
+
+      </main>
+
+      <!-- Footer -->
+      
+      <footer class="n-footer n-footer--v1" style="border-top: solid 10px #DFDFDF;">
+        <div class="n-footer__bottom">
+          <div class="n-container">
+            <div class="n-footer__bottom-left">
+              <div class="n-footer__copyright">
+                  <a href="//www.netapp.com/us/legal/copyright.aspx" class="n-footer__copyright-link">© 2018 NetApp, Inc.</a>
+              </div>
+              <div class="n-footer__copyright">
+                <a href="https://library.netapp.com/ecm/ecm_download_file/ECMLP2848669" class="n-footer__copyright-link">Notice</a>
+              </div>
+              <div class="n-footer__copyright">
+                <a href="//www.netapp.com/us/legal/index.aspx" class="n-footer__copyright-link">Legal</a>
+              </div>
+              <div class="n-footer__social-links">
+                <ul class="n-footer__social-link-list">
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-blog" href="http://blog.netapp.com" target="_blank" title="blog" alt="blog">
+                      <span class="n-footer__social-link-text">blog</span>
+                      <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                        <title>blog@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/common/svg/sprite.svg#blog"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-community" href="http://community.netapp.com/" target="_blank" title="community" alt="community">
+                      <span class="n-footer__social-link-text">community</span>
+                      <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                        <title>community@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/common/svg/sprite.svg#comments"></use>
+                      </svg>
+                    </a>
+                  </li>
+
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netappdoc" target="_blank" title="twitter" alt="twitter">
+                      <span class="n-footer__social-link-text">twitter</span>
+                      <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                        <title>twitter@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/common/svg/sprite.svg#twitter"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTechCommTV/" target="_blank" title="youtube" alt="youtube">
+                      <span class="n-footer__social-link-text">youtube</span>
+                      <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                        <title>youtube@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/common/svg/sprite.svg#youtube"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="n-footer__bottom-right">
+                <p class="n-footer__fine-print">
+                    Have feedback for our website?
+                    <a target="_self" href="javascript:netapp_mailto()">Let us know</a>
+                </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+    <script src="/cloudinsights/common/js/components.js"></script>
+    <script src="/cloudinsights/common/js/doc-components.js"></script>
+
+    <!-- i18n script -->
+    <script type="text/javascript" src="/cloudinsights/js/responsive.js"></script>
+
+    <!-- Elasticsearch JS -->
+    
+    <script type="text/javascript" src='/cloudinsights/js/bundle.js'></script>
+    
+  </body>
+
+  
+</html>
