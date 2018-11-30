@@ -2,7 +2,7 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>Ensuring IO density data describes only internal data volumes | NetApp Cloud Docs</title>
+  <title>Identifying orphaned capacity | NetApp Cloud Docs</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +14,8 @@
 
   
 
-  <meta name="description" content="NetApp root volume contains directories and configuration files for managing the storage system. When querying for high I/O density you want to exclude these...">
-  <meta name="keywords" content=" NetApp, root volume, high I/O,">
+  <meta name="description" content="Identifying orphaned capacity">
+  <meta name="keywords" content=" orphaned, unused, configured but unused">
 
   <!-- Icons -->
   <link rel="icon" href="/cloudinsights/images/favicon.ico" type="image/x-icon">
@@ -895,152 +895,52 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Ensuring IO density data describes only internal data volumes
+  <h1 class="n-doc__component-detail-heading">Identifying orphaned capacity
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_io_density_report_no_root.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Ensuring IO density data describes only internal data volumes](https://docs.netapp.com/zz/cloudinsights/task_io_density_report_no_root.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_identify_orphaned_capacity.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Identifying orphaned capacity](https://docs.netapp.com/zz/cloudinsights/task_identify_orphaned_capacity.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
 </div>
 
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph lead">
-<p>NetApp root volume contains directories and configuration files for managing the storage system. When querying for high I/O density you want to exclude these root volumes.</p>
+<p>Orphaned capacity is defined by configuration or by performance. Storage orphaned by configuration occurs when storage is allocated to a host, but configuration errors result in the host not able to access the storage. Orphaned by performance results when the storage is correctly configured to be accessed by a host, but there is no storage traffic.</p>
 </div>
 <div class="paragraph">
-<p>When monitoring your environment it is more important to determine which internal data volumes are producing high I/O density numbers. In order to accurately identify only the data volumes, you need to isolate the NetApp internal volumes from queries you use to monitor I/O density.</p>
+<p>You can identify orphaned storage using Cloud Insights.  Create a query to identify the volumes or &lt;what else look at Kurt&#8217;s blog&gt;  that have not reported I/O data over an extended period of time.</p>
 </div>
 <div class="paragraph">
-<p>This guide describes how to easily identify the NetApp root aggregates, isolate them from the results of internal volume queries, and create rules that exclude any new NetApp root aggregates as they are added to the system. The following Insight features are used to insure that your I/O density reports are derived from internal data volumes:</p>
+<p>Orphaned</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>A query is created to identify all of the NetApp root aggregates that are monitored by Insight.</p>
+<p>Performance characteristics, such as utilization, or IOPS, of Arrays, disk pools, disks, volumes</p>
 </li>
 <li>
-<p>An annotation is assigned to each of the NetApp root aggregates.</p>
+<p>to identify resources that are under utilized or not used at all. These assets might</p>
 </li>
-<li>
-<p>An annotation rule is created to apply the annotation to new NetApp root aggregates.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The steps in this guide can also be applied to other vendor&#8217;s storage systems. You will need to identify the volumes that contain directories and configuration files for managing the storage system and use similar steps to exclude these volumes.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="creating-a-query-to-identify-netapp-root-aggregates-in-your-environment">Creating a query to identify NetApp root aggregates in your environment</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Queries provide search at a granular level, based on user-selected criteria. Using a query allows you to search for Internal volumes in your environment that contain the NetApp root aggregate.</p>
+</ol>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Create a query to identify NetApp root aggregates in your environment: Click <strong>Queries &gt; New Query &gt; Select Resource Type</strong> (?)</p>
+<p>In the Cloud Insights menu, click <strong>Queries &gt; New Query</strong></p>
 </li>
 <li>
-<p>Click <strong>storage Pool</strong></p>
+<p>In the <code>Search For</code> menu, select Volumes</p>
 </li>
 <li>
-<p>Enter the name for the root aggregate</p>
-<div class="paragraph">
-<p>This example uses "aggr0" for the name. When creating an aggregate, only the following requirements for the name must be followed:</p>
-</div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>It must begin with either a letter or an underscore (_).</p>
+<p>Click <strong>+ &gt; Is Active</strong></p>
 </li>
 <li>
-<p>It can contain only letters, digits, and underscores.</p>
-</li>
-<li>
-<p>It can be 250 characters or less.</p>
-<div class="paragraph">
-<p>In most cases, the aggregate is named +<em>aggr0</em>, <em>aggr_0</em>, or something similar. It might require an iterative process to identify all of the NetApp root aggregates in your environment.</p>
-</div>
+<p>Click <strong>Any</strong> and change it to <strong>No</strong><br>
++The system displays volumes that have had no I/O for 'some period of time"</p>
 </li>
 </ol>
-</div>
-</li>
-<li>
-<p>Click <strong>Save</strong> and enter a name for the new query.</p>
-<div class="paragraph">
-<p>As mentioned before, this might be an iterative process and require multiple queries to identify all of the NetApp root aggregates.</p>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="create-an-annotation-for-the-root-volumes-returned-by-your-queries">Create an annotation for the root volumes returned by your queries</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Annotations are specialized notes that you assign to your assets, allowing you to filter assets by their annotations. The annotation you create will be used to identify the NetApp root aggregates in your environment and ensure that they are not included in a specific report.</p>
-</div>
-<div class="paragraph">
-<div class="title">Before you begin</div>
-<p>You must have identified all of the root aggregates you want to exclude from the "High I/O Density" report.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Steps</div>
-<ol class="arabic">
-<li>
-<p>In the Cloud Insights menu, click <strong>Manage &gt; Annotations</strong></p>
-</li>
-<li>
-<p>Click <strong>Add</strong></p>
-</li>
-<li>
-<p>Enter the name for the annotation: <strong>RootAggr</strong></p>
-</li>
-<li>
-<p>Enter a description of the annotation: <strong>Remove root aggregate from "High I/O Density" report</strong></p>
-</li>
-<li>
-<p>Enter the type of annotation: <strong>Boolean</strong></p>
-</li>
-<li>
-<p>Click <strong>Save</strong></p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="create-an-annotation-rule-to-automate-excluding-specific-aggregates-from-your-io-density-report">Create an annotation rule to automate excluding specific aggregates from your I/O density report</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>As an alternative to manually applying annotations to individual assets, you can automatically apply annotations to multiple assets using annotation rules. Annotation rules are based on queries you create and when run on the system they add new assets to existing sets of assets. When these sets of assets are excluded from a report the new assets are automatically excluded too.</p>
-</div>
-<div class="paragraph">
-<div class="title">Before you begin</div>
-<p>You must have created and saved a query that identifies the NetApp root aggregates you identified in your environment.
-. Steps
-. In the Cloud Insights toolbar, Click <strong>Manage &gt; Annotation rules</strong>
-. Click <strong>Add</strong></p>
-</div>
-<div class="paragraph">
-<p>+
-The <strong>Add Rule</strong> dialog displays.</p>
-</div>
-<div class="paragraph">
-<p>+
-.. In the Name box, enter a unique name that describes the rule: <strong>"RootAggrExclude"</strong>
-.. Click Query and select the Query that Insight should use to apply the annotation rule to: <strong>"Aggregate0"</strong>
-.. Click Annotation and select: <strong>"Root agg exclude"</strong>
-.. Click <strong>Value</strong> and enter <strong>True</strong></p>
-</div>
-</div>
 </div>
 
         </article>

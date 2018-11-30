@@ -2,7 +2,7 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>Ensuring IO density data describes only internal data volumes | NetApp Cloud Docs</title>
+  <title>Defining annotations | NetApp Cloud Docs</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,11 +14,11 @@
 
   
 
-  <meta name="description" content="NetApp root volume contains directories and configuration files for managing the storage system. When querying for high I/O density you want to exclude these...">
-  <meta name="keywords" content=" NetApp, root volume, high I/O,">
+  <meta name="description" content="Track data using annotations.">
+  <meta name="keywords" content=" annotations, monitor, notes, tags">
 
   <!-- Icons -->
-  <link rel="icon" href="/cloudinsights/us-en/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/cloudinsights/en/images/favicon.ico" type="image/x-icon">
 
   <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
 
@@ -26,23 +26,23 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
 
   <!-- LUCI CSS Content -->
-  <link rel="stylesheet" href="/cloudinsights/us-en/common/css/esb.min.css">
-  <link rel="stylesheet" href="/cloudinsights/us-en/common/css/netapp-library.min.css">
-  <link rel="stylesheet" href="/cloudinsights/us-en/common/css/doc.css">
-  <link rel="stylesheet" href="/cloudinsights/us-en/common/css/doc-components.css">
+  <link rel="stylesheet" href="/cloudinsights/en/common/css/esb.min.css">
+  <link rel="stylesheet" href="/cloudinsights/en/common/css/netapp-library.min.css">
+  <link rel="stylesheet" href="/cloudinsights/en/common/css/doc.css">
+  <link rel="stylesheet" href="/cloudinsights/en/common/css/doc-components.css">
 
-  <link rel="stylesheet" href='/cloudinsights/us-en/css/na-sidebar.css' type='text/css'>
-  <link rel='stylesheet' href='/cloudinsights/us-en/css/na-search.css' type='text/css'>
-  <link rel='stylesheet' href='/cloudinsights/us-en/css/clouddocs.css' type='text/css'>
+  <link rel="stylesheet" href='/cloudinsights/en/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/cloudinsights/en/css/na-search.css' type='text/css'>
+  <link rel='stylesheet' href='/cloudinsights/en/css/clouddocs.css' type='text/css'>
 
   <!-- Font awesome seems to affect our GitHub Icon and generic "arrow box" for external links. -->
-  <link rel="stylesheet" type="text/css" href="/cloudinsights/us-en/css/font-awesome.min.css">
-  <!-- <link rel="stylesheet" href="/cloudinsights/us-en/css/customstyles.css"> -->
+  <link rel="stylesheet" type="text/css" href="/cloudinsights/en/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="/cloudinsights/en/css/customstyles.css"> -->
   <!-- Controls the shadow effect for search dropdown menu -->
-  <link rel="stylesheet" href="/cloudinsights/us-en/css/boxshadowproperties.css">
+  <link rel="stylesheet" href="/cloudinsights/en/css/boxshadowproperties.css">
 
   <!-- NetApp CSS controls the technical content -->
-  <link rel='stylesheet' href='/cloudinsights/us-en/css/netapp.css' type='text/css'>
+  <link rel='stylesheet' href='/cloudinsights/en/css/netapp.css' type='text/css'>
 
   
 
@@ -51,21 +51,21 @@
   <!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
   
-    <script src='/cloudinsights/us-en/js/na-search.js'></script>
+    <script src='/cloudinsights/en/js/na-search.js'></script>
   
 
   
-  <link rel='stylesheet' href='/cloudinsights/us-en/css/na-pagenav.css' type='text/css' id="pagenav-css">
-  <script src='/cloudinsights/us-en/js/na-pagenav.js'></script>
+  <link rel='stylesheet' href='/cloudinsights/en/css/na-pagenav.css' type='text/css' id="pagenav-css">
+  <script src='/cloudinsights/en/js/na-pagenav.js'></script>
   
 
-  <script src='/cloudinsights/us-en/js/clouddocs.js'></script>
-  <script src='/cloudinsights/us-en/js/s_code_impl.js'></script>
-  <script src='/cloudinsights/us-en/js/jquery.navgoco.min.js'></script>
+  <script src='/cloudinsights/en/js/clouddocs.js'></script>
+  <script src='/cloudinsights/en/js/s_code_impl.js'></script>
+  <script src='/cloudinsights/en/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
-  <script src='/cloudinsights/us-en/js/toc.js'></script>
-  <script src='/cloudinsights/us-en/js/customscripts.js'></script>
+  <script src='/cloudinsights/en/js/toc.js'></script>
+  <script src='/cloudinsights/en/js/customscripts.js'></script>
 
   <script>
       $(document).ready(function() {
@@ -150,7 +150,7 @@
       <div class="n-off-canvas-menu__property-title">NetApp Cloud Docs</div>
       <ul class="n-off-canvas-menu__property-navigation-list">
         <li class="n-off-canvas-menu__property-navigation-list-item ">
-          <a href="https://docs.netapp.com/us-en/" class="n-off-canvas-menu__property-navigation-link">
+          <a href="https://docs.netapp.com/en/" class="n-off-canvas-menu__property-navigation-link">
             Home
           </a>
           <div class="n-off-canvas-menu__child-menu">
@@ -191,19 +191,19 @@
       <div class="n-property-bar__menu-toggle">
         <a href="#" class="n-property-bar__menu-toggle-link"><span class="n-property-bar__menu-toggle-text">Menu</span><svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
           <title>bars</title>
-          <use xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#bars"></use>
+          <use xlink:href="/cloudinsights/en/common/svg/sprite.svg#bars"></use>
         </svg></a>
       </div>
       <div class="n-property-bar__property-mark n-property-bar__property-mark--has-property-name">
-        <a class="n-property-bar__property-link" href="https://docs.netapp.com/us-en/">
+        <a class="n-property-bar__property-link" href="https://docs.netapp.com/en/">
           <div class="n-property-bar__logo">
             <svg class="n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
               <title>netapp-mark</title>
-              <use xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#netapp-mark"></use>
+              <use xlink:href="/cloudinsights/en/common/svg/sprite.svg#netapp-mark"></use>
             </svg>
             <svg viewBox="0 0 1008 181.537" class="n-property-bar__logo-svg" aria-labelledby="title">
               <title>NetApp</title>
-              <use xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#netapp-logo"></use>
+              <use xlink:href="/cloudinsights/en/common/svg/sprite.svg#netapp-logo"></use>
             </svg>
           </div>
           <h2 class="n-property-bar__property-name">Cloud Docs</h2>
@@ -223,7 +223,7 @@
             <a href="#" class="n-property-navigation-bar__utils-link n-property-navigation-bar__nav-link n-property-navigation-bar__language-selector-toggle" data-menu-id="n-property-navigation-bar__menu--language-selector">
               <svg class="n-icon-globe n-globe__icon" aria-labelledby="title">
                 <title>globe</title>
-                <use xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#globe"></use>
+                <use xlink:href="/cloudinsights/en/common/svg/sprite.svg#globe"></use>
               </svg>
             </a>
           </li>
@@ -249,7 +249,7 @@
             </li>
           </ul>
           <div class="menu__footer">
-            <p>Current Language: us-en
+            <p>Current Language: en
             </p>
           </div>
         </div>
@@ -895,11 +895,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Ensuring IO density data describes only internal data volumes
+  <h1 class="n-doc__component-detail-heading">Defining annotations
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_io_density_report_no_root.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Ensuring IO density data describes only internal data volumes](https://docs.netapp.com/us-en/cloudinsights/task_io_density_report_no_root.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_defining_annotations.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Defining annotations](https://docs.netapp.com/en/cloudinsights/annotations.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -908,137 +908,322 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>NetApp root volume contains directories and configuration files for managing the storage system. When querying for high I/O density you want to exclude these root volumes.</p>
+<p>When customizing Cloud Insights to track data for your corporate requirements, you can define specialized notes, called annotations, and assign them to your assets.</p>
 </div>
 <div class="paragraph">
-<p>When monitoring your environment it is more important to determine which internal data volumes are producing high I/O density numbers. In order to accurately identify only the data volumes, you need to isolate the NetApp internal volumes from queries you use to monitor I/O density.</p>
+<p>You can assign annotations to assets with information such as asset end of life, data center, building location, storage tier, or volume service level.</p>
 </div>
 <div class="paragraph">
-<p>This guide describes how to easily identify the NetApp root aggregates, isolate them from the results of internal volume queries, and create rules that exclude any new NetApp root aggregates as they are added to the system. The following Insight features are used to insure that your I/O density reports are derived from internal data volumes:</p>
+<p>Using annotations to help monitor your environment includes the following high-level tasks:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>A query is created to identify all of the NetApp root aggregates that are monitored by Insight.</p>
+<p>Creating or editing definitions for all annotation types.</p>
 </li>
 <li>
-<p>An annotation is assigned to each of the NetApp root aggregates.</p>
+<p>Displaying asset pages and associating each asset with one or more annotations.</p>
+<div class="paragraph">
+<p>For example, if an asset is being leased and the lease expires within two months, you might want to apply an end-of-life annotation to the asset. This helps prevent others from using that asset for an extended time.</p>
+</div>
 </li>
 <li>
-<p>An annotation rule is created to apply the annotation to new NetApp root aggregates.</p>
+<p>Creating rules to automatically
+apply annotations to multiple assets of the same type.</p>
+</li>
+<li>
+<p>Using the annotation import utility to import annotations.</p>
+</li>
+<li>
+<p>Filter assets by their annotations.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="default-annotation-types">Default annotation types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cloud Insights provides some default annotation types. These annotations can be used to filter or group data.</p>
+</div>
+<div class="paragraph">
+<p>You can associate assets with default annotation types such as the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Asset life cycle, such as birthday, sunset, or end of life</p>
+</li>
+<li>
+<p>Location information about a device, such as data center, building, or floor</p>
+</li>
+<li>
+<p>Classification of assets, such as by quality (tiers), by connected devices (switch level), or by service level</p>
+</li>
+<li>
+<p>Status, such as hot (high utilization)</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The steps in this guide can also be applied to other vendor&#8217;s storage systems. You will need to identify the volumes that contain directories and configuration files for managing the storage system and use similar steps to exclude these volumes.</p>
+<p>The following table lists the default annotation types. You can edit any of these annotation names to suit your needs.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30.303%;">
+<col style="width: 53.5353%;">
+<col style="width: 16.1617%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Annotation types</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alias</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User-friendly name for a resource</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Birthday</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date device was/will be brought online</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Building</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Physical location of assets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">City</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Municipality location of assets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Compute Resource Group</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Group assignment used by the Host and VM Filesystems data collector</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Continent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geographic location of assets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Country</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">National location of assets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data Center</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Physical location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Direct Attached</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates (Yes or No) if a storage resource is connected directly to hosts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">End of Life</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date when a device will be taken offline</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fabric Alias</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User-friendly name for a fabric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Floor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Location of a device on a floor of a building (hosts, storage arrays, switches, and tapes)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Devices under heavy use on a regular basis or at the threshold of capacity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comments associated with a resource</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rack in which the resource resides</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SAN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical partition of the network for hosts, storage arrays, tapes, switches, and applications.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service Level</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A set of supported service levels that you can assign to resources. Provides an ordered options list for internal volumes, qtree, and volumes. Edit service levels to set performance policies for different levels.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">State/Province</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">State or province where the resource is located.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sunset</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Threshold set after which no new allocations can be made to that device. Useful for planned migrations and other pending network changes.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switch Level</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Predefined options for setting up categories for switches. Typically, these designations remain for the life of the device, although you can edit them. Available only for switches.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can be used to define different levels of service within your environment. Tiers can define the type of level, such as speed needed (for example, gold or silver). This feature is available only on internal volumes, qtrees, storage arrays, storage pools, and volumes.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Violation Severity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rank (for example, major) of a violation (for example, missing host ports or missing redundancy), in a hierarchy of highest to lowest importance.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Alias, Data Center, Hot, Service Level, Sunset, Switch Level,  Tier, and Violation Severity are system-level annotations, which you cannot delete or rename; you can change only their assigned values.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="creating-a-query-to-identify-netapp-root-aggregates-in-your-environment">Creating a query to identify NetApp root aggregates in your environment</h2>
+<h2 id="creating-custom-annotations">Creating custom annotations</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Queries provide search at a granular level, based on user-selected criteria. Using a query allows you to search for Internal volumes in your environment that contain the NetApp root aggregate.</p>
+<p>Using annotations, you can add custom business-specific data that matches your business needs to assets. While Cloud Insights provides a set of default annotations, you might find that you want to view data in other ways. The data in custom annotations supplements device data already collected, such as storage manufacturer, number volumes, and performance statistics. The data you add using annotations is not discovered by Cloud Insights.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Create a query to identify NetApp root aggregates in your environment: Click <strong>Queries &gt; New Query &gt; Select Resource Type</strong> (?)</p>
-</li>
-<li>
-<p>Click <strong>storage Pool</strong></p>
-</li>
-<li>
-<p>Enter the name for the root aggregate</p>
+<p>In the Cloud Insights menu, click <strong>Manage &gt; Annotations</strong>.</p>
 <div class="paragraph">
-<p>This example uses "aggr0" for the name. When creating an aggregate, only the following requirements for the name must be followed:</p>
+<p>The Annotations page displays the list of annotations.</p>
 </div>
+</li>
+<li>
+<p>Click <strong>+Add</strong></p>
+</li>
+<li>
+<p>Enter a <strong>Name</strong> and <strong>Description</strong> of the annotation.</p>
+<div class="paragraph">
+<p>You can enter up to 255 characters in these fields.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Type</strong> and then select one of the following options that represents the type of data allowed in this annotation:</p>
+</li>
+</ol>
+</div>
+<div class="dlist">
+<div class="title">Annotation types</div>
+<dl>
+<dt class="hdlist1">Boolean</dt>
+<dd>
+<p>Creates a drop-down list with the choices of yes and no. For example, the "Direct Attached" annotation is Boolean.</p>
+</dd>
+<dt class="hdlist1">Date</dt>
+<dd>
+<p>This creates a field that holds a date. For example, if the annotation will be a date, select this.</p>
+</dd>
+<dt class="hdlist1">List</dt>
+<dd>
+<p>Creates either of the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A drop-down fixed list</p>
+<div class="paragraph">
+<p>When others are assigning this annotation type on a device, they cannot add more values to the list.</p>
+</div>
+</li>
+<li>
+<p>A drop-down flexible list</p>
+<div class="paragraph">
+<p>If you select the Add new values on the fly option when you create this list, when others are assigning this annotation type on a device, they can add more values to the list.</p>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Number</dt>
+<dd>
+<p>Creates a field where the user assigning the annotation can enter a number. For example, if the annotation type is "Floor", the user could select the Value Type of "number" and enter the floor number.</p>
+</dd>
+<dt class="hdlist1">Text</dt>
+<dd>
+<p>Creates a field that allows free-form text. For example, you might enter "Language" as the annotation type, select "Text" as the value type, and enter a language as a value.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+After you set the type and save your changes, you cannot change the type of the annotation. If you need to change the type, you have to delete the annotation and create a new one.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If you select List as the annotation type, do the following:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>It must begin with either a letter or an underscore (_).</p>
-</li>
-<li>
-<p>It can contain only letters, digits, and underscores.</p>
-</li>
-<li>
-<p>It can be 250 characters or less.</p>
+<p>Select <strong>Add new values on the fly</strong> if you want the ability to add more values to the annotation when on an asset page, which creates a flexible list.</p>
 <div class="paragraph">
-<p>In most cases, the aggregate is named +<em>aggr0</em>, <em>aggr_0</em>, or something similar. It might require an iterative process to identify all of the NetApp root aggregates in your environment.</p>
+<p>For example, suppose you are on an asset page and the asset has the City annotation with the values Detroit, Tampa, and Boston. If you selected the <strong>Add new values on the fly</strong> option, you can add additional values to City like San Francisco and Chicago directly on the asset page instead of having to go to the Annotations page to add them. If you do not choose this option, you cannot add new annotation values when applying the annotation; this creates a fixed list.</p>
 </div>
+</li>
+<li>
+<p>Enter a value and description in <strong>Value</strong> and  <strong>Description</strong> fields.</p>
+</li>
+<li>
+<p>Click <strong>Add</strong> to add additional values.</p>
+</li>
+<li>
+<p>Click the Trash icon to delete a value.</p>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>Click <strong>Save</strong> and enter a name for the new query.</p>
-<div class="paragraph">
-<p>As mentioned before, this might be an iterative process and require multiple queries to identify all of the NetApp root aggregates.</p>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="create-an-annotation-for-the-root-volumes-returned-by-your-queries">Create an annotation for the root volumes returned by your queries</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Annotations are specialized notes that you assign to your assets, allowing you to filter assets by their annotations. The annotation you create will be used to identify the NetApp root aggregates in your environment and ensure that they are not included in a specific report.</p>
-</div>
-<div class="paragraph">
-<div class="title">Before you begin</div>
-<p>You must have identified all of the root aggregates you want to exclude from the "High I/O Density" report.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Steps</div>
-<ol class="arabic">
-<li>
-<p>In the Cloud Insights menu, click <strong>Manage &gt; Annotations</strong></p>
-</li>
-<li>
-<p>Click <strong>Add</strong></p>
-</li>
-<li>
-<p>Enter the name for the annotation: <strong>RootAggr</strong></p>
-</li>
-<li>
-<p>Enter a description of the annotation: <strong>Remove root aggregate from "High I/O Density" report</strong></p>
-</li>
-<li>
-<p>Enter the type of annotation: <strong>Boolean</strong></p>
 </li>
 <li>
 <p>Click <strong>Save</strong></p>
+<div class="paragraph">
+<p>Your annotations appear in the list on the Annotations page.</p>
+</div>
 </li>
 </ol>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="create-an-annotation-rule-to-automate-excluding-specific-aggregates-from-your-io-density-report">Create an annotation rule to automate excluding specific aggregates from your I/O density report</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>As an alternative to manually applying annotations to individual assets, you can automatically apply annotations to multiple assets using annotation rules. Annotation rules are based on queries you create and when run on the system they add new assets to existing sets of assets. When these sets of assets are excluded from a report the new assets are automatically excluded too.</p>
-</div>
-<div class="paragraph">
-<div class="title">Before you begin</div>
-<p>You must have created and saved a query that identifies the NetApp root aggregates you identified in your environment.
-. Steps
-. In the Cloud Insights toolbar, Click <strong>Manage &gt; Annotation rules</strong>
-. Click <strong>Add</strong></p>
-</div>
-<div class="paragraph">
-<p>+
-The <strong>Add Rule</strong> dialog displays.</p>
-</div>
-<div class="paragraph">
-<p>+
-.. In the Name box, enter a unique name that describes the rule: <strong>"RootAggrExclude"</strong>
-.. Click Query and select the Query that Insight should use to apply the annotation rule to: <strong>"Aggregate0"</strong>
-.. Click Annotation and select: <strong>"Root agg exclude"</strong>
-.. Click <strong>Value</strong> and enter <strong>True</strong></p>
+<div class="title">After you finish</div>
+<p>In the UI, the annotation is available immediately for use.</p>
 </div>
 </div>
 </div>
@@ -1084,7 +1269,7 @@ The <strong>Add Rule</strong> dialog displays.</p>
                       <span class="n-footer__social-link-text">blog</span>
                       <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
                         <title>blog@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#blog"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/en/common/svg/sprite.svg#blog"></use>
                       </svg>
                     </a>
                   </li>
@@ -1093,7 +1278,7 @@ The <strong>Add Rule</strong> dialog displays.</p>
                       <span class="n-footer__social-link-text">community</span>
                       <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
                         <title>community@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#comments"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/en/common/svg/sprite.svg#comments"></use>
                       </svg>
                     </a>
                   </li>
@@ -1103,7 +1288,7 @@ The <strong>Add Rule</strong> dialog displays.</p>
                       <span class="n-footer__social-link-text">twitter</span>
                       <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
                         <title>twitter@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#twitter"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/en/common/svg/sprite.svg#twitter"></use>
                       </svg>
                     </a>
                   </li>
@@ -1112,7 +1297,7 @@ The <strong>Add Rule</strong> dialog displays.</p>
                       <span class="n-footer__social-link-text">youtube</span>
                       <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
                         <title>youtube@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#youtube"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/en/common/svg/sprite.svg#youtube"></use>
                       </svg>
                     </a>
                   </li>
@@ -1131,15 +1316,15 @@ The <strong>Add Rule</strong> dialog displays.</p>
 
     </div>
 
-    <script src="/cloudinsights/us-en/common/js/components.js"></script>
-    <script src="/cloudinsights/us-en/common/js/doc-components.js"></script>
+    <script src="/cloudinsights/en/common/js/components.js"></script>
+    <script src="/cloudinsights/en/common/js/doc-components.js"></script>
 
     <!-- i18n script -->
-    <script type="text/javascript" src="/cloudinsights/us-en/js/responsive.js"></script>
+    <script type="text/javascript" src="/cloudinsights/en/js/responsive.js"></script>
 
     <!-- Elasticsearch JS -->
     
-    <script type="text/javascript" src='/cloudinsights/us-en/js/bundle.js'></script>
+    <script type="text/javascript" src='/cloudinsights/en/js/bundle.js'></script>
     
   </body>
 

@@ -2,7 +2,7 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>Ensuring IO density data describe only internal data volumes | NetApp Cloud Docs</title>
+  <title>Performance Troubleshooting | NetApp Cloud Docs</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +14,8 @@
 
   
 
-  <meta name="description" content="IO Density">
-  <meta name="keywords" content=" notifications, annotations, queries, applications,">
+  <meta name="description" content="">
+  <meta name="keywords" content=" FAQ, Frequently asked questions, performance, troubleshooting">
 
   <!-- Icons -->
   <link rel="icon" href="/cloudinsights/en/images/favicon.ico" type="image/x-icon">
@@ -895,11 +895,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Ensuring IO density data describe only internal data volumes
+  <h1 class="n-doc__component-detail-heading">Performance Troubleshooting
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/h2-IO-density-excludes-rootaggr.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Ensuring IO density data describe only internal data volumes](https://docs.netapp.com/en/cloudinsights/io_density_nonroot.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/faq-perf-trblsht.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Performance Troubleshooting](https://docs.netapp.com/en/cloudinsights/concept_faq.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -908,152 +908,65 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>In NetApp storage systems the root aggregate contains the root volume, containing special directories and configuration files for managing and controlling the storage system. Theses operations might result in a large amount of activity in the root aggregate. When you query Cloud Insights for the top 10 internal volumes with the highest IO density, your results might include NetApp root aggregates as members of the top 10.</p>
-</div>
-<div class="paragraph">
-<p>When monitoring your environment it is more important to determine which internal data volumes are producing high I/O density numbers. In order to accurately identify only the data volumes, you need to isolate the NetApp internal volumes from queries you use to monitor I/O density.</p>
-</div>
-<div class="paragraph">
-<p>This guide describes how to easily identify the NetApp root aggregates, isolate them from the results of internal volume queries, and create rules that exclude any new NetApp root aggregates as they are added to the system. The following Cloud Insights features are used to insure that your I/O density reports are derived from internal data volumes.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>A query is created to identify all of the NetApp root aggregates that are monitored by Cloud Insights.</p>
-</li>
-<li>
-<p>An annotation is assigned to each of the NetApp root aggregates.</p>
-</li>
-<li>
-<p>An annotation rule is created to exclude the NetApp root  aggregates.</p>
-</li>
-</ul>
+<p>This FAQ answers common questions about Cloud Insights performance troubleshooting.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="creating-a-query-to-identify-netapp-root-aggregates-in-your-environment">Creating a query to identify NetApp root aggregates in your environment</h2>
+<h2 id="how-can-i-create-a-list-of-all-the-greedy-resources-in-my-environment">How can I create a list of all the greedy resources in my environment?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Queries provide search at a granular level, based on user-selected criteria. Using a query allows you to search for Internal volumes in your environment that contain the NetApp root aggregate.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Steps</div>
-<ol class="arabic">
-<li>
-<p>In Cloud Insights create a query to identify NetApp root aggregates in your environment: <strong>Queries &gt; +New Query &gt; Storage Pool</strong></p>
-</li>
-<li>
-<p>Enter the name for the root aggregate</p>
-<div class="paragraph">
-<p>This example uses "aggr0" for the name. When creating an aggregate, only the following requirements for the name must be followed:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>It must begin with either a letter or an underscore (_).</p>
-</li>
-<li>
-<p>It can contain only letters, digits, and underscores.</p>
-</li>
-<li>
-<p>It can be 250 characters or less.</p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>In most cases the aggregate is name aggr0, aggr_0, or something similar. It might require an iterative process to identify all of the NetApp root aggregates in your environment.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Click <strong>Save</strong> and enter a name for the new query.</p>
-<div class="paragraph">
-<p>As mentioned before, this might be an iterative process and require multiple queries to identify all of the NetApp root aggregates.</p>
-</div>
-</li>
-</ol>
+<p>Cloud Insights&#8217;s correlation analytics help with identification of greedy and degraded resources for a “specified” service path. The correlation feature&#8217;s generated analysis is performed in real time while viewing each object. The analysis provided greatly reduces the time necessary for troubleshooting performance issues and identifying root cause. Exploring generated violations of defined performance policies are one point of entry to discovering greedy or degraded resources. Cloud Insights&#8217;s anomaly detection capabilities may also be used as a more proactive approach to identifying an application infrastructure&#8217;s greedy or degraded resources before they become service disruptions. Both widgets and dashboards using the latest query capability help to filter, sort and visualize resources with higher than expected IOPS (greedy), Utilization or Latency.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="create-an-annotation-for-the-root-volumes-returned-by-your-queries">Create an annotation for the root volumes returned by your queries</h2>
+<h2 id="can-cloud-insights-give-one-place-to-diagnose-performance-problems">Can Cloud Insights give one place to diagnose performance problems?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Annotations are specialized notes that you assign to your assets, allowing you to filter assets by their annotations. The annotation you create will be used to identify the NetApp root aggregates in your environment and ensure that they are not included in a list of internal volumes with the highest IO density.</p>
+<p>Yes. Performance Troubleshooting in Cloud Insights can be approached in multiple ways. Cloud Insights has a number of alerting methods possible. SNMP, Syslog and emailed Alerts are used commonly. Emailed Alerts allow users to quickly click and launch to the impacted resources within Cloud Insights. A global search window allows administrators to simply type in a resource name to begin analyzing the situation.</p>
 </div>
 <div class="paragraph">
-<div class="title">Before you begin</div>
-<p>You must have identified all of the root aggregates you want to exclude from the "High I/O Density" report.</p>
+<p>Cloud Insights&#8217;s Violation Dashboard allows users to prioritize efforts based on the number of events, the duration and the time of day. An example of various alerting types would be Latency, IOPS, Utilization, Severity, business unit or even assCloud Insightsated application.</p>
 </div>
-<div class="olist arabic">
-<div class="title">Steps</div>
-<ol class="arabic">
-<li>
-<p>Create an annotation to associate all of the NetApp root aggregates you identified with queries: <strong>Manage &gt; Annotations</strong></p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Enter the name for the annotation: <strong>RootAggr</strong></p>
-</li>
-<li>
-<p>Enter a description of the annotation: <strong>Remove root aggregate from "High I/O Density" list</strong></p>
-</li>
-<li>
-<p>Enter the type of annotation: <strong>Boolean</strong></p>
-</li>
-</ol>
+<div class="paragraph">
+<p>Cloud Insights&#8217;s correlation analytics helps administrators compare objects assCloud Insightsated with the impacted resource and determines their impact to IOPS, Latency, Utilization, CPU and BB credits.</p>
 </div>
-</li>
-<li>
-<p>Click <strong>Save</strong></p>
-</li>
-</ol>
+<div class="paragraph">
+<p>Cloud Insights&#8217;s latest advances in anomaly detection and ethernet monitoring provide a more aggressive and proactive approach to detecting deviating resource behaviors before they become service disruptions or outages.</p>
+</div>
+<div class="paragraph">
+<p>Cloud Insights&#8217;s Query technology and Widget dashboards allows for pinpoint specifics in organized views that targets problem areas within the Datacenter.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="create-an-annotation-rule-to-automate-excluding-specific-aggregates-from-your-io-density-report">Create an annotation rule to automate excluding specific aggregates from your I/O density report</h2>
+<h2 id="can-cloud-insights-help-with-my-7-mode-to-cdot-migrations">Can Cloud Insights help with my 7-mode to cDOT migrations?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>As an alternative to manually applying annotations to individual assets, you can automatically apply annotations to multiple assets using annotation rules. Annotation rules are based on queries you create and when run on the system they add new assets to existing sets of assets. When these sets of assets are excluded from inclusion the new assets are automatically excluded too.</p>
+<p>Yes, Cloud Insights provides an invaluable understanding for existing workload demand and post migration validations. Cloud Insights’s role in modernizing today’s datacenter allows for change management simulations, pre-migration optimization planning and defining the right tier of service. Cloud Insights effortlessly collects and correlates the business impact across thousands of NFS shares and Fibre channel paths in multi-vendor environments with just a few clicks. From migration to tech refreshes, Cloud Insights is providing a pathway to reliable, right-sized migrations and mitigating unplanned service disruptions.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="how-real-time-is-cloud-insights-performance-monitoring">How “real time” is Cloud Insights performance monitoring?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cloud Insights is considered near-real-time for both on-premises and hybrid cloud data center management. While polling of data sources can be configured to occur more often, most users don’t get significant analytical benefit from having a performance collection interval for most devices of less than 5 minutes. More frequent collection can put unnecessary burden on the objects under management and the analyses performed. Of course, there may be circumstances where a more granular collection is required, and fortunately Cloud Insights allows complete flexibility including configurable device inventory and performance polling intervals to suit your specific data center environment needs.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="why-is-my-total-different-from-my-read-plus-write">Why is my "Total" different from my "Read" plus "Write"?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In some instances, you may notice that the Total for a counter is not equal to the sum of Reads plus Writes for that counter. There are a few instances where this could happen.</p>
 </div>
 <div class="paragraph">
-<div class="title">Before you begin</div>
-<p>You must have created and saved a query that identifies the NetApp root aggregates you identified in your environment.</p>
+<p>IOPS: In addition to reads and writes, a storage array or other asset will process internal operations unrelated to the workload data flow. These are sometimes referred to as "system", "metadata", or simply "other" operations, and can be attributed to internal processes such as snapshots, deduplication, or space reallocation. In these cases, to find the amount of system operations for a given asset, subtract the sum of Read and Write IOPS from the Total IOPS. The sum of Read plus Write IOPS is the total IOPS directly related to your data flow.</p>
 </div>
-<div class="olist arabic">
-<div class="title">Steps</div>
-<ol class="arabic">
-<li>
-<p>In the Cloud Insights menu, click  <strong>Manage &gt; Annotations</strong></p>
-</li>
-<li>
-<p>Click <strong>Add</strong></p>
-</li>
-<li>
-<p>Do the following:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>In the Name box, enter a unique name that describes the rule: <strong>RootAggrExclude</strong></p>
-</li>
-<li>
-<p>Click Query and select the Query that Cloud Insights should use to apply the annotation rule to: <strong>Aggregate0</strong></p>
-</li>
-<li>
-<p>Click Annotation and select: <strong>Root agg exclude</strong></p>
-</li>
-<li>
-<p>Click <strong>Value</strong> and enter <strong>True</strong></p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
+<div class="paragraph">
+<p>Latency: The total response time (latency) for an operation can sometimes be reported as less than the write response time, because the total response time is a time-weighted average. I/O workloads will often consist of more read than write operations, with the writes typically observing larger latencies. For example, if a workload performed 10 read operations with an average latency of 5ms, and 5 write operations with an average latency of 10ms, the total weighted average latency will be calculated as the number of reads times the average read latency, plus the number of writes times the average write latency, divided by the total number of I/O operations, e.g. (10 * 5 + 5 * 10) / (10 + 5) = 6.33ms.</p>
 </div>
 </div>
 </div>

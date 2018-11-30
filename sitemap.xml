@@ -22,63 +22,63 @@
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/concept_about_applications.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/concept_acquisition_unit_requirements.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/concept_asset_expert_view_section.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/concept_asset_page_overview.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/concept_asset_summary_section.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/concept_asset_user_data_section.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/concept_asset_violation_section.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/concept_audit.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/concept_dashboard_best_practices.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
@@ -99,42 +99,42 @@
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/concept_data_collector_reference.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/concept_determining_data_collector_acq_status.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/concept_in_context_filters.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/concept_notifications_email.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/concept_other_cloud_products.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/concept_querying_assets.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
@@ -148,7 +148,7 @@
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/concept_searching_assets.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
@@ -162,21 +162,21 @@
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/concept_troubleshooting_overview.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/concept_ttl_and_downsampling.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/concept_user_roles.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
@@ -188,44 +188,72 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/zz/cloudinsights/concept_faq.html</loc>
+      
+        <lastmod>2018-11-30T21:52:51+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zz/cloudinsights/concept_faq.html</loc>
+      
+        <lastmod>2018-11-30T21:52:51+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zz/cloudinsights/concept_faq.html</loc>
+      
+        <lastmod>2018-11-30T21:52:51+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zz/cloudinsights/concept_faq.html</loc>
+      
+        <lastmod>2018-11-30T21:52:51+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/front_page_concept_2.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/io_density_nonroot.html</loc>
       
-        <lastmod>2018-11-05T20:24:55+00:00</lastmod>
+        <lastmod>2018-11-30T21:52:51+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/reference_data_collector_support_matrix.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/reference_object_icons.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights//search.html</loc>
       
-        <lastmod>2018-11-30T20:14:53+00:00</lastmod>
+        <lastmod>2018-11-30T22:02:08+00:00</lastmod>
       
     </url>
   
@@ -246,7 +274,7 @@
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/Task_Configure_Data_Collectors.html</loc>
       
-        <lastmod>2018-10-30T18:03:00+00:00</lastmod>
+        <lastmod>2018-11-30T21:52:51+00:00</lastmod>
       
     </url>
   
@@ -260,21 +288,28 @@
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_configure_acquisition_unit.html</loc>
       
-        <lastmod>2018-11-27T22:00:37+00:00</lastmod>
+        <lastmod>2018-11-30T21:52:51+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_configure_data_collectors.html</loc>
       
-        <lastmod>2018-10-30T17:39:28+00:00</lastmod>
+        <lastmod>2018-11-30T21:52:51+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zz/cloudinsights/task_create_annotataion_rules.html</loc>
+      
+        <lastmod>2018-11-30T21:52:51+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_create_annotation.html</loc>
       
-        <lastmod>2018-11-02T15:49:02+00:00</lastmod>
+        <lastmod>2018-11-30T21:52:51+00:00</lastmod>
       
     </url>
   
@@ -288,42 +323,42 @@
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_create_application.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-11-30T21:52:51+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_create_performance_policies.html</loc>
       
-        <lastmod>2018-11-13T16:43:03+00:00</lastmod>
+        <lastmod>2018-11-30T21:52:51+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zz/cloudinsights/task_create_query.html</loc>
+      <loc>https://docs.netapp.com/zz/cloudinsights/task_create_annotation.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-11-30T21:52:51+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_dashboard_example_VM_performance.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_dashboard_example_node_utilization.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_dashboard_rollup_aggregation.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
@@ -358,7 +393,7 @@
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_dc_IBM_XIV.html</loc>
       
-        <lastmod>2018-11-06T20:42:37+00:00</lastmod>
+        <lastmod>2018-11-30T21:52:51+00:00</lastmod>
       
     </url>
   
@@ -400,7 +435,7 @@
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_dc_brocade_EFCM_configure.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
@@ -414,7 +449,7 @@
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_dc_brocade_Sphereon_Intrepid_configure.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
@@ -603,21 +638,21 @@
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_dc_na_cdot.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_dc_na_cdot_um.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_dc_na_eseries.html</loc>
       
-        <lastmod>2018-11-06T20:42:37+00:00</lastmod>
+        <lastmod>2018-11-30T21:52:51+00:00</lastmod>
       
     </url>
   
@@ -631,7 +666,7 @@
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_dc_na_solidfire.html</loc>
       
-        <lastmod>2018-11-26T21:11:55+00:00</lastmod>
+        <lastmod>2018-11-30T21:52:51+00:00</lastmod>
       
     </url>
   
@@ -678,23 +713,23 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zz/cloudinsights/task_defining_annotations.html</loc>
+      <loc>https://docs.netapp.com/zz/cloudinsights/annotations.html</loc>
       
-        <lastmod>2018-11-27T20:56:55+00:00</lastmod>
+        <lastmod>2018-11-30T21:52:51+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_display_widget_legends.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_export_query_results.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
@@ -708,7 +743,7 @@
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_h2_minrisk_thin.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
@@ -727,16 +762,23 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zz/cloudinsights/task_invite_users.html</loc>
+      <loc>https://docs.netapp.com/zz/cloudinsights/task_identify_orphaned_capacity.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-11-30T21:52:51+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zz/cloudinsights/task_io_density_report_no_root.html</loc>
+      <loc>https://docs.netapp.com/zz/cloudinsights/task_invite_users.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zz/cloudinsights/task_isolate_root_volume.html</loc>
+      
+        <lastmod>2018-11-30T21:52:51+00:00</lastmod>
       
     </url>
   
@@ -750,35 +792,35 @@
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_modify_delete_query.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_query_assign_multiple_applicationss.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_query_copy_table_values.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_research_failed_collector.html</loc>
       
-        <lastmod>2018-10-30T14:36:08+00:00</lastmod>
+        <lastmod>2018-11-30T21:52:51+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_troubleshooting_data_collector_failures.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
@@ -792,28 +834,28 @@
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_troubleshooting_windows_acquisition_unit_problems.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_view_configured_data_collectors.html</loc>
       
-        <lastmod>2018-10-29T19:12:17+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_view_queries.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-10-29T19:16:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloudinsights/task_widget_queries_and_filters.html</loc>
       
-        <lastmod>2018-10-29T17:31:52+00:00</lastmod>
+        <lastmod>2018-11-30T21:52:51+00:00</lastmod>
       
     </url>
   

@@ -2,7 +2,7 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>Creating a Query | NetApp Cloud Docs</title>
+  <title>Creating annotation rules | NetApp Cloud Docs</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +14,8 @@
 
   
 
-  <meta name="description" content="How to create a query">
-  <meta name="keywords" content=" query, queries, create">
+  <meta name="description" content="You create annotation rules to automatically apply annotations to multiple assets.">
+  <meta name="keywords" content=" ">
 
   <!-- Icons -->
   <link rel="icon" href="/cloudinsights/images/favicon.ico" type="image/x-icon">
@@ -676,7 +676,7 @@
   
 
   
-    <li class="active"><a href="task_create_query.html">Creating a Query</a></li>
+    <li><a href="task_create_query.html">Creating a Query</a></li>
   
 
   
@@ -895,11 +895,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Creating a Query
+  <h1 class="n-doc__component-detail-heading">Creating annotation rules
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_create_query.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Creating a Query](https://docs.netapp.com/zz/cloudinsights/task_create_query.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_create_annatation_rules.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Creating annotation rules](https://docs.netapp.com/zz/cloudinsights/task_create_annotataion_rules.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -908,155 +908,128 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>You can create a query to enable you to search the assets in your environment at a granular level. Queries enable you to slice data by adding filters and then sorting the results to view inventory and performance data in one view.</p>
+<p>You can use annotation rules to automatically apply annotations to multiple assets based on criteria that you define. Cloud Insights assigns the annotations to assets based on these rules. Annotations set manually on an individual asset pages take precedence over rule-based annotations when Cloud Insight evaluates the annotation rules.</p>
 </div>
 <div class="paragraph">
-<p>For example, you can create a query for volumes, add a filter to find particular storages associated with the selected volume, add a filter to find a particular annotation (such as <em>Tier 1</em>) on the selected storages, and finally add another filter to find all storages with <em>IOPS - Read (IO/s)</em> greater than 25. When the results are displayed, you can then sort the columns of information associated with the query in ascending or descending order.</p>
-</div>
-<div class="paragraph">
-<p>When a new data collector is added which acquires assets, or any annotation or application assignments are made, you can query for those assets, annotations, or applications after the queries are indexed, which occurs at a regularly scheduled interval.</p>
+<div class="title">Before you begin</div>
+<p>You must have created a query for the annotation rule.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Log in to your Cloud Insights tenant.</p>
-</li>
-<li>
-<p>Click <strong>Queries</strong> and select <strong>+New Query</strong>.</p>
-</li>
-<li>
-<p>Click <strong>Search For&#8230;&#8203;</strong> and select a type of asset.</p>
+<p>In the Cloud Insights menu click <strong>Manage &gt; Annotation rules</strong>.</p>
 <div class="paragraph">
-<p>When a resource is selected for a query, a number of default columns are automatically displayed; you can remove these columns or add new ones at any time.</p>
+<p>The Add Rule dialog is displayed.</p>
 </div>
 </li>
 <li>
-<p>In the <strong>Name</strong> text box, type the name of the asset or type a portion of text to filter through the asset names. Hit "enter" or click outside the box to apply the filter. Leave this field empty to return all results.</p>
+<p>Do the following:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>In the <strong>Name</strong> box, enter a unique name that describes the rule.</p>
+<div class="paragraph">
+<p>The name appears in the Annotation Rules page.</p>
+</div>
 </li>
 <li>
-<p>You can add additional filters by clicking on the <strong>+</strong> button next to the current filter.</p>
+<p>Click <strong>Query</strong> and select the query that Cloud Insights uses to identify the assets the annotation applies to.</p>
+</li>
+<li>
+<p>Click <strong>Annotation</strong> and select the annotation you want to apply.</p>
+</li>
+<li>
+<p>Click <strong>Value</strong> and select a value for the annotation.</p>
+<div class="paragraph">
+<p>For example, if you choose Birthday as the annotation, you specify a date for the value.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Save</strong></p>
+</li>
+<li>
+<p>Click <strong>Run all rules</strong> if you want to run all the rules immediately; otherwise, the rules are run at a regularly scheduled interval.</p>
+</li>
+</ol>
+</div>
 </li>
 </ol>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="refining-your-filter">Refining your filter</h3>
+<div class="sect1">
+<h2 id="modifying-annotation-rules">Modifying annotation rules</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>You can use any of the following alone or combined to refine your search in any text box on the New Query page:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>An asterisk enables you to search for everything. For example,</p>
-<div class="listingblock">
-<div class="content">
-<pre>vol*rhel</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>displays all resources that start with "vol" and end with "rhel".</p>
-</div>
-</li>
-<li>
-<p>The question mark enables you to search for a specific number of characters. For example,</p>
-<div class="listingblock">
-<div class="content">
-<pre>BOS-PRD??-S12</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>displays <em>BOS-PRD12-S12</em>, <em>BOS-PRD13-S12</em>, and so on.</p>
-</div>
-</li>
-<li>
-<p>The OR operator enables you to specify multiple entities. For example,</p>
-<div class="listingblock">
-<div class="content">
-<pre>FAS2240 OR CX600 OR FAS3270</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>finds multiple storage models.</p>
-</div>
-</li>
-<li>
-<p>The NOT operator allows you to exclude text from the search results. For example,</p>
-<div class="listingblock">
-<div class="content">
-<pre>NOT EMC*</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>finds everything that does not start with "EMC". You can use</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>NOT *</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>to display fields that contain no value.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>If you enter an invalid filter (for example, entering an alphanumeric character in a date field), you will receive a message indicating the problem, and will not be able to save the query until you correct the error. If you refresh the web page, the query will revert to the last valid state.</p>
-</div>
-<div class="paragraph">
-<p>To add a criteria, click <span class="image"><img src="./media/GearIcon.png" alt="Columns"></span> and do either of the following:</p>
+<p>You can modify an annotation rule to change the rule&#8217;s name, its annotation, the annotation&#8217;s value, or the query associated with the rule.</p>
 </div>
 <div class="olist arabic">
+<div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Type to search for a specific criteria and then select it.</p>
+<p>In the Cloud Insights menu, Click <strong>Manage &gt; Annotation rules</strong>.</p>
+<div class="paragraph">
+<p>The Annotation Rules page displays the list of existing annotation rules.</p>
+</div>
 </li>
 <li>
-<p>Scroll down the list and select a criteria.</p>
+<p>Locate the Annotation Rule you want to delete.</p>
+<div class="paragraph">
+<p>Filter the annotation rules by entering a value in the filter box or click a page number to browse through the annotation rules by page.</p>
+</div>
+</li>
+<li>
+<p>Click the menu icon for the rule that you want to modify.</p>
+</li>
+<li>
+<p>Click <strong>Modify</strong></p>
+<div class="paragraph">
+<p>The Edit Rule dialog is displayed.</p>
+</div>
+</li>
+<li>
+<p>Modify the annotation rule&#8217;s name, annotation, value, or query.</p>
 </li>
 </ol>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deleting-annotation-rules">Deleting annotation rules</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Enter a range of values if you choose a performance metric like <em>IOPS - Read (IO/s)</em>.</p>
+<p>You might want to delete annotation rules that are no longer used</p>
 </div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>In the Cloud Insights menu, Click <strong>Manage &gt; Annotation rules</strong>.</p>
 <div class="paragraph">
-<p>Default annotations provided by Cloud Insights are indicated by <span class="image"><img src="./media/TagIcon.png" alt="Tag"></span>. It is possible to have annotations with duplicate names.</p>
+<p>The Annotation Rules page displays the list of existing annotation rules.</p>
 </div>
+</li>
+<li>
+<p>Locate the Annotation Rule you want to delete.</p>
 <div class="paragraph">
-<p>A column is added to the Query results list for the criteria and the results of the query in the list updates.</p>
+<p>Filter the annotation rules by entering a value in the filter box or click a page number to browse through the annotation rules by page.</p>
 </div>
+</li>
+<li>
+<p>Click the menu icon for the rule that you want to delete.</p>
+</li>
+<li>
+<p>Click <strong>Delete</strong></p>
 <div class="paragraph">
-<p>Optionally, you can click <span class="image"><img src="./media/GearIcon.png" alt="Columns"></span> to remove an annotation or performance metric from the query results.<br>
-For example, if your query shows maximum latency and maximum throughput for datastores and you want to show only maximum latency in the query results list, click this button, and clear the <em>Throughput - Max</em> check box. The <em>Throughput - Max (MB/s)</em> column is removed from the Query results list.</p>
+<p>A confirmation message is displayed, prompting whether you want to delete the rule.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Depending on the number of columns displayed in the query results table, you may not be able to view additional added columns. You can remove one or more columns until your desired columns become visible.
-</td>
-</tr>
-</table>
+</li>
+<li>
+<p>Click <strong>OK</strong></p>
+</li>
+</ol>
 </div>
-<div class="paragraph">
-<p>When you have defined the query as you want it, click <strong>Save</strong>. If you have not set a name for the query at the top of the screen, you will be prompted to enter a name.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If you have an account with an administrator role, you can create dashboards. A dashboard can comprise any of the widgets from the Widget Library, several of which let you represent query results in a dashboard. For more information about dashboards, see the topics under <a href="concept_dashboards_overview.html">Dashboards</a>.
-</td>
-</tr>
-</table>
 </div>
 </div>
 

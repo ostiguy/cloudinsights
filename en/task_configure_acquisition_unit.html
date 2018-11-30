@@ -927,9 +927,6 @@
 <li>
 <p>You must have an unzip program to unzip the downloaded files.</p>
 </li>
-<li>
-<p>Be sure your server or VM meets the minimum <a href="concept_acquisition_unit_requirements.html">requirements</a>.</p>
-</li>
 </ul>
 </div>
 <div class="olist arabic">
@@ -977,23 +974,24 @@
 <p>You can access the Acquisition Unit logs at /var/log/netapp/cloudinsights/acq/acq.log</p>
 </li>
 <li>
-<p>Use the following script to stop, start, restart, or check the status the Acquisition Unit:</p>
-<div class="literalblock">
-<div class="content">
-<pre>cloudinsights-service.sh</pre>
-</div>
+<p>Use the following script to control the Acquisition Unit:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>cloudinsights-service.sh (stop, start, restart, check the status)</p>
+</li>
+</ul>
 </div>
 </li>
 <li>
 <p>Use the following script to uninstall the Acquisition Unit:</p>
-<div class="literalblock">
-<div class="content">
-<pre>cloudinsights-uninstall.sh</pre>
-</div>
-</div>
-</li>
+<div class="ulist">
+<ul>
 <li>
-<p>For troubleshooting AU installation errors, see <a href="task_troubleshooting_linux_acquisition_unit_problems.html">Troubleshooting Linux AU</a></p>
+<p>cloudinsights-uninstall.sh</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1012,21 +1010,9 @@
 </li>
 <li>
 <p>Copy the commands to a text editor and set your proxy variables as needed.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Proxy variables cannot contain special characters. Use only use only upper- and lower-case letters and numeric characters for variables.
-</td>
-</tr>
-</table>
-</div>
 </li>
 <li>
-<p>Run the edited command in a terminal.</p>
+<p>Run the edited command in a terminal using the Bash shell.</p>
 </li>
 <li>
 <p>Install the Acquisition Unit software.</p>
