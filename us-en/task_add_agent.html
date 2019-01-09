@@ -14,8 +14,8 @@
 
   
 
-  <meta name="description" content="Adding Cloud Secure agents">
-  <meta name="keywords" content=" data collector, Secure">
+  <meta name="description" content="Adding CloudSecure agents">
+  <meta name="keywords" content=" agent, CloudSecure">
 
   <!-- Icons -->
   <link rel="icon" href="/cloudinsights/us-en/images/favicon.ico" type="image/x-icon">
@@ -913,21 +913,37 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Cloud Secure collects device data using one or more agents. Agents connect to devices in your environment and collect data that is sent to Cloud Secure for analysis.</p>
+<p>CloudSecure collects device data using one or more agents. Agents connect to devices in your environment and collect data that is sent to CloudSecure for analysis.</p>
 </div>
 <div class="paragraph">
-<p>This topic describes the steps required to add agents to Cloud Secure.</p>
+<p>This topic describes the steps required to add agents to CloudSecure.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="adding-a-cloud-secure-agent">Adding a Cloud Secure Agent</h2>
+<h2 id="adding-a-cloudsecure-agent">Adding a CloudSecure Agent</h2>
 <div class="sectionbody">
 <div class="ulist">
 <div class="title">Before you begin</div>
 <ul>
 <li>
-<p>Are there any prerequisites?</p>
+<p>A Docker image must be installed on the VM hosting the Agent.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>RHEL and CentOS Agent systems should always have the docker-ce package installed. Users should not install the docker-client-xx or docker-common-xx native RHEL docker packages since these do not support the docker run cli format that CloudSecure supports.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>OpenJDK java is required.</p>
+</li>
+<li>
+<p>The IBM-Java package, found in some RHEL versions must be uninstalled.</p>
+</li>
+<li>
+<p>The ”sudo su –' command is required for  installation, running scripts, and uninstall.</p>
 </li>
 </ul>
 </div>
@@ -935,17 +951,19 @@
 <div class="title">Steps for Installation</div>
 <ol class="arabic">
 <li>
-<p>Log in as Administrator or Account Owner to your Cloud Secure environment.</p>
+<p>Log in as Administrator or Account Owner to your CloudSecure environment.</p>
 </li>
 <li>
-<p>Click <strong>Admin &gt; Data Collectors &gt; Agent &gt; +Agents</strong><br>
-The system displays the <em>Add Agent</em> dialog.</p>
+<p>Click <strong>Admin &gt; Data Collectors &gt; Agent &gt; +Agents</strong></p>
+<div class="paragraph">
+<p>The <em>Add Agent Operating System</em> dialog is displayed.</p>
+</div>
 </li>
 </ol>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./media/add-agent-csecure.png" alt="Not the correct Image - will replace when available">
+<img src="./media/cs-add-agent-1.png" alt="Not the correct Image - will replace when available">
 </div>
 </div>
 <div class="olist arabic">
@@ -963,13 +981,16 @@ The system displays the <em>Add Agent</em> dialog.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./media/add-agent.png" alt="Need new image - will replace when available">
+<img src="./media/cs-add-agent-2.png" alt="Need new image - will replace when available">
 </div>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Copy the installation command displayed in the dialog into a terminal window on the Agent server and execute the command.</p>
+<p>Click the copy to Clipboard icon to copy the installation command.</p>
+</li>
+<li>
+<p>Run the installation command.</p>
 </li>
 </ol>
 </div>
@@ -989,7 +1010,7 @@ The system displays the <em>Add Agent</em> dialog.</p>
 <p>The logs directiory is /opt/netapp/cloud-secure/logs</p>
 </li>
 <li>
-<p>Use the following script to control the Cloud Secure service:</p>
+<p>Use the following script to control the CloudSecure service:</p>
 <div class="ulist">
 <ul>
 <li>
