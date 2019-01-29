@@ -911,7 +911,7 @@
 </div>
 
 
-<p class="page-details">Updated <time datetime="2018-11-26 21:11:55 +0000">11/26/2018</time></p>
+<p class="page-details">Updated <time datetime="2019-01-29 16:07:15 +0000">01/29/2019</time></p>
 
 
 <div id="preamble">
@@ -1097,6 +1097,60 @@
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some things to try if you encounter problems with this data collector:</p>
+</div>
+<div class="sect3">
+<h4 id="inventory">Inventory</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Problem:</th>
+<th class="tableblock halign-left valign-top">Try this:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"showsys" command doesn&#8217;t return any result.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Run "showsys" and "showversion -a" from the command line and check if the version is supported by 3par.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="performance">Performance</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Problem:</th>
+<th class="tableblock halign-left valign-top">Try this:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Failed to connect or login. Provider initialization failed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An all-numeric array name can cause problems with SMI-S server. Try changing the array name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMI-S user configured does not have any domain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Grant appropriate domain privileges to the configured SMI-S user</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 
