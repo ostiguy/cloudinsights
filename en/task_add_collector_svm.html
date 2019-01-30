@@ -2,7 +2,7 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>User accounts | NetApp Cloud Docs</title>
+  <title>Configuring the NetApp ONTAP Data Collector | NetApp Cloud Docs</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +14,8 @@
 
   
 
-  <meta name="description" content="Cloud Insights provides multiple user accounts with different permission levels.">
-  <meta name="keywords" content=" roles, users, guest, user, administrator">
+  <meta name="description" content="Adding data collectors">
+  <meta name="keywords" content=" data collector, ONTAP, NetApp, SVM">
 
   <!-- Icons -->
   <link rel="icon" href="/cloudinsights/en/images/favicon.ico" type="image/x-icon">
@@ -337,7 +337,7 @@
   
 
   
-    <li class="active"><a href="concept_user_roles.html">User Accounts and Roles</a></li>
+    <li><a href="concept_user_roles.html">User Accounts and Roles</a></li>
   
 
   
@@ -900,110 +900,168 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">User accounts
+  <h1 class="n-doc__component-detail-heading">Configuring the NetApp ONTAP Data Collector
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/concept_user_roles.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[User accounts](https://docs.netapp.com/en/cloudinsights/concept_user_roles.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_add_collector_svm.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Configuring the NetApp ONTAP Data Collector](https://docs.netapp.com/en/cloudinsights/task_add_collector_svm.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
 </div>
 
 
-<p class="page-details">Updated <time datetime="2018-11-06 17:15:27 +0000">11/06/2018</time></p>
+<p class="page-details">Updated <time datetime="2019-01-30 15:55:48 +0000">01/30/2019</time></p>
 
 
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph lead">
-<p>Cloud Insights provides four user accounts, Account Owner, Administrator, User, and Guest. Each account is assigned specific permission levels.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="permission-levels">Permission levels</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The following illustration identifies the permissions granted to each user account.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="./media/user-roles-fig.png" alt="user roles fig"></span></p>
-</div>
-<div class="paragraph">
-<p>You use an account that has Administrator privileges to create or modify user accounts. Each user account is assigned one of the following permission levels.<br>
-* Guest can view asset pages, dashboards, queries and run queries.<br>
-* User can perform all guest-level privileges, and create, modify or delete, dashboards, queries, annotations, annotation rules, and applications.  Users cannot create modify or delete policies.<br>
-* Admins and Account Owner can perform all functions including adding new users and managing data collectors.</p>
-</div>
-<div class="paragraph">
-<p>The Account Owner is created when you register for Cloud Insights.</p>
-</div>
-<div class="paragraph">
-<p>Best practice is to limit the number of users with Administrator permissions.  The greatest number of accounts should be user or guest accounts.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="creating-user-accounts">Creating user accounts</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Creating a new user account is achieved through Cloud Central. A user can respond to the invitation sent through email, but if the user does not have an account with Cloud Central, the user needs to sign up with Cloud Central so that they can accept the invitation.</p>
-</div>
-<div class="ulist">
-<div class="title">Before you begin</div>
-<ul>
-<li>
-<p>The user name is the email address of the invitation.</p>
-</li>
-<li>
-<p>Understand the user roles you will be assigning.</p>
-</li>
-<li>
-<p>Passwords are defined by the user during the sign up process.</p>
-</li>
-</ul>
+<p>Cloud Secure uses data collectors to collect file and user access data from devices.</p>
 </div>
 <div class="olist arabic">
-<div class="title">Steps</div>
+<div class="title">Steps for Configuration</div>
 <ol class="arabic">
 <li>
-<p>Log into Cloud Insights</p>
+<p>Log in as Administrator or Account Owner to your Cloud Secure environment.</p>
 </li>
 <li>
-<p>In the menu, click <strong>Admin &gt; Account Manager</strong></p>
+<p>Click <strong>Admin &gt; Data Collectors &gt; +Data Collectors</strong></p>
 <div class="paragraph">
-<p>The User Management screen is displayed. The screen contains a list of all of the accounts on the system.</p>
+<p>The system displays the available Data Collectors.</p>
 </div>
 </li>
 <li>
-<p>Click <strong>+ User</strong></p>
+<p>You can chose to view the data collectors in a grid of tiles, or in a list.</p>
+</li>
+<li>
+<p>Click <strong>+Monitor</strong> in the <strong>NetApp ONTAP</strong> tile  or click the Data Collector name.</p>
+</li>
+<li>
+<p>Click the <strong>NETAPP&gt; ONTAP SVM</strong> in the tile or click <strong>ONTAP SVM</strong> from the list.</p>
 <div class="paragraph">
-<p>The Invite User screen is displayed.</p>
-</div>
-</li>
-<li>
-<p>Enter an email address or multiple addresses for invitations.</p>
-<div class="paragraph">
-<p><strong>Note:</strong> When you enter multiple addresses, they are all created with the same role. You can only set multiple users to the same role.</p>
-</div>
-</li>
-<li>
-<p>Enter the user&#8217;s e-mail address.</p>
-</li>
-<li>
-<p>Select the user role.</p>
-</li>
-<li>
-<p>Click <strong>Invite</strong></p>
-<div class="paragraph">
-<p>The invitation is sent to the user. Users will have 14 days to accept the invitation. Once a user accepts the invitation, he or she will be taken to the NetApp Cloud Portal, where they will sign up using the email address in the invitation.<br>
-If they have an existing account for that email address, they can simply sign in and will then be able to access their Cloud Insights environment.</p>
+<p>The system displays the Add SVM configuration page. Enter the required data for each field.</p>
 </div>
 </li>
 </ol>
 </div>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Configuration</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Field</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique name for the Data Collector</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Agent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a configured agent from the list or click <strong>Add Agent</strong> to configure an Agent. See <a href="&lt;concept_agent_requirements&gt;.html">Agent requirements</a> and<br>
+<a href="&lt;task_add_agent&gt;.html">Configuring an Agent</a> for configuration information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Continue</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Click Continue after you have selected an Agent</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SVM Management IP Address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Management IP Address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Username</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User name to access the SVM</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Password</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SVM Password</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Advanced Configuration</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Field</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Protocol</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ports</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Custom NFS Export Policies and CIFS Shares</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Field</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NFS Export Policies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All included or All excluded</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policy 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Included or Excluded</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policy 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Included or Excluded</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policy 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Included or Excluded</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Newly added NFS Export Policies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Include or exclude</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CIFS Shares</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All included or All excluded</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Share 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Included or Excluded</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Share 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Included or Excluded</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Share 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Included or Excluded</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Newly added CIFS Shares</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Include or exclude</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<div class="title">After you finish</div>
+<p>Click <strong>Test Configuration</strong> to check the status of the collector you configured.</p>
 </div>
 
         </article>
