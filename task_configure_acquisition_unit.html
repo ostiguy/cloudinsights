@@ -911,7 +911,7 @@
 </div>
 
 
-<p class="page-details">Updated <time datetime="2018-12-04 20:51:52 +0000">12/04/2018</time></p>
+<p class="page-details">Updated <time datetime="2019-01-31 20:43:33 +0000">01/31/2019</time></p>
 
 
 <div id="preamble">
@@ -1004,11 +1004,8 @@
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="setting-proxy-environment-variables">Setting proxy environment variables</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="setting-proxy-environment-variables">Setting proxy environment variables</h3>
 <div class="paragraph">
 <p>For environments that use a proxy, you must set the proxy environment variables before you add the Acquisition Unit. The instructions for configuring the proxy are provided on the <em>Add Acquisition Unit</em>  dialog.</p>
 </div>
@@ -1026,6 +1023,48 @@
 </li>
 <li>
 <p>Install the Acquisition Unit software.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reinstalling-an-acquisition-unit">Reinstalling an Acquisition Unit</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To re-install an Acquisition Unit on the same server/VM, you must follow these steps:</p>
+</div>
+<div class="paragraph">
+<div class="title">Before you begin</div>
+<p>You must have a temporary Acquisition Unit configured on a separate server/VM before re-installing an Acquisition Unit.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Log in to the Acquisition Unit server/VM and uninstall the AU software.</p>
+</li>
+<li>
+<p>Log into your Cloud Insights environment and go to <strong>Admin &gt; Data Collectors</strong>.</p>
+</li>
+<li>
+<p>For each data collector, click the Options menu on the right and select <em>Edit</em>. Assign the data collector to the temporary Acquisition Unit and click <strong>Save</strong>.</p>
+<div class="paragraph">
+<p>You can also select multiple data collectors of the same type and click the <strong>Bulk Actions</strong> button. Choose <em>Edit</em> and assign the data collectors to the temporary Acquisition Unit.</p>
+</div>
+</li>
+<li>
+<p>After all of the data collectors have been moved to the temporary Acquisition Unit, go to <strong>Admin &gt; Data Collectors</strong> and select the <strong>Acquisition Units</strong> tab.</p>
+</li>
+<li>
+<p>Click the Options button to the right of the Acquisition Unit you wish to re-install, and select <em>Delete</em>. You can delete an Acquisition Unit only if there are no data collectors assigned to it.</p>
+</li>
+<li>
+<p>You can now re-install the Acquisition Unit software on the original server/VM. Click <strong>+Acquisition Unit</strong> and follow the instructions above to install the Acquisition Unit.</p>
+</li>
+<li>
+<p>Once the Acquisition Unit has been re-installed, assign your data collectors back to the Acquisition Unit.</p>
 </li>
 </ol>
 </div>
