@@ -2,7 +2,7 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>Brocade FC Switch data collector | NetApp Cloud Docs</title>
+  <title>HP Enterprise Command View data collector | NetApp Cloud Docs</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +14,8 @@
 
   
 
-  <meta name="description" content="Configuring Brocade FC Switches data collector.">
-  <meta name="keywords" content=" data collector, Brocade, FC switch,">
+  <meta name="description" content="Configuring HP Enterprise Command View data collector.">
+  <meta name="keywords" content=" data collector, HP Command View, HP">
 
   <!-- Icons -->
   <link rel="icon" href="/cloudinsights/en/images/favicon.ico" type="image/x-icon">
@@ -372,7 +372,7 @@
         
 
   
-    <li class="active"><a href="task_dc_brocade_FC_Switch_configure.html">Brocade FC Switch</a></li>
+    <li><a href="task_dc_brocade_fc_switch.html">Brocade FC Switch</a></li>
   
 
   
@@ -385,7 +385,7 @@
   
 
   
-    <li><a href="task_dc_ceph_configure.html">Ceph</a></li>
+    <li><a href="task_dc_ceph_storage.html">Ceph</a></li>
   
 
   
@@ -400,11 +400,11 @@
         
 
   
-    <li><a href="task_dc_emc_celerra_configure.html">Celerra</a></li>
+    <li><a href="task_dc_emc_celerra.html">Celerra</a></li>
   
 
   
-    <li><a href="task_dc_emc_clariion_configure.html">CLARiiON</a></li>
+    <li><a href="task_dc_emc_clariion.html">CLARiiON</a></li>
   
 
   
@@ -468,7 +468,7 @@
   
 
   
-    <li><a href="task_dc_HP_Enterprise_Command_View_configure.html">HP Command View AE</a></li>
+    <li class="active"><a href="task_dc_HP_Enterprise_Command_View.html">HP Command View AE</a></li>
   
 
 
@@ -900,24 +900,24 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Brocade FC Switch data collector
+  <h1 class="n-doc__component-detail-heading">HP Enterprise Command View data collector
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_dc_brocade_FC_Switch_configure.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Brocade FC Switch data collector](https://docs.netapp.com/en/cloudinsights/task_dc_brocade_FC_Switch_configure.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_dc_HP_Enterprise_Command_View.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[HP Enterprise Command View data collector](https://docs.netapp.com/en/cloudinsights/task_dc_HP_Enterprise_Command_View.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
 </div>
 
 
-<p class="page-details">Updated <time datetime="2018-11-29 21:54:51 +0000">11/29/2018</time></p>
+<p class="page-details">Updated <time datetime="2019-02-01 19:41:01 +0000">02/01/2019</time></p>
 
 
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Cloud Insights uses the Brocade FC Switch (SSH) data source to discover inventory for Brocade or rebranded switch devices running Factored Operating System (FOS) firmware 4.2 and later. Devices in both FC switch and Access Gateway modes are supported.</p>
+<p>The HP Enterprise Command View data collector supports the Command View Device Manager server. Cloud Insights communicates with the Command View Server using the standard Command View API to collect inventory and performance data.</p>
 </div>
 </div>
 </div>
@@ -925,7 +925,7 @@
 <h2 id="terminology">Terminology</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Cloud Insights acquires the following inventory information from the Brocade FC Switch data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:</p>
+<p>Cloud Insights acquires the following inventory information from the HP  Enterprise Command View data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -934,34 +934,34 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Switch</th>
-<th class="tableblock halign-left valign-top">Switch</th>
+<th class="tableblock halign-left valign-top">Vendor/Model Term</th>
+<th class="tableblock halign-left valign-top">Cloud Insights Term</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Port</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PDEV</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disk</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Virtual Fabric, Physical Fabric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fabric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Journal Pool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disk Group</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Zone</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Zone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage Array</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Logical Switch</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Logical Switch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Port Controller</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage Node</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Virtual Volume</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Array Group, DP Pool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage Pool</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical Unit, LDEV</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Volume</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">LSAN Zone</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IVR Zone</p></td>
 </tr>
 </tbody>
 </table>
@@ -971,21 +971,62 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="requirements">Requirements</h2>
+<h2 id="inventory-requirements">Inventory requirements</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>You must have the following in order to collect inventory data:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>There must be IP connectivity to all switches in the fabric. If you select the Discover all switches in the fabric check box, Cloud Insights identifies all the switches in the fabric; however, it needs IP connectivity to these additional switches to discover them.</p>
+<p>IP address of the Command View Device Manager server</p>
 </li>
 <li>
-<p>The same account is needed globally across all switches in the fabric. You can use PuTTY (open source terminal emulator) to confirm access.</p>
+<p>Read-only user name and password for the Command View Device Manager software and peer privileges</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="performance-requirements">Performance requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following requirements must be met in order to collect performance data:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>HDS USP, USP V, and VSP performance</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Performance Monitor must be licensed.</p>
 </li>
 <li>
-<p>Ports 161 and 162 must be open to all switches in the fabric for SNMP performance polling.</p>
+<p>Monitoring switch must be enabled.</p>
 </li>
 <li>
-<p>SNMP read-only Community String</p>
+<p>The Export Tool (Export.exe) must be copied to the Cloud Insights AU.</p>
+</li>
+<li>
+<p>The Export Tool version must match the microcode version of the target array.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>AMS performance:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Performance Monitor must be licensed.</p>
+</li>
+<li>
+<p>The Storage Navigator Modular 2 (SNM2) CLI utility be installed on the Cloud Insights AU.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1007,35 +1048,61 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Switch IP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IP address or fully-qualified domain name of the EFC Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Command View Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IP address or fully-qualified domain name of the Command View server</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">User Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">User name for the switch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User name for the Command View server.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Password</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Password for the switch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Password used for the Command View server.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SNMP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SNMP version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Devices - VSP G1000 (R800), VSP (R700), HUS VM (HM700) and USP storages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Device list for VSP G1000 (R800), VSP (R700), HUS VM (HM700) and USP storages. Each storage requires:<br>
+<br>
+* Array&#8217;s IP: IP address of the storage<br>
+* User Name: User name for the storage<br>
+* Password: Password for the storage<br>
+* Folder Containing Export Utility JAR Files</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SNMP Community String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SNMP read-only community string used to access the switch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SNM2Devices - WMS/SMS/AMS Storages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Device list for WMS/SMS/AMS storages. Each storage requires:<br>
+<br>
+* Array&#8217;s IP: IP address of the storage<br>
+* Storage Navigator CLI Path: SNM2 CLI path<br>
+* Account Authentication Valid: Select to choose valid account authentication<br>
+* User Name: User name for the storage<br>
+* Password: Password for the storage</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SNMP User Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SNMP user name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Choose Tuning Manager for Performance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Override other performance options</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SNMP Password</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SNMP password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tuning Manager Host</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IP address or fully-qualified domain name of tuning manager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tuning Manager Port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Port used for Tuning Manager (Default is 2001)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tuning Manager Username</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User name for Tuning Manager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tuning Manager Password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Password for Tuning Manager</p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>Note: In HDS USP, USP V, and VSP, any disk can belong to more than one array group.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1046,76 +1113,46 @@
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Field</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fabric name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fabric name to be reported by the data collector. Leave blank to report the fabric name as WWN.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Field</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Command View Server Port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Port used for the Command View Server</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPs Enabled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select to enable HTTPs</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inventory Poll Interval (min)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Interval between inventory polls. The default is 15.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interval between inventory polls. The default is 40.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Excluded Devices</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma-separated list of device IDs to exclude from polling</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Choose 'Exclude' or 'Include' to specify a list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify whether to include or exclude the array list below when collecting data.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Timeout (sec)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Connection timeout. The default is 30.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exclude or Include Devices</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma-separated list of device ID&#8217;s or array names to include or exclude</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Banner Wait Timeout (sec)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SSHAdmin Domains Active 	Select if using Admin Domainsbanner wait timeout. The default is 5 seconds.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Query Host Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select to query host manager</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Admin Domains Active</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select if using Admin Domains</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP Timeout (sec)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP connection timeout The default is 60.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve MPR Data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select to acquire routing data from your multiprotocol router.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enable Trapping</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select to enable acquisition upon receiving an SNMP trap from the device. If you select enable trapping, you must also activate SNMP.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum Time Between Traps (sec)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum time between acquisition attempts triggered by traps. The default is 10.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Discover all switches in the fabric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select to discover all switches in the fabric</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Choose Favoring HBA vs. Zone Aliases</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Choose whether to favor HBA or zone aliases</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Performance Poll Interval (sec)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Performance Polling Interval (sec)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Interval between performance polls. The default is 300.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SNMP Auth Protocol</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SNMP authentication protocol (SNMP v3 only)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SNMP Privacy Password</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SNMP privacy password (SNMP v3 only)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SNMP Retries</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number of SNMP retry attempts</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SNMP Timeout (ms)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SNMP timeout. The default is 5000.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Export timeout in seconds</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Export utility timeout. The default is 300.</p></td>
 </tr>
 </tbody>
 </table>

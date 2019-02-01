@@ -2,7 +2,7 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>DELL EMC Celerra Unified Storage System data collector | NetApp Cloud Docs</title>
+  <title>HP Enterprise Command View data collector | NetApp Cloud Docs</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +14,8 @@
 
   
 
-  <meta name="description" content="Configuring DELL EMC Celerra data collector.">
-  <meta name="keywords" content=" data collector, Celerra, EMC, DELL">
+  <meta name="description" content="Configuring HP Enterprise Command View data collector.">
+  <meta name="keywords" content=" data collector, HP Command View, HP">
 
   <!-- Icons -->
   <link rel="icon" href="/cloudinsights/images/favicon.ico" type="image/x-icon">
@@ -372,7 +372,7 @@
         
 
   
-    <li><a href="task_dc_brocade_FC_Switch_configure.html">Brocade FC Switch</a></li>
+    <li><a href="task_dc_brocade_fc_switch.html">Brocade FC Switch</a></li>
   
 
   
@@ -385,7 +385,7 @@
   
 
   
-    <li><a href="task_dc_ceph_configure.html">Ceph</a></li>
+    <li><a href="task_dc_ceph_storage.html">Ceph</a></li>
   
 
   
@@ -400,11 +400,11 @@
         
 
   
-    <li class="active"><a href="task_dc_emc_celerra_configure.html">Celerra</a></li>
+    <li><a href="task_dc_emc_celerra.html">Celerra</a></li>
   
 
   
-    <li><a href="task_dc_emc_clariion_configure.html">CLARiiON</a></li>
+    <li><a href="task_dc_emc_clariion.html">CLARiiON</a></li>
   
 
   
@@ -468,7 +468,7 @@
   
 
   
-    <li><a href="task_dc_HP_Enterprise_Command_View_configure.html">HP Command View AE</a></li>
+    <li class="active"><a href="task_dc_HP_Enterprise_Command_View.html">HP Command View AE</a></li>
   
 
 
@@ -900,24 +900,24 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">DELL EMC Celerra Unified Storage System data collector
+  <h1 class="n-doc__component-detail-heading">HP Enterprise Command View data collector
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_dc_emc_celerra_configure.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[DELL EMC Celerra Unified Storage System data collector](https://docs.netapp.com/zz/cloudinsights/task_dc_emc_celerra_configure.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_dc_HP_Enterprise_Command_View.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[HP Enterprise Command View data collector](https://docs.netapp.com/zz/cloudinsights/task_dc_HP_Enterprise_Command_View.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
 </div>
 
 
-<p class="page-details">Updated <time datetime="2018-11-06 20:59:32 +0000">11/06/2018</time></p>
+<p class="page-details">Updated <time datetime="2019-02-01 19:41:01 +0000">02/01/2019</time></p>
 
 
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>This data collector acquires inventory information from the Celerra Unified Storage System. For configuration, this data collector requires the IP address of the storage processors and a read-only user name and password.</p>
+<p>The HP Enterprise Command View data collector supports the Command View Device Manager server. Cloud Insights communicates with the Command View Server using the standard Command View API to collect inventory and performance data.</p>
 </div>
 </div>
 </div>
@@ -925,7 +925,7 @@
 <h2 id="terminology">Terminology</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Cloud Insights acquires the following inventory information from the Celerra data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:</p>
+<p>Cloud Insights acquires the following inventory information from the HP  Enterprise Command View data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -940,28 +940,28 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Celerra Network Server/Celerra Storage Pool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PDEV</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disk</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Journal Pool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disk Group</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage Array</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Port Controller</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage Node</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Array Group, DP Pool</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Storage Pool</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">File System</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Internal Volume</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Data Mover</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Controller</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">File System mounted on a data mover</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">File Share</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CIFS and NFS Exports</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Share</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Disk Volume</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Backend LUN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical Unit, LDEV</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume</p></td>
 </tr>
 </tbody>
 </table>
@@ -971,21 +971,62 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="requirements">Requirements</h2>
+<h2 id="inventory-requirements">Inventory requirements</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You need the following to configure this data collector:</p>
+<p>You must have the following in order to collect inventory data:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The IP address of the storage processor</p>
+<p>IP address of the Command View Device Manager server</p>
 </li>
 <li>
-<p>Read-only user name and password</p>
+<p>Read-only user name and password for the Command View Device Manager software and peer privileges</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="performance-requirements">Performance requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following requirements must be met in order to collect performance data:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>HDS USP, USP V, and VSP performance</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Performance Monitor must be licensed.</p>
 </li>
 <li>
-<p>SSH port 22</p>
+<p>Monitoring switch must be enabled.</p>
+</li>
+<li>
+<p>The Export Tool (Export.exe) must be copied to the Cloud Insights AU.</p>
+</li>
+<li>
+<p>The Export Tool version must match the microcode version of the target array.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>AMS performance:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Performance Monitor must be licensed.</p>
+</li>
+<li>
+<p>The Storage Navigator Modular 2 (SNM2) CLI utility be installed on the Cloud Insights AU.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1007,19 +1048,61 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Address of Celerra</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IP address or fully-qualified domain name of the Celerra device</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Command View Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IP address or fully-qualified domain name of the Command View server</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">User Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name used to log in to the Celerra device</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User name for the Command View server.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Password</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Password used to log in to the Celerra device</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Password used for the Command View server.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Devices - VSP G1000 (R800), VSP (R700), HUS VM (HM700) and USP storages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Device list for VSP G1000 (R800), VSP (R700), HUS VM (HM700) and USP storages. Each storage requires:<br>
+<br>
+* Array&#8217;s IP: IP address of the storage<br>
+* User Name: User name for the storage<br>
+* Password: Password for the storage<br>
+* Folder Containing Export Utility JAR Files</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SNM2Devices - WMS/SMS/AMS Storages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Device list for WMS/SMS/AMS storages. Each storage requires:<br>
+<br>
+* Array&#8217;s IP: IP address of the storage<br>
+* Storage Navigator CLI Path: SNM2 CLI path<br>
+* Account Authentication Valid: Select to choose valid account authentication<br>
+* User Name: User name for the storage<br>
+* Password: Password for the storage</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Choose Tuning Manager for Performance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Override other performance options</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tuning Manager Host</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IP address or fully-qualified domain name of tuning manager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tuning Manager Port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Port used for Tuning Manager (Default is 2001)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tuning Manager Username</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User name for Tuning Manager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tuning Manager Password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Password for Tuning Manager</p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>Note: In HDS USP, USP V, and VSP, any disk can belong to more than one array group.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1030,28 +1113,46 @@
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Field</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Inventory Poll Interval (minutes)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Interval between inventory polls. The default is 20 minutes.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Field</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SSH Process Wait Timeout (sec)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SSH process timeout. The default is 600 seconds.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Command View Server Port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Port used for the Command View Server</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number of Retries</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number of inventory retry attempts. The default is 2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPs Enabled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select to enable HTTPs</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SSH Banner Wait Timeout (sec)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SSH banner wait timeout. The default is 20 seconds.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inventory Poll Interval (min)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interval between inventory polls. The default is 40.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Choose 'Exclude' or 'Include' to specify a list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify whether to include or exclude the array list below when collecting data.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exclude or Include Devices</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma-separated list of device ID&#8217;s or array names to include or exclude</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Query Host Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select to query host manager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP Timeout (sec)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP connection timeout The default is 60.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Performance Polling Interval (sec)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interval between performance polls. The default is 300.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Export timeout in seconds</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Export utility timeout. The default is 300.</p></td>
 </tr>
 </tbody>
 </table>
