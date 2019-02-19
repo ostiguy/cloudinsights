@@ -2,7 +2,7 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title> | NetApp Cloud Docs</title>
+  <title>Using annotations | NetApp Cloud Docs</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,7 @@
 
   
 
-  <meta name="description" content="This topic describes how to create query.">
+  <meta name="description" content="How to create an annotation.">
   <meta name="keywords" content=" annotations, annotation rules, manual annotations,">
 
   <!-- Icons -->
@@ -717,10 +717,6 @@
         
 
   
-    <li><a href="task_defining_annotations.html">Using Annotations to Monitor Your Environment</a></li>
-  
-
-  
     <li class="active"><a href="task_create_annotation.html">Using Annotations</a></li>
   
 
@@ -900,11 +896,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">
+  <h1 class="n-doc__component-detail-heading">Using annotations
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_create_query.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[](https://docs.netapp.com/en/cloudinsights/task_create_annotation.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_create_annotation.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Using annotations](https://docs.netapp.com/en/cloudinsights/task_create_annotation.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -914,35 +910,177 @@
 <p class="page-details">Updated <time datetime="2018-11-30 21:52:51 +0000">11/30/2018</time></p>
 
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
-<p>You can create a query to enable you to search the assets in your environment at a granular level. Queries enable you to slice data by adding filters and then sorting the results to view inventory and performance data in one view.</p>
+<p>You create annotations and assign them to assets you monitor. Annotations are notes that provide information about an asset, such as physical location, end of life, storage tier, or volume service levels.</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>About this task<br>
-You can create a query for volumes, add a filter to find particular storages associated with the selected volume, add a filter to find a particular annotation, such as Tier 1, on the selected storages, and finally add another filter to find all storages with IOPS - Read (IO/s) greater than 25. When the results are displayed, you can then sort the columns of information associated with the query in ascending or descending order.</p>
-</li>
-</ol>
+</div>
+</div>
+<div class="sect1">
+<h2 id="defining-annotations">Defining annotations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Using annotations, you can add custom business-specific data that matches<br>
+your business needs to assets. While Cloud Insights provides a set of<br>
+default annotations, such as asset life cycle (birthday or end of life),<br>
+building or data center location, and tier you might find that you want to<br>
+view data in other ways.</p>
 </div>
 <div class="paragraph">
-<p>When a new data collector is added which acquires assets or any annotation or application assignments are made, you can query for those assets, annotations, or applications after the queries are indexed, which occurs at a regularly scheduled interval.</p>
+<p>The data in custom annotations supplements device data already collected,<br>
+such as switch manufacturer, number of ports, and performance statistics.<br>
+The data you add using annotations is not discovered by Cloud Insights.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="manually-assigning-annotations-to-assets">Manually assigning annotations to assets</h2>
+<div class="sectionbody">
+<div class="ulist">
+<div class="title">Before you begin</div>
+<ul>
+<li>
+<p>List any industry terminology to which environment data must be associated.</p>
+</li>
+<li>
+<p>List corporate terminology to which environment data must be associated, which<br>
+is not already being tracked using the business entities.</p>
+</li>
+<li>
+<p>Identify any default annotation types that you might be able to use.</p>
+</li>
+<li>
+<p>Identify which custom annotations you need to create.<br>
+You need to create the annotation before it can be assigned to an asset.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use the following steps to create an annotation.</p>
 </div>
 <div class="olist arabic">
+<div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Steps</p>
+<p>In the Cloud Insights menu, click <strong>Manage &gt; Annotations</strong></p>
 </li>
 <li>
-<p>Click <strong>Queries &gt; New Query</strong></p>
+<p>Click <strong>+ Annotation</strong> to create a new annotation.</p>
 </li>
 <li>
-<p>Click <strong>+Query</strong></p>
-</li>
-<li>
-<p>From the 'Search for' list, select the asset type you want to query for.</p>
+<p>Enter a Name, Description, and type for the new annotation.</p>
+<div class="paragraph">
+<p>For example, enter the following to create a text annotation that defines the<br>
+physical location of an asset in Data Center 4:</p>
+</div>
 </li>
 </ol>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Enter a name for the annotation (Location)</p>
+</li>
+<li>
+<p>Enter a description of what the annotation is describing (Physical location is Data Center 4)</p>
+</li>
+<li>
+<p>Enter the 'type' of annotation it is (Text).</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="assigning-annotations-using-annotation-rules">Assigning annotations using annotation rules</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To automatically assign annotations to assets based on criteria that you define, you configure annotation rules. Cloud Insights assigns the annotations to assets based on these rules. Cloud Insights also provides two default annotation rules, which you can modify to suit your needs or remove if you do not want to use them.</p>
+</div>
+<div class="sect2">
+<h3 id="default-storage-annotation-rules">Default storage annotation rules</h3>
+<div class="paragraph">
+<p>To expedite the assignment of storage annotations to your resources, Cloud Insights includes 21 default annotation rules, which associate a tier level with a storage tier model. All of your storage resources are automatically associated with a tier upon acquisition of the assets in your environment.<br>
+The default annotation rules apply a tier annotations in the following way:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Tier 1, storage quality tier</dt>
+<dd>
+<p>The Tier 1 annotation is applied to the following vendors and their specified families: EMC (Symmetrix), HDS (HDS9500V, HDS9900, HDS9900V, R600, R700, USP r, USP V), IBM (DS8000), NetApp (FAS6000 or FAS6200), and Violin (Memory).</p>
+</dd>
+<dt class="hdlist1">Tier 2, storage quality tier</dt>
+<dd>
+<p>The Tier 2 annotation is applied to the following vendors and their specified families: HP (3PAR StoreServ or EVA), EMC (CLARiiON), HDS (AMS or D800), IBM (XIV), and NetApp (FAS3000, FAS3100, and FAS3200).</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>You can edit the default settings of these rules to match your tier requirements, or you can remove them if you do not need them.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-annotation-rules">Creating annotation rules</h3>
+<div class="paragraph">
+<p>As an alternative to manually applying annotations to individual assets, you can automatically apply annotations to multiple assets using annotation rules. Annotations set manually on an individual asset pages take precedence over rule-based annotations when Insight evaluates the annotation rules.</p>
+</div>
+<div class="paragraph">
+<div class="title">Before you begin</div>
+<p>You must have created a query for the annotation rule.</p>
+</div>
+<div class="paragraph">
+<div class="title">About this task</div>
+<p>Although you can edit the annotation types while you are creating the rules, you should have defined the types ahead of time.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Click <strong>Manage &gt; Annotation rules</strong></p>
+<div class="paragraph">
+<p>The Annotation Rules page displays the list of existing annotation rules.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>+ Add</strong>.</p>
+</li>
+<li>
+<p>Do the following:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>In the <strong>Name</strong> box, enter a unique name that describes the rule.</p>
+<div class="paragraph">
+<p>This name will appear in the Annotation Rules page.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Query</strong> and select the query that is used to apply the annotation to assets.</p>
+</li>
+<li>
+<p>Click <strong>Annotation</strong> and select the annotation you want to apply.</p>
+</li>
+<li>
+<p>Click <strong>Value</strong> and select a value for the annotation.</p>
+<div class="paragraph">
+<p>For example, if you choose Birthday as the annotation, you specify a date for the value.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Save</strong></p>
+</li>
+<li>
+<p>Click <strong>Run all rules</strong> if you want to run all the rules immediately; otherwise, the rules are run at a regularly scheduled interval.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
 </div>
 
         </article>
