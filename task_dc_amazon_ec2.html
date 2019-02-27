@@ -912,7 +912,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-02-21 18:25:10 +0000">02/21/2019</time>
+<time datetime="2019-02-27 16:06:18 +0000">02/27/2019</time>
 
 
 <span>Contributors
@@ -1048,6 +1048,51 @@
 <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html" target="_blank" rel="noopener">Managing Access Keys for IAM Users</a></p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="include-extra-regions">Include Extra Regions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the AWS Data Collector <strong>Advanced Configuration</strong> section, you can set the <strong>Include extra regions</strong> field to include additional regions, separated by comma or semi-colon. By default, this field is set to <strong><em>us-.*</em></strong>, which collects on all US AWS regions.  To collect on <em>all</em> regions, set this field to  <strong><em>.*</em></strong>.<br>
+If the <strong>Include extra regions</strong> field is empty, the data collector will collect on assets specified in the <strong>AWS Region</strong> field as specified in the <strong>Configuration</strong> section.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="collecting-from-aws-child-accounts">Collecting from AWS Child Accounts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cloud Insights supports collection of child accounts for AWS within a single AWS data collector. Configuration for this collection is performed in the AWS environment:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You must configure each child account to have an AWS Role that allows the master account ID to access EC2 details from the children account.</p>
+</li>
+<li>
+<p>Each child account must have the role name configured as the same string.</p>
+</li>
+<li>
+<p>Enter this role name string into the Cloud Insights AWS Data Collector <strong>Advanced Configuration</strong> section, in the <strong>Cross account role</strong> field.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Best Practice: It is highly recommended to assign the AWS predefined <em>AmazonEC2ReadOnlyAccess</em> policy to the ECS master account. Also, the user configured in the data source should have at least the predefined <em>AWSOrganizationsReadOnlyAccess</em> policy assigned, in order to query AWS.</p>
+</div>
+<div class="paragraph">
+<p>Please see the following for information on configuring your environment to allow Cloud Insights to collect from AWS child accounts:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across AWS Accounts Using IAM Roles</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_aws-accounts.html">AWS Setup: Providing Access to an IAM User in Another AWS Account That You Own</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html">Creating a Role to Delegate Permissions to an IAM User</a></p>
 </div>
 </div>
 </div>
