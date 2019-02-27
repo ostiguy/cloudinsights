@@ -2,7 +2,7 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>Object Icon Reference | NetApp Cloud Docs</title>
+  <title>Configuration | NetApp Cloud Docs</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +14,8 @@
 
   
 
-  <meta name="description" content="Cloud Insights object icon reference.">
-  <meta name="keywords" content=" icons, assets, objects, reference">
+  <meta name="description" content="">
+  <meta name="keywords" content=" telegraf, installation, install, agent, telegraf agent">
 
   <!-- Icons -->
   <link rel="icon" href="/cloudinsights/images/favicon.ico" type="image/x-icon">
@@ -877,7 +877,7 @@
   
 
   
-    <li class="active"><a href="reference_object_icons.html">Object Icon Reference</a></li>
+    <li><a href="reference_object_icons.html">Object Icon Reference</a></li>
   
 
 
@@ -900,11 +900,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Object Icon Reference
+  <h1 class="n-doc__component-detail-heading">Configuration
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/reference_object_icons.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Object Icon Reference](https://docs.netapp.com/zz/cloudinsights/reference_object_icons.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_config_telegraf_agent.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Configuration](https://docs.netapp.com/zz/cloudinsights/task_config_telegraf_agent.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -912,16 +912,16 @@
 
 <p class="page-details">
 
-<time datetime="2018-11-16 19:26:02 +0000">11/16/2018</time>
+<time datetime="2019-02-27 19:15:15 +0000">02/27/2019</time>
 
 
 <span>Contributors
   
-  <a target="_blank" href="https://github.com/netapp-alavoie">
+  <a target="_blank" href="https://github.com/dgracenetapp">
     <img  class="avatar avatar-small"
-          alt="netapp-alavoie"
+          alt="dgracenetapp"
           width="20" height="20"
-          src="https://avatars0.githubusercontent.com/u/39956590?v=4"
+          src="https://avatars0.githubusercontent.com/u/38116247?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -929,11 +929,84 @@
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
-<p>A quick reference for object icons used in Cloud Insights.</p>
+<p>Under construction</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="install-telegraf-on-windows">Install Telegraf on Windows</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="install-telegraf-on-linux">Install Telegraf on Linux</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<div class="title">Steps to install Telegraph:</div>
+<ol class="arabic">
+<li>
+<p>Install the latest stable version of Telegraf using the yum package manager:</p>
+<div class="paragraph">
+<p>cat &lt;&lt;EOF | sudo tee /etc/yum.repos.d/influxdb.repo<br>
+  [influxdb]<br>
+  name = InfluxDB Repository - RHEL \$releasever<br>
+  baseurl = <a href="https://repos.influxdata.com/rhel/\$releasever/\$basearch/stable" class="bare">https://repos.influxdata.com/rhel/\$releasever/\$basearch/stable</a><br>
+  enabled = 1<br>
+  gpgcheck = 1<br>
+  gpgkey = <a href="https://repos.influxdata.com/influxdb.key" class="bare">https://repos.influxdata.com/influxdb.key</a><br>
+  EOF</p>
+</div>
+</li>
+<li>
+<p>Once repository is added to the yum configuration, install and start the Telegraf service by running:</p>
+<div class="paragraph">
+<p>sudo yum install telegraf<br>
+sudo service telegraf start</p>
+</div>
+</li>
+<li>
+<p>If your operating system is using systemd (CentOS 7+)</p>
+<div class="paragraph">
+<p>sudo yum install telegraf<br>
+sudo systemctl start telegraf</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuration">Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To create a configuration file with default input and output plugins. Every plugin is included in this file, but most are commented out:</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="./media/Icon_Glossary.png" alt="Icon Reference"></span></p>
+<p>telegraf config &gt; telegraf.conf</p>
+</div>
+<div class="paragraph">
+<p>To create a configuration file with specific inputs and outputs:</p>
+</div>
+<div class="paragraph">
+<p>telegraf --input-filter &lt;pluginname&gt;[:&lt;pluginname&gt;] --output-filter &lt;outputname&gt;[:&lt;outputname&gt;] config &gt; telegraf.conf</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting-mac">Troubleshooting MAC</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting-kubernetes">Troubleshooting Kubernetes</h2>
+<div class="sectionbody">
+
+</div>
 </div>
 
         </article>
