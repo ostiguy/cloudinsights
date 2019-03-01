@@ -912,7 +912,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-02-27 19:15:15 +0000">02/27/2019</time>
+<time datetime="2019-03-01 15:29:04 +0000">03/01/2019</time>
 
 
 <span>Contributors
@@ -931,19 +931,96 @@
 
 <div id="preamble">
 <div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>//link:&lt;file_name&gt;.html#&lt;section-name-using-dashes-and-all-lower-case&gt;[Link text]</pre>
+</div>
+</div>
 <div class="paragraph lead">
-<p>Under construction</p>
+<p>This topic provides instructions for installing Telegraf on the following operating systems:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>link<a href="#installing-telegraf-on-rhel-and- centos">[installing-telegraf-on-rhel-and- centos]</a>[RedHat and CentOS Installation]</p>
+</li>
+<li>
+<p>&lt;installing-telegraf-on-ubuntu-debian&gt;[Debian and Ubuntu Installation]</p>
+</li>
+<li>
+<p>&lt;installing-telegraf-on-mac&gt;[MacOS Installation]</p>
+</li>
+<li>
+<p><a href="#install-telegraf-on-windows">Install Telegraf on Windows</a>[Windows Installation]</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="install-telegraf-on-windows">Install Telegraf on Windows</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>To complete the installation of Telegraph on Windows, you install the Telegraf software and customize the configuration file.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps to install Telegraph:</div>
+<ol class="arabic">
+<li>
+<p>Create the the following directory:  C:\Program Files\Telegraf</p>
+<div class="paragraph">
+<p>When you install in a different location, specify the -config parameter with the new location.</p>
+</div>
+</li>
+<li>
+<p>Place the Telegraf.exe and the Telegraf.conf files into C:\Program Files\Telegraf.</p>
+</li>
+<li>
+<p>Edit the configuration file to meet your requirements.</p>
+</li>
+<li>
+<p>Verify that Telegraph is working properly:</p>
+<div class="paragraph">
+<p>C: \"Program Files"\Telegraf\telegraf.exe --config C: \"Program Files"\Telegraf\telegraf.conf --test</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use the following commands to perform telegraf functions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Install telegraf as a service:</p>
+<div class="paragraph">
+<p>telegraf.exe --service install</p>
+</div>
+</li>
+<li>
+<p>Remove the telegraf service</p>
+<div class="paragraph">
+<p>telegraf.exe --service uninstall</p>
+</div>
+</li>
+<li>
+<p>Start the telegraf service</p>
+<div class="paragraph">
+<p>telegraf.exe --service start</p>
+</div>
+</li>
+<li>
+<p>Stop the telegraf service</p>
+<div class="paragraph">
+<p>telegraf.exe --service stop</p>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="install-telegraf-on-linux">Install Telegraf on Linux</h2>
+<h2 id="install-telegraf-on-rhel-and-centos">Install Telegraf on RHEL and CentOS</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <div class="title">Steps to install Telegraph:</div>
@@ -962,14 +1039,14 @@
 </div>
 </li>
 <li>
-<p>Once repository is added to the yum configuration, install and start the Telegraf service by running:</p>
+<p>Once repository is added to the yum configuration, install and start the Telegraf service:</p>
 <div class="paragraph">
 <p>sudo yum install telegraf<br>
 sudo service telegraf start</p>
 </div>
 </li>
 <li>
-<p>If your operating system is using systemd (CentOS 7+)</p>
+<p>If your operating system is using systemd (CentOS 7+ and RHEL 7+)</p>
 <div class="paragraph">
 <p>sudo yum install telegraf<br>
 sudo systemctl start telegraf</p>
@@ -977,11 +1054,8 @@ sudo systemctl start telegraf</p>
 </li>
 </ol>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="configuration">Configuration</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="rhel-and-centos-configuration">RHEL and CentOS Configuration</h3>
 <div class="paragraph">
 <p>To create a configuration file with default input and output plugins. Every plugin is included in this file, but most are commented out:</p>
 </div>
@@ -996,14 +1070,15 @@ sudo systemctl start telegraf</p>
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="troubleshooting-mac">Troubleshooting MAC</h2>
+<h2 id="troubleshooting-macos-installations">Troubleshooting macOS Installations</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="troubleshooting-kubernetes">Troubleshooting Kubernetes</h2>
+<h2 id="troubleshooting-kubernetes-installations">Troubleshooting Kubernetes Installations</h2>
 <div class="sectionbody">
 
 </div>
