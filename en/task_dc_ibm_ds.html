@@ -940,7 +940,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-02-21 18:25:10 +0000">02/21/2019</time>
+<time datetime="2019-03-06 15:46:22 +0000">03/06/2019</time>
 
 
 <span>Contributors
@@ -1115,6 +1115,49 @@
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some things to try if you encounter problems with this data collector:</p>
+</div>
+<div class="sect3">
+<h4 id="inventory">Inventory</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Problem:</th>
+<th class="tableblock halign-left valign-top">Try this:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error containing: CMUC00192E, CMUC00191E or CMUC00190E</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Verify credentials and IP address entered.<br>
+* Try to communicate with the array through web management console <a href="https://${ip}:8452/DS8000/Console" class="bare">https://${ip}:8452/DS8000/Console</a>.  Replace the ${ip} with data collector configured IP.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error:<br>
+* Cannot run program<br>
+* Error executing command</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* From Cloud Insights Acquisition Unit Open a CMD<br>
+* Open CLI.CFG file in CLI&#8217;s home dir/lib and check property JAVA_INSTALL, edit the value to match your environment<br>
+* Display Java version installed on this machine, typing: "java -version"<br>
+* Ping the IP address of the IBM Storage device specified in CLI command issued.<br>
+* If all the above worked fine then manually run a CLI command</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Additional information may be found from the <a href="concept_requesting_support.html">Support</a> page or in the <a href="https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf">Data Collector Support Matrix</a>.</p>
+</div>
+</div>
 </div>
 </div>
 

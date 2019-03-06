@@ -940,7 +940,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-02-21 18:25:10 +0000">02/21/2019</time>
+<time datetime="2019-03-06 15:46:22 +0000">03/06/2019</time>
 
 
 <span>Contributors
@@ -1163,6 +1163,69 @@
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some things to try if you encounter problems with this data collector:</p>
+</div>
+<div class="sect3">
+<h4 id="inventory">Inventory</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Problem:</th>
+<th class="tableblock halign-left valign-top">Try this:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: The feature being requested is not currently licensed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Install the SYMAPI server license.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: No devices were found</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure Symmetrix devices are configured to be managed by the the Solutions Enabler server:<br>
+  - Run symcfg list -v to see the list of configured Symmetrix devices.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: A requested network service was not found in the service file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure the Solutions Enabler Service Name is defined the netcnfg file for Solutions Enabler. This file is usually located under SYMAPI\config\ in the Solutions Enabler client installation.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: The remote client/server handshake failed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Check the most recent storsrvd.log* files on the Solutions Enabler host we are trying to discover.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: Common name in client certificate not valid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edit the <em>hosts</em> file on the Solutions Enabler server so that the Acquisition Unit&#8217;s hostname resolves to the IP address as reported in the storsrvd.log on the Solutions Enabler server.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: The function could not obtain memory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure there is enough free memory available in the system to execute Solutions Enabler</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: Solutions Enabler was unable to serve all data required.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Investigate the health status and load profile of Solutions Enabler</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error:<br>
+•	The "symcfg list -tdev" CLI command may return incorrect data when collected with Solutions Enabler 7.x from a Solutions Enabler server 8.x.<br>
+•	The "symcfg list -srp" CLI command may return incorrect data when collected with Solutions Enabler 8.1.0 or earlier from a Solutions Enabler server 8.3 or later.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Be sure you are using the same Solutions Enabler major release</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Additional information may be found from the <a href="concept_requesting_support.html">Support</a> page or in the <a href="https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf">Data Collector Support Matrix</a>.</p>
+</div>
+</div>
 </div>
 </div>
 

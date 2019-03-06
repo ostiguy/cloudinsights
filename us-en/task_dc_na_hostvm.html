@@ -940,7 +940,7 @@
 
 <p class="page-details">
 
-<time datetime="2018-11-30 22:01:18 +0000">11/30/2018</time>
+<time datetime="2019-03-06 15:46:22 +0000">03/06/2019</time>
 
 
 <span>Contributors
@@ -950,6 +950,14 @@
           alt="dgracenetapp"
           width="20" height="20"
           src="https://avatars0.githubusercontent.com/u/38116247?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/netapp-alavoie">
+    <img  class="avatar avatar-small"
+          alt="netapp-alavoie"
+          width="20" height="20"
+          src="https://avatars0.githubusercontent.com/u/39956590?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1105,6 +1113,58 @@ A blank value indicates that the data collector discovers file systems for all h
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some things to try if you encounter problems with this data collector:</p>
+</div>
+<div class="sect3">
+<h4 id="inventory">Inventory</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Problem:</th>
+<th class="tableblock halign-left valign-top">Try this:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">“All devices failed" or “Partial Success” with error message “No hosts or VMs discovered in Compute Resource group ” or “No hosts or VMs discovered in default Compute Resource group.”</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generate an error report, open the ASUP*zip, navigate to the acq directory, open the foundation_*zip, navigate to the timestamp directory (e.g. 1405708269094, NOT root) and examine the log_foundation_*_failed_targets.csv for details regarding which specific Hosts and VMs failed, and why.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">“UNSUPPORTED_AU_OS” or “UNSUPPORTED_OS”</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Consult the Cloud Insights Data Collector support matrix, remove unsupported Hosts and VMs from the Compute Resource Group.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">“CONNECT_FAILED”</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure of the following:<br>
+* Hosts and VMs are up and reachable from the Acquisition Unit<br>
+* WMI is running and not blocked by a firewall on each Windows Host and VM<br>
+* WMI is configured to allow remote access using the configured credentials on each Windows Host and VM.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">“CREDENTIAL_FAILED”</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Remove Hosts and VMs that don&#8217;t honor the configured credential from the Compute Resource Group<br>
+* Create additional Host and VM File Systems datasources and Compute Resource Groups for additional credentials as appropriate.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"Configuration error" with error message “Windows Host and VM discovery from Linux acquisition units is not implemented.”</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move the NetApp Host and VM File Systems datasource to a Windows based Acquisition Unit in order to discover Windows and Linux targets.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Additional information may be found from the <a href="concept_requesting_support.html">Support</a> page or in the <a href="https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf">Data Collector Support Matrix</a>.</p>
+</div>
+</div>
 </div>
 </div>
 

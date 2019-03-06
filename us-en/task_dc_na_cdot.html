@@ -2,7 +2,7 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>ONTAP Data management data collector | NetApp Cloud Docs</title>
+  <title>NetApp ONTAP Data Management Software Data Collector | NetApp Cloud Docs</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +15,7 @@
   
 
   <meta name="description" content="CDOT collector">
-  <meta name="keywords" content=" data collector, ontap, clustered ontap">
+  <meta name="keywords" content=" data collector, ontap, clustered ontap,">
 
   <!-- Icons -->
   <link rel="icon" href="/cloudinsights/us-en/images/favicon.ico" type="image/x-icon">
@@ -928,11 +928,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">ONTAP Data management data collector
+  <h1 class="n-doc__component-detail-heading">NetApp ONTAP Data Management Software Data Collector
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_dc_ontap.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[ONTAP Data management data collector](https://docs.netapp.com/us-en/cloudinsights/task_dc_na_cdot.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_dc_na_cdot.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[NetApp ONTAP Data Management Software Data Collector](https://docs.netapp.com/us-en/cloudinsights/task_dc_na_cdot.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -940,18 +940,10 @@
 
 <p class="page-details">
 
-<time datetime="2019-02-21 18:25:10 +0000">02/21/2019</time>
+<time datetime="2018-12-04 20:29:59 +0000">12/04/2018</time>
 
 
 <span>Contributors
-  
-  <a target="_blank" href="https://github.com/netapp-alavoie">
-    <img  class="avatar avatar-small"
-          alt="netapp-alavoie"
-          width="20" height="20"
-          src="https://avatars0.githubusercontent.com/u/39956590?v=4"
-          style="border-radius: 50%;"/>
-  </a>
   
   <a target="_blank" href="https://github.com/dgracenetapp">
     <img  class="avatar avatar-small"
@@ -968,7 +960,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>This data collector acquires inventory and performance data from storage systems running ONTAP Data management software using read-only API calls from an administrator account.</p>
+<p>This data collector acquires inventory and performance data from storage systems running Clustered Data ONTAP using read-only API calls from an administrator account.</p>
 </div>
 </div>
 </div>
@@ -976,7 +968,7 @@
 <h2 id="terminology">Terminology</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Cloud Insights acquires inventory and performance data from the ONTAP Data management software data collector. For each asset type acquired, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:</p>
+<p>Cloud Insights acquires inventory and performance data from the Clustered Data ONTAP data collector. For each asset type acquired, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1034,16 +1026,20 @@
 <p>You must have access to an Administrator account used for read-only API calls.</p>
 </li>
 <li>
-<p>Target IP is the cluster management LIF.</p>
+<p>Username (with read-only role name to ontapi application to the default Vserver) and password to log into NetApp cluster)</p>
 </li>
 <li>
-<p>FCP license and mapped/masked volumes required for Cloud Insights discovery.</p>
+<p>Port requirements: 80 or 433</p>
 </li>
 <li>
-<p>CIFS and/or NFS license and CIFS shares or NFS exports required for Cloud Insights NAS discovery.</p>
-</li>
+<p>License requirements:</p>
+<div class="ulist">
+<ul>
 <li>
-<p>Access validation: Telnet or SSH to the cluster management LIF from the acquisition unit, using the username and password.</p>
+<p>FCP license and mapped/masked volumes required for discovery</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1101,105 +1097,14 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inventory Poll Interval (min)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Default is 20 minutes.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default is 60 minutes.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Performance Poll Interval (sec)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Default is  300 seconds.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default is 900 seconds.</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="troubleshooting">Troubleshooting</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Some things to try if you encounter problems with this data collector:</p>
-</div>
-<div class="sect3">
-<h4 id="inventory">Inventory</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Problem:</th>
-<th class="tableblock halign-left valign-top">Try this:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Receive 401 HTTP response or 13003 ZAPI error code and ZAPI returns “Insufficient privileges” or “not authorized for this command”</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Check username and password, and user privileges/permissions.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster version is &lt; 8.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster minimum supported version is 8.1. Upgrade to minimum supported version.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ZAPI returns "cluster role is not cluster_mgmt LIF"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AU needs to talk to cluster management IP. Check the IP and change to a different IP if necessary</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Error: “7 Mode filers are not supported”</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This can happen if you use this data collector to discover 7 mode filer. Change IP to point to cdot filer instead.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ZAPI command fails after retry</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AU has communication problem with the cluster. Check network, port number, and IP address. User should also try to run a command from command line from the AU machine.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AU failed to connect to ZAPI via HTTP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Check whether ZAPI port accepts plaintext. If AU tries to send plaintext to an SSL socket, the communication fails.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Communication fails with SSLException</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AU is attempting to send SSL to a plaintext port on a filer. Check whether the ZAPI port accepts SSL, or use a different port.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Additional Connection errors:<br>
-<br>
-ZAPI response has error code 13001, “database  is not open”<br>
-<br>
-ZAPI error code is 60 and response contains “API did not finish on time”<br>
-<br>
-ZAPI response contains “initialize_session() returned NULL environment”<br>
-<br>
-ZAPI error code is 14007 and response contains “Node is not healthy”</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Check network, port number, and IP address. User should also try to run a command from command line from the AU machine.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="performance">Performance</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Problem:</th>
-<th class="tableblock halign-left valign-top">Try this:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">“Failed to collect performance from ZAPI” error</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This is usually due to perf stat not running. Try the following command on each node:<br>
-<br>
-&gt; <em>system node systemshell -node * -command “spmctl -h cmd –stop; spmctl -h cmd –exec”</em></p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Additional information may be found from the <a href="concept_requesting_support.html">Support</a> page or in the <a href="https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf">Data Collector Support Matrix</a>.</p>
-</div>
-</div>
 </div>
 </div>
 

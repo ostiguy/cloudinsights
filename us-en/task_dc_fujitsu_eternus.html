@@ -940,7 +940,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-02-28 21:04:29 +0000">02/28/2019</time>
+<time datetime="2019-03-06 15:50:31 +0000">03/06/2019</time>
 
 
 <span>Contributors
@@ -1085,6 +1085,52 @@
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some things to try if you encounter problems with this data collector:</p>
+</div>
+<div class="sect3">
+<h4 id="inventory">Inventory</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Problem:</th>
+<th class="tableblock halign-left valign-top">Try this:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"Error retrieving data" with error messages “Error Finding Prompt CLI” or “Error finding prompt at the end of shell results”</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Likely caused by: Storage system has page scrolling enabled.<br>
+Possible solution:<br>
+* Try to disable page scrolling by running the following command:<br>
+ set clienv-show-more -scroll disable</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"Connecting error" with error messages “Failed to instantiate an SSH connection to storage” or “Failed to instantiate a connection to VirtualCenter”</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Likely causes:<br>
+* Incorrect credentials.<br>
+* Incorrect IP address.<br>
+* Network problem.<br>
+* Storage may be down or unresponsive.<br>
+Possible solutions:<br>
+* Verify credentials and IP address entered.<br>
+* Try to communicate with storage using SSH Client.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Additional information may be found from the <a href="concept_requesting_support.html">Support</a> page or in the <a href="https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf">Data Collector Support Matrix</a>.</p>
+</div>
+</div>
 </div>
 </div>
 

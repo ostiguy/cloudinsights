@@ -940,7 +940,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-02-21 18:25:10 +0000">02/21/2019</time>
+<time datetime="2019-03-06 15:46:22 +0000">03/06/2019</time>
 
 
 <span>Contributors
@@ -1157,6 +1157,53 @@ The following fields can be configured:</p>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some things to try if you encounter problems with this data collector:</p>
+</div>
+<div class="sect3">
+<h4 id="inventory">Inventory</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Problem:</th>
+<th class="tableblock halign-left valign-top">Try this:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: Include list to filter VMs cannot be empty</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If Include List is selected, please list valid DataCenter, Cluster, or Host names to filter VMs</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: Failed to instantiate a connection to VirtualCenter at IP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Possible solutions:<br>
+<br>
+* Verify credentials and IP address entered.<br>
+* Try to communicate with Virtual Center using VMware Infrastructure Client.<br>
+* Try to communicate with Virtual Center using Managed Object Browser (e.g MOB).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: VirtualCenter at IP has non-conform certificate that JVM requires</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Possible solutions:<br>
+<br>
+* Recommended: Re-generate certificate for Virtual Center by using stronger (e.g. 1024-bit) RSA key.<br>
+* Not Recommended: Modify the JVM java.security configuration to leverage the constraint jdk.certpath.disabledAlgorithms to allow 512-bit RSA key. See JDK 7 update 40 release notes at "http://www.oracle.com/technetwork/java/javase/7u40-relnotes-2004172.html"</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Additional information may be found from the <a href="concept_requesting_support.html">Support</a> page or in the <a href="https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf">Data Collector Support Matrix</a>.</p>
+</div>
+</div>
 </div>
 </div>
 

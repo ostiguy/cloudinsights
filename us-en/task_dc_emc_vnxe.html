@@ -940,7 +940,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-02-14 20:40:42 +0000">02/14/2019</time>
+<time datetime="2019-03-06 15:46:22 +0000">03/06/2019</time>
 
 
 <span>Contributors
@@ -1111,6 +1111,41 @@
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some things to try if you encounter problems with this data collector:</p>
+</div>
+<div class="sect3">
+<h4 id="inventory">Inventory</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Problem:</th>
+<th class="tableblock halign-left valign-top">Try this:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"Failed to execute external utility" with error messages “Failed to find Unisphere executable uemcli”</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Verify correct IP address, username, and password<br>
+* Confirm that Unisphere CLI is installed on the Cloud Insights Acquisition Unit<br>
+* Confirm that Unisphere CLI installation directory is correct in the datasource configuration<br>
+* Confirm that the IP of the VNXe is correct in the configuration of the datasource. From the Cloud Insights Acquisition Unit, open a CMD and change to to the configured installation directory: ${INSTALLDIR. Try to make a connection with the VNXe device by typing: uemcli -d &lt;Your IP&gt; -u &lt;Your ID&gt; /sys/general show</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Additional information may be found from the <a href="concept_requesting_support.html">Support</a> page or in the <a href="https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf">Data Collector Support Matrix</a>.</p>
+</div>
+</div>
 </div>
 </div>
 

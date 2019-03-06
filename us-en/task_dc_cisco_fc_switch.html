@@ -940,7 +940,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-02-21 18:25:10 +0000">02/21/2019</time>
+<time datetime="2019-03-06 15:46:22 +0000">03/06/2019</time>
 
 
 <span>Contributors
@@ -1185,6 +1185,86 @@ A user-friendly name for a port that can be used only for the active configurati
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some things to try if you encounter problems with this data collector:</p>
+</div>
+<div class="sect3">
+<h4 id="inventory">Inventory</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Problem:</th>
+<th class="tableblock halign-left valign-top">Try this:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: Failed to discover chassis - no switches have been discovered</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">•	Ping the device with the IP configured<br>
+•	Login to the device using Cisco Device Manager GUI<br>
+•	Login to the device using CLI<br>
+•	Try to run SNMP walk</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: Device is not a Cisco MDS switch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">•	Make sure the data source IP configured for the device is correct<br>
+•	Login to the device using Cisco Device Manager GUI<br>
+•	Login to the device using CLI</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: Cloud Insights is not able to obtain the switch’s WWN.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This may not be a FC or FCoE switch, and as such may not be supported. Make sure the IP/FQDN configured in the datasource is truly a FC/FCoE switch.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: Found more than one nodes logged into NPV switch port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disable direct acquisition of the NPV switch</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: Could not connect to the switch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">•	Make sure the device is UP<br>
+•	Check the IP address and listening port<br>
+•	Ping the device<br>
+•	Login to the device using Cisco Device Manager GUI<br>
+•	Login to the device using CLI<br>
+•	Run SNMP walk</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="performance">Performance</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Problem:</th>
+<th class="tableblock halign-left valign-top">Try this:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: Performance acquisition not supported by SNMP v1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">•	Edit Data Source and disable Switch Performance<br>
+•	Modify Data Source and switch configuration to use SNMP v2 or higher</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Additional information may be found from the <a href="concept_requesting_support.html">Support</a> page or in the <a href="https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf">Data Collector Support Matrix</a>.</p>
+</div>
+</div>
 </div>
 </div>
 

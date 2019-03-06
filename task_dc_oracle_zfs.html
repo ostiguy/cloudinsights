@@ -940,7 +940,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-02-22 15:10:56 +0000">02/22/2019</time>
+<time datetime="2019-03-06 15:46:22 +0000">03/06/2019</time>
 
 
 <span>Contributors
@@ -1103,6 +1103,53 @@
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some things to try if you encounter problems with this data collector:</p>
+</div>
+<div class="sect3">
+<h4 id="inventory">Inventory</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Problem:</th>
+<th class="tableblock halign-left valign-top">Try this:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"Invalid login credentials"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">validate Zfs user account and password</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"Configuration error" with error message “REST Service is disabled”</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Verify REST service is enabled on this device.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"Configuration error " with error message “User unauthorized for command”</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Likely due to certain roles (for example, 'advanced_analytics') are not included for the configured user &lt;userName&gt;.<br>
+Possible Solution:<br>
+* Correct the Analytics (statistic) scope for the user ${user} with the read only role:<br>
+- From the Configuration &#8594; Users screen, put your mouse over the role and double click to allow editing<br>
+-	Select "Analytics" from the Scope drop down menu. A list of the possible properties appears.<br>
+-	Click the top most check box and it will select all three properties.<br>
+-	Click the Add button on the right side.<br>
+-	Click the Apply button at the top right of the pop-up window. The pop-up window will close.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Additional information may be found from the <a href="concept_requesting_support.html">Support</a> page or in the <a href="https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf">Data Collector Support Matrix</a>.</p>
+</div>
+</div>
 </div>
 </div>
 

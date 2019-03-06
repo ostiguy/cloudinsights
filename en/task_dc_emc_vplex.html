@@ -940,7 +940,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-02-21 18:25:10 +0000">02/21/2019</time>
+<time datetime="2019-03-06 15:46:22 +0000">03/06/2019</time>
 
 
 <span>Contributors
@@ -1129,6 +1129,81 @@
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some things to try if you encounter problems with this data collector:</p>
+</div>
+<div class="sect3">
+<h4 id="inventory">Inventory</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Problem:</th>
+<th class="tableblock halign-left valign-top">Try this:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: User authentication failed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure your credentials for this device are correct.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="performance">Performance</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Problem:</th>
+<th class="tableblock halign-left valign-top">Try this:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: VPLEX performance for version below 5.3 is not supported.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upgrade VPLEX to 5.3 or above</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: No enough data collected.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">•	Check collection timestamp in log file and modify polling interval accordingly<br>
+•	Wait for longer time</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: Perpetual Log files not being updated.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Please contact EMC support to enable updating the perpetual log files</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: Performance polling interval is too big.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Check collection timestamp in log file ${logfile} and modify polling interval accordingly</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: Performance Remote IP address of VPLEX Management Console is not configured.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edit the data source to set Performance Remote IP address of VPLEX Management Console.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: No performance data reported from director</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">•	Check that the system performance monitors are running correctly<br>
+•	Please contact EMC support to enable updating the system performance monitor log files</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Additional information may be found from the <a href="concept_requesting_support.html">Support</a> page or in the <a href="https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf">Data Collector Support Matrix</a>.</p>
+</div>
+</div>
 </div>
 </div>
 

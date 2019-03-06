@@ -940,7 +940,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-02-14 20:40:42 +0000">02/14/2019</time>
+<time datetime="2019-03-06 15:46:22 +0000">03/06/2019</time>
 
 
 <span>Contributors
@@ -1194,6 +1194,135 @@
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some things to try if you encounter problems with this data collector:</p>
+</div>
+<div class="sect3">
+<h4 id="inventory">Inventory</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Problem:</th>
+<th class="tableblock halign-left valign-top">Try this:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: User does not have enough permission</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use a different user account that has more privilege or increase the privilege of user account configured in the data collector</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: Storages list is empty. Either devices are not configured or the user does not have enough permission</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*	Use DeviceManager to check if the devices are configured.<br>
+* Use a different user account that has more privilege, or increase the privilege of the  user account</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: HDS storage array was not refreshed for some days</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Investigate why this array is not being refreshed in HP CommandView AE.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="performance">Performance</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Problem:</th>
+<th class="tableblock halign-left valign-top">Try this:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error:<br>
+* Error executing export utility<br>
+* Error executing external command</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Confirm that Export Utility is installed on the Cloud Insights Acquisition Unit<br>
+* Confirm that Export Utility location is correct in the data collector configuration<br>
+* Confirm that the IP of the USP/R600 array is correct in the configuration of the data collector<br>
+* Confirm that the User name and password are correct in the configuration of the data collector<br>
+* Confirm that Export Utility version is compatible with storage array micro code version<br>
+* From the Cloud Insights Acquisition Unit, open a CMD prompt and do the following:<br>
+- Change the directory to the configured installation directory<br>
+- Try to make a connection with the configured storage array by executing batch file runWin.bat</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: Export tool login failed for target IP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Confirm that username/password is correct<br>
+* Create a user ID mainly for this HDS data collector<br>
+* Confirm that no other data collectors are configured to acquire this array</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: Export tools logged "Unable to get time range for monitoring".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Confirm performance monitoring is enabled on the array.<br>
+* Try invoking the export tools outside of Cloud Insights to confirm the problem lies outside of Cloud Insights.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error:<br>
+* Configuration error: Storage Array not supported by Export Utility<br>
+* Configuration error: Storage Array not supported by Storage Navigator Modular CLI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Configure only supported storage arrays.<br>
+* Use “Filter Device List” to exclude unsupported storage arrays.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error:<br>
+* Error executing external command<br>
+* Configuration error: Storage Array not reported by Inventory<br>
+* Configuration error:export folder does not contains jar files</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Check Export utility location.<br>
+* Check if Storage Array in question is configured in Command View server<br>
+* Set Performance poll interval as multiple of 60 seconds.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error:<br>
+* Error Storage navigator CLI<br>
+* Error executing auperform command<br>
+* Error executing external command</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Confirm that Storage Navigator Modular CLI is installed on the Cloud Insights Acquisition Unit<br>
+* Confirm that Storage Navigator Modular CLI location is correct in the data collector configuration<br>
+* Confirm that the IP of the WMS/SMS/SMS array is correct in the configuration of the data collector<br>
+* Confirm that Storage Navigator Modular CLI version is compatible with micro code version of storage array configured in the data collector<br>
+* From the Cloud Insights Acquisition Unit, open a CMD prompt and do the following:<br>
+- Change the directory to the configured installation directory<br>
+- Try to make a connection with the configured storage array by executing following command “auunitref.exe”</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: Configuration error: Storage Array not reported by Inventory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Check if Storage Array in question is configured in Command View server</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error:<br>
+* No Array is registered with the Storage Navigator Modular 2 CLI<br>
+* Array is not registered with the Storage Navigator Modular 2 CLI<br>
+* Configuration error: Storage Array not registered with StorageNavigator Modular CLI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Open Command prompt and change directory to the configured path<br>
+* Run the command “set=STONAVM_HOME=.”<br>
+* Run the command “auunitref”<br>
+* Confirm that the command output contains details of the array with IP<br>
+* If the output does not contain the array details then register the array with Storage Navigator CLI:<br>
+    - Open Command prompt and change directory to the configured path<br>
+    - Run the command “set=STONAVM_HOME=.”<br>
+    - Run command “auunitaddauto -ip ${ip}”. Replace ${ip} with real IP</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Additional information may be found from the <a href="concept_requesting_support.html">Support</a> page or in the <a href="https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf">Data Collector Support Matrix</a>.</p>
+</div>
+</div>
 </div>
 </div>
 
