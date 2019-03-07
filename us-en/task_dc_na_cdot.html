@@ -940,7 +940,7 @@
 
 <p class="page-details">
 
-<time datetime="2018-12-06 16:09:57 +0000">12/06/2018</time>
+<time datetime="2019-03-07 19:17:51 +0000">03/07/2019</time>
 
 
 <span>Contributors
@@ -950,6 +950,14 @@
           alt="dgracenetapp"
           width="20" height="20"
           src="https://avatars0.githubusercontent.com/u/38116247?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/netapp-alavoie">
+    <img  class="avatar avatar-small"
+          alt="netapp-alavoie"
+          width="20" height="20"
+          src="https://avatars0.githubusercontent.com/u/39956590?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1105,6 +1113,97 @@
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some things to try if you encounter problems with this data collector:</p>
+</div>
+<div class="sect3">
+<h4 id="inventory">Inventory</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Problem:</th>
+<th class="tableblock halign-left valign-top">Try this:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Receive 401 HTTP response or 13003 ZAPI error code and ZAPI returns “Insufficient privileges” or “not authorized for this command”</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Check username and password, and user privileges/permissions.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster version is &lt; 8.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster minimum supported version is 8.1. Upgrade to minimum supported version.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ZAPI returns "cluster role is not cluster_mgmt LIF"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AU needs to talk to cluster management IP. Check the IP and change to a different IP if necessary</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: “7 Mode filers are not supported”</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This can happen if you use this data collector to discover 7 mode filer. Change IP to point to cdot filer instead.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ZAPI command fails after retry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AU has communication problem with the cluster. Check network, port number, and IP address. User should also try to run a command from command line from the AU machine.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AU failed to connect to ZAPI via HTTP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Check whether ZAPI port accepts plaintext. If AU tries to send plaintext to an SSL socket, the communication fails.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Communication fails with SSLException</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AU is attempting to send SSL to a plaintext port on a filer. Check whether the ZAPI port accepts SSL, or use a different port.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Additional Connection errors:<br>
+<br>
+ZAPI response has error code 13001, “database  is not open”<br>
+<br>
+ZAPI error code is 60 and response contains “API did not finish on time”<br>
+<br>
+ZAPI response contains “initialize_session() returned NULL environment”<br>
+<br>
+ZAPI error code is 14007 and response contains “Node is not healthy”</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Check network, port number, and IP address. User should also try to run a command from command line from the AU machine.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="performance">Performance</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Problem:</th>
+<th class="tableblock halign-left valign-top">Try this:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">“Failed to collect performance from ZAPI” error</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is usually due to perf stat not running. Try the following command on each node:<br>
+<br>
+&gt; <em>system node systemshell -node * -command “spmctl -h cmd –stop; spmctl -h cmd –exec”</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Additional information may be found from the <a href="concept_requesting_support.html">Support</a> page or in the <a href="https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf">Data Collector Support Matrix</a>.</p>
+</div>
+</div>
 </div>
 </div>
 
