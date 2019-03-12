@@ -936,7 +936,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-03-04 15:22:53 +0000">03/04/2019</time>
+<time datetime="2019-03-12 17:46:39 +0000">03/12/2019</time>
 
 
 <span>Contributors
@@ -949,6 +949,14 @@
           style="border-radius: 50%;"/>
   </a>
   
+  <a target="_blank" href="https://github.com/netapp-alavoie">
+    <img  class="avatar avatar-small"
+          alt="netapp-alavoie"
+          width="20" height="20"
+          src="https://avatars0.githubusercontent.com/u/39956590?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 </p>
@@ -956,8 +964,28 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>"Under construction"</p>
+<p>This data collector allows collection of data from Apache servers in your environment.</p>
 </div>
+<div class="ulist">
+<div class="title">Pre-requisites</div>
+<ul>
+<li>
+<p>You must have Apache set up and properly running on your servers</p>
+</li>
+<li>
+<p>You must have sudo or administrator permissions on your agent host/VM</p>
+</li>
+<li>
+<p>Typically, the Apache <em>mod_status</em> module is configured to expose a page at the '/server-status?auto' location of the Apache server. The <em>ExtendedStatus</em> option must be enabled in order to collect all available fields. For information about how to configure your server, see the Apache module documentation: <a href="https://httpd.apache.org/docs/2.4/mod/mod_status.html#enable" class="bare">https://httpd.apache.org/docs/2.4/mod/mod_status.html#enable</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuration">Configuration</h2>
+<div class="sectionbody">
+
 </div>
 </div>
 <div class="sect1">
