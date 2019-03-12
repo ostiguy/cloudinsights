@@ -936,7 +936,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-03-12 16:21:49 +0000">03/12/2019</time>
+<time datetime="2019-03-12 20:20:52 +0000">03/12/2019</time>
 
 
 <span>Contributors
@@ -967,10 +967,15 @@
 <p><strong>This Topic Is Under Construction</strong></p>
 </div>
 <div class="paragraph">
-<p>Telegraf is a plugin-driven server agent that can be used to collect and report metrics, events, and logs. Input plugins are used to collect the desired information into Telegraf by accessing the system/OS directly, by calling third-party APIs, or by listening to configured streams (i.e. Kafka, statsD, etc). Output plugins are used to send the collected metric, events, and logs from Telegraf to Cloud Insights.</p>
+<p>The Cloud Insights Agent is a plugin-driven server agent that can be used to collect and report metrics, events, and logs. Input plugins are used to collect the desired information into the agent by accessing the system/OS directly, by calling third-party APIs, or by listening to configured streams (i.e. Kafka, statsD, etc). Output plugins are used to send the collected metric, events, and logs from the agent to Cloud Insights.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing-an-agent">Installing an Agent</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>This topic provides instructions for installing Telegraf on the following operating systems:</p>
+<p>This topic provides instructions for installing the Cloud Insights Agent on the following platforms:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -978,10 +983,10 @@
 <p>Windows</p>
 </li>
 <li>
-<p>RHEL / CentOS</p>
+<p>RHEL or CentOS</p>
 </li>
 <li>
-<p>Ubuntu / Debian</p>
+<p>Ubuntu or Debian</p>
 </li>
 <li>
 <p>MacOS</p>
@@ -991,51 +996,118 @@
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>To install a Cloud Insights agent, regardless of the platform you are using, you must first do the following:</p>
 </div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log into the host you will use for your Agent.</p>
+</li>
+<li>
+<p>Log in to your Cloud Insights site and go to <strong>Admin &gt; Data Collectors</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>+Data Collector</strong> and choose a data collector to install. There are several types of data collectors:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Host</strong> (Windows, Linux, MacOS, etc.)</p>
+</li>
+<li>
+<p><strong>Service</strong> (integration with a wide variety of agent-collected plugins)</p>
+</li>
+<li>
+<p><strong>Infrastructure</strong> (collects from storage, switch, cloud platform, etc.). Infrastructure collection is done with an <a href="task_configure_acquisition_unit.html">Acquisition Unit</a> instead of an Agent.</p>
+</li>
+</ul>
 </div>
-<div class="sect1">
-<h2 id="installing-an-agent">Installing an Agent</h2>
-<div class="sectionbody">
+</li>
+<li>
+<p>Choose the appropriate platform for your host (Windows, Linux, MacOS, etc.)</p>
+</li>
+<li>
+<p>Follow the remaining steps for each platform below</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Once you have installed an agent on a host, you do not need to install an agent again on that host.
+</td>
+</tr>
+</table>
+</div>
 <div class="sect2">
-<h3 id="install-telegraf-on-windows">Install Telegraf on Windows</h3>
+<h3 id="windows">Windows</h3>
 <div class="paragraph">
-<p>These steps are performed from the UI instructions.</p>
+<p>To install the agent on a Windows host, you first install the agent software and then customize the configuration file.</p>
 </div>
 <div class="paragraph">
-<p>To complete the installation of Telegraph on Windows, you install the Telegraf software and customize the configuration file.</p>
-</div>
-<div class="paragraph">
-<div class="title">Steps to install Telegraph:</div>
 <p><span class="image"><img src="./media/AgentInstallWindows.png" alt="Windows Agent Install"></span></p>
 </div>
+<div class="ulist">
+<div class="title">Pre-requisites:</div>
+<ul>
+<li>
+<p>PowerShell must be installed, and you must have Administrative permissions for the PowerShell command</p>
+</li>
+<li>
+<p>At least one Agent Access Key configured</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Steps to install agent on Windows:</div>
+<ol class="arabic">
+<li>
+<p>Select Windows from the Platform drop-down.</p>
+</li>
+<li>
+<p>Choose an Agent Access Key.</p>
+</li>
+<li>
+<p>If you have not already installed an agent on this host:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Copy the command block from the agent installation dialog. You can click the clipboard icon to quickly copy the command to the clipboard.</p>
+</li>
+<li>
+<p>Open a PowerShell window as administrator</p>
+</li>
+<li>
+<p>Paste the command into the PowerShell window and press Enter.</p>
+</li>
+<li>
+<p>The command will download the appropriate agent installer, install it, and set a default configuration. When finished, it will restart the agent service.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>In you have already installed an agent on this host, you can skip the previous step</p>
+</li>
+<li>
+<p>Click <strong>Finish</strong> or <strong>Continue</strong></p>
+</li>
+</ol>
+</div>
 <div class="paragraph">
-<p>After the Agent is installed, you can use the following commands to perform telegraf functions:</p>
+<p>After the agent is installed, you can use the following commands to start/stop the service:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Install telegraf as a service:</p>
-<div class="paragraph">
-<p>telegraf.exe --service install</p>
-</div>
-</li>
-<li>
-<p>Remove the telegraf service</p>
-<div class="paragraph">
-<p>telegraf.exe --service uninstall</p>
-</div>
-</li>
-<li>
-<p>Start the telegraf service</p>
-<div class="paragraph">
 <p>telegraf.exe --service start</p>
-</div>
 </li>
 <li>
-<p>Stop the telegraf service</p>
-<div class="paragraph">
 <p>telegraf.exe --service stop</p>
-</div>
 </li>
 </ul>
 </div>
@@ -1056,14 +1128,14 @@
 </li>
 <li>
 <p>sudo service telegraf stop</p>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>If your operating system is using systemd (CentOS 7+ and RHEL 7+)</p>
 </li>
-</ol>
+</ul>
 </div>
-</li>
+<div class="paragraph">
+<p>If your operating system is using systemd (CentOS 7+ and RHEL 7+):</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>sudo systemctl start telegraf</p>
 </li>
@@ -1075,7 +1147,7 @@
 <div class="sect3">
 <h4 id="rhel-and-centos-configuration">RHEL and CentOS Configuration</h4>
 <div class="paragraph">
-<p>To create a configuration file with default input and output plugins. Every plugin is included in this file, but most are commented out:</p>
+<p>To create a configuration file with default input and output plugins, run the following command. Every plugin is included in this file, but most are commented out:</p>
 </div>
 <div class="paragraph">
 <p>telegraf config &gt; telegraf.conf</p>
