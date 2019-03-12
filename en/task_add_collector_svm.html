@@ -936,7 +936,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-02-01 19:30:15 +0000">02/01/2019</time>
+<time datetime="2019-03-12 19:51:15 +0000">03/12/2019</time>
 
 
 <span>Contributors
@@ -956,6 +956,48 @@
 <div class="paragraph lead">
 <p>Cloud Secure uses data collectors to collect file and user access data from devices.</p>
 </div>
+<div class="ulist">
+<div class="title">Before you begin</div>
+<ul>
+<li>
+<p>An Agent must be configured before you can configure data collectors. See <a href="task_add_agent.html">Configuring an agent</a> for instructions.</p>
+</li>
+<li>
+<p>You need the SVM management IP address.</p>
+</li>
+<li>
+<p>You need a username and password to access the SVM.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The permissions required to use this data collector include the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>security login role create -vserver vs1 -role carole -cmddirname DEFAULT -access none</p>
+</li>
+<li>
+<p>security login role create -vserver vs1 -role carole -cmddirname "network interface" -access readonly</p>
+</li>
+<li>
+<p>security login role create -vserver vs1 -role carole -cmddirname version -access readonly</p>
+</li>
+<li>
+<p>security login role create -vserver vs1 -role carole -cmddirname volume -access readonly</p>
+</li>
+<li>
+<p>security login role create -vserver vs1 -role carole -cmddirname vserver -access readonly</p>
+</li>
+<li>
+<p>security login role create -vserver vs1 -role carole -cmddirname "vserver fpolicy" -access all</p>
+</li>
+<li>
+<p>security login create -user-or-group-name causer -application ontapi -authmethod password -role carole -vserver vs1</p>
+</li>
+</ul>
+</div>
 <div class="olist arabic">
 <div class="title">Steps for Configuration</div>
 <ol class="arabic">
@@ -972,10 +1014,7 @@
 <p>You can chose to view the data collectors in a grid of tiles, or in a list.</p>
 </li>
 <li>
-<p>Click <strong>+Monitor</strong> in the <strong>NetApp ONTAP</strong> tile  or click the Data Collector name.</p>
-</li>
-<li>
-<p>Click the <strong>NETAPP&gt; ONTAP SVM</strong> in the tile or click <strong>ONTAP SVM</strong> from the list.</p>
+<p>Click <strong>+Monitor</strong> in the <strong>NetApp ONTAP SVM</strong> tile.</p>
 <div class="paragraph">
 <p>The system displays the Add SVM configuration page. Enter the required data for each field.</p>
 </div>
@@ -990,8 +1029,8 @@
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Field</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Field</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
@@ -999,12 +1038,8 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Agent</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select a configured agent from the list or click <strong>Add Agent</strong> to configure an Agent. See <a href="&lt;concept_agent_requirements&gt;.html">Agent requirements</a> and<br>
-<a href="&lt;task_add_agent&gt;.html">Configuring an Agent</a> for configuration information.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Continue</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Click Continue after you have selected an Agent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a configured agent from the list or click <strong>Add Agent</strong> to configure an Agent. See <a href="concept_agent_requirements.html">Agent requirements</a> and<br>
+<a href="task_add_agent.html">Configuring an Agent</a> for configuration information.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SVM Management IP Address</p></td>
@@ -1016,85 +1051,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Password</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Password</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Password</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SVM Password</p></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Advanced Configuration</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Field</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Protocol</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ports</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Custom NFS Export Policies and CIFS Shares</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Field</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NFS Export Policies</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All included or All excluded</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Policy 1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Included or Excluded</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Policy 2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Included or Excluded</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Policy 3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Included or Excluded</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Newly added NFS Export Policies</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Include or exclude</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CIFS Shares</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All included or All excluded</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Share 1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Included or Excluded</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Share 2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Included or Excluded</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Share 3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Included or Excluded</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Newly added CIFS Shares</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Include or exclude</p></td>
 </tr>
 </tbody>
 </table>
