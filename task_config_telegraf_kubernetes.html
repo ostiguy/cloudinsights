@@ -936,7 +936,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-03-18 19:53:05 +0000">03/18/2019</time>
+<time datetime="2019-03-18 21:17:20 +0000">03/18/2019</time>
 
 
 <span>Contributors
@@ -1060,46 +1060,36 @@
 <div class="paragraph">
 <p>To manually generate the Kubernetes access token, run the following in a Bash shell:</p>
 </div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>SECRET=$(sudo kubectl --namespace kube-system describe sa default |grep Tokens |awk '{print $2}')</p>
+<div class="literalblock">
+<div class="content">
+<pre>SECRET=$(sudo kubectl --namespace kube-system describe sa default |grep Tokens |awk '{print $2}')</pre>
 </div>
-</blockquote>
 </div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>TOKEN=$(sudo kubectl --namespace kube-system describe secrets $SECRET |grep ^token |awk '{print $2}')</p>
+<div class="literalblock">
+<div class="content">
+<pre>TOKEN=$(sudo kubectl --namespace kube-system describe secrets $SECRET |grep ^token |awk '{print $2}')</pre>
 </div>
-</blockquote>
 </div>
 <div class="paragraph">
 <p>To verify that the access token works as needed, run the following to confirm the kubelet API is accessible:</p>
 </div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>curl -v -X GET -H "Authorization: Bearer $TOKEN" <a href="https://10.197.122.81:10250/stats/summary" class="bare">https://10.197.122.81:10250/stats/summary</a></p>
+<div class="literalblock">
+<div class="content">
+<pre>curl -v -X GET -H "Authorization: Bearer $TOKEN" https://10.197.122.81:10250/stats/summary</pre>
 </div>
-</blockquote>
 </div>
 <div class="paragraph">
 <p>To the required access token file, run the following:</p>
 </div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>mkdir -p /var/run/secrets/kubernetes.io/serviceaccount/</p>
+<div class="literalblock">
+<div class="content">
+<pre>mkdir -p /var/run/secrets/kubernetes.io/serviceaccount/</pre>
 </div>
-</blockquote>
 </div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>echo -n $TOKEN | sudo tee /var/run/secrets/kubernetes.io/serviceaccount/token</p>
+<div class="literalblock">
+<div class="content">
+<pre>echo -n $TOKEN | sudo tee /var/run/secrets/kubernetes.io/serviceaccount/token</pre>
 </div>
-</blockquote>
 </div>
 <div class="paragraph">
 <p>By default, the Kubernetes input plugin configuration provided by CloudInsights is set up to look for the required access token file in the location used above. After performing the steps above, restart the Telegraf agent for the changes to take effect.</p>
