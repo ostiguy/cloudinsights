@@ -936,7 +936,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-03-13 18:51:59 +0000">03/13/2019</time>
+<time datetime="2019-03-18 17:15:25 +0000">03/18/2019</time>
 
 
 <span>Contributors
@@ -968,6 +968,9 @@
 </div>
 <div class="paragraph">
 <p>The Cloud Insights Agent is a plugin-driven server agent that can be used to collect and report metrics, events, and logs. Input plugins are used to collect the desired information into the agent by accessing the system/OS directly, by calling third-party APIs, or by listening to configured streams (i.e. Kafka, statsD, etc). Output plugins are used to send the collected metric, events, and logs from the agent to Cloud Insights.</p>
+</div>
+<div class="paragraph">
+<p>Cloud Insights uses <a href="https://docs.influxdata.com/telegraf/v1.8/">Telegraf</a> as its agent for collection of Service integration data.</p>
 </div>
 </div>
 </div>
@@ -1015,7 +1018,7 @@
 <p><strong>Host</strong> (Windows, Linux, MacOS, etc.)</p>
 </li>
 <li>
-<p><strong>Service</strong> (integration with a wide variety of agent-collected plugins)</p>
+<p><strong>Service</strong> (integration with a wide variety of agent-collected plugins). Agents are configured and run as a service for RHEL/CentOS, Ubuntu/Debian, macOS, and Windows. For Kubernetes platforms, the agent in configured as a DaemonSet.</p>
 </li>
 <li>
 <p><strong>Infrastructure</strong> (collects from storage, switch, cloud platform, etc.). Infrastructure collection is done with an <a href="task_configure_acquisition_unit.html">Acquisition Unit</a> instead of an Agent.</p>
@@ -1046,7 +1049,7 @@ Once you have installed an agent on a host, you do not need to install an agent 
 <div class="sect2">
 <h3 id="windows">Windows</h3>
 <div class="paragraph">
-<p>To install the agent on a Windows host, you first install the agent software and then customize the configuration file.</p>
+<p>To install the agent on a Windows host, you first install the agent software and then customize the configuration file as needed.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/AgentInstallWindows.png" alt="Windows Agent Install"></span></p>
@@ -1066,7 +1069,7 @@ Once you have installed an agent on a host, you do not need to install an agent 
 <div class="title">Steps to install agent on Windows:</div>
 <ol class="arabic">
 <li>
-<p>Select Windows from the Platform drop-down.</p>
+<p>If prompted, select Windows from the Platform drop-down.</p>
 </li>
 <li>
 <p>Choose an Agent Access Key.</p>
@@ -1079,19 +1082,19 @@ Once you have installed an agent on a host, you do not need to install an agent 
 <p>Copy the command block from the agent installation dialog. You can click the clipboard icon to quickly copy the command to the clipboard.</p>
 </li>
 <li>
-<p>Open a PowerShell window as administrator</p>
+<p>Open a PowerShell window</p>
 </li>
 <li>
 <p>Paste the command into the PowerShell window and press Enter.</p>
 </li>
 <li>
-<p>The command will download the appropriate agent installer, install it, and set a default configuration. When finished, it will restart the agent service.</p>
+<p>The command will download the appropriate agent installer, install it, and set a default configuration. When finished, it will restart the agent service. The command has a unique key and is valid for 24 hours.</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>In you have already installed an agent on this host, you can skip the previous step</p>
+<p>In you have already installed an agent on this host, you can skip the previous step.</p>
 </li>
 <li>
 <p>Click <strong>Finish</strong> or <strong>Continue</strong></p>
@@ -1101,128 +1104,417 @@ Once you have installed an agent on a host, you do not need to install an agent 
 <div class="paragraph">
 <p>After the agent is installed, you can use the following commands to start/stop the service:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>telegraf.exe --service start</p>
-</li>
-<li>
-<p>telegraf.exe --service stop</p>
-</li>
-</ul>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>telegraf.exe --service start<br>
+telegraf.exe --service stop</p>
+</div>
+</blockquote>
 </div>
 </div>
 <div class="sect2">
-<h3 id="install-telegraf-on-rhel-and-centos">Install Telegraf on RHEL and CentOS</h3>
+<h3 id="rhel-and-centos">RHEL and CentOS</h3>
 <div class="paragraph">
-<div class="title">Steps to install Telegraph:</div>
-<p><span class="image"><img src="./media/AgentInstallRHELCentOS.png" alt="Red Hat/CentOS Agent Install"></span></p>
+<div class="title">Steps to install agent on RHEL/CentOS:</div>
+<p><span class="image"><img src="./media/AgentInstallRHELCentOS.png" alt="RHEL/CentOS Agent Install"></span></p>
+</div>
+<div class="paragraph">
+<div class="title">Pre-requisites:</div>
+<p>The following commands must be available: curl, sudo, ping, and dmidecode.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If prompted, select RHEL/CentOS from the Platform drop-down.</p>
+</li>
+<li>
+<p>Choose an Agent Access Key.</p>
+</li>
+<li>
+<p>If you have not already installed an agent on this host:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Copy the command block from the agent installation dialog. You can click the clipboard icon to quickly copy the command to the clipboard.</p>
+</li>
+<li>
+<p>Open a Bash window</p>
+</li>
+<li>
+<p>Paste the command into the Bash window and press Enter.</p>
+</li>
+<li>
+<p>The command will download the appropriate agent installer, install it, and set a default configuration. When finished, it will restart the agent service. The command has a unique key and is valid for 24 hours.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>In you have already installed an agent on this host, you can skip the previous step.</p>
+</li>
+<li>
+<p>Click <strong>Finish</strong> or <strong>Continue</strong></p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p>After the agent is installed, you can use the following commands to start/stop the service:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>sudo service telegraf start</p>
-</li>
-<li>
-<p>sudo service telegraf stop</p>
-</li>
-</ul>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>sudo service telegraf start<br>
+sudo service telegraf stop</p>
+</div>
+</blockquote>
 </div>
 <div class="paragraph">
 <p>If your operating system is using systemd (CentOS 7+ and RHEL 7+):</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>sudo systemctl start telegraf</p>
-</li>
-<li>
-<p>sudo systemctl stop telegraf</p>
-</li>
-</ul>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>sudo systemctl start telegraf<br>
+sudo systemctl stop telegraf</p>
+</div>
+</blockquote>
 </div>
 <div class="sect3">
 <h4 id="rhel-and-centos-configuration">RHEL and CentOS Configuration</h4>
 <div class="paragraph">
 <p>To create a configuration file with default input and output plugins, run the following command. Every plugin is included in this file, but most are commented out:</p>
 </div>
+<div class="quoteblock">
+<blockquote>
 <div class="paragraph">
 <p>telegraf config &gt; telegraf.conf</p>
+</div>
+</blockquote>
 </div>
 <div class="paragraph">
 <p>To create a configuration file with specific inputs and outputs:</p>
 </div>
+<div class="quoteblock">
+<blockquote>
 <div class="paragraph">
 <p>telegraf --input-filter &lt;pluginname&gt;[:&lt;pluginname&gt;] --output-filter &lt;outputname&gt;[:&lt;outputname&gt;] config &gt; telegraf.conf</p>
 </div>
+</blockquote>
+</div>
+</div>
+<div class="sect3">
+<h4 id="uninstalling-the-agent">Uninstalling the Agent</h4>
+<div class="paragraph">
+<p>To uninstall the agent on RHEL/CentOS, in a Bash terminal, run the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Stop the Telegraf service using the following command:</p>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>systemctl stop telegraf (If your operating system is using systemd (CentOS 7+ and RHEL 7+)<br>
+/etc/init.d/telegraf stop (for systems without systemd support)</p>
+</div>
+</blockquote>
+</div>
+</li>
+<li>
+<p>Remove the Telegraf package:</p>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>yum remove telegraf</p>
+</div>
+</blockquote>
+</div>
+</li>
+<li>
+<p>Remove any configuration or log files that may be left behind:</p>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>rm -rf /etc/telegraf*<br>
+rm -rf /var/log/telegraf*</p>
+</div>
+</blockquote>
+</div>
+</li>
+</ol>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="install-telegraf-on-debian-and-ubuntu">Install Telegraf on Debian and Ubuntu</h3>
+<h3 id="debian-and-ubuntu">Debian and Ubuntu</h3>
 <div class="paragraph">
-<div class="title">Steps to install Telegraph:</div>
+<div class="title">Steps to install agent on Ubuntu/Debian:</div>
 <p><span class="image"><img src="./media/AgentInstallUbuntuDebian.png" alt="Ubuntu/Debian Agent Install"></span></p>
 </div>
+<div class="paragraph">
+<div class="title">Pre-requisites:</div>
+<p>The following commands must be available: curl, sudo, ping, and dmidecode.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If prompted, select Ubuntu/Debian from the Platform drop-down.</p>
+</li>
+<li>
+<p>Choose an Agent Access Key.</p>
+</li>
+<li>
+<p>If you have not already installed an agent on this host:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Copy the command block from the agent installation dialog. You can click the clipboard icon to quickly copy the command to the clipboard.</p>
+</li>
+<li>
+<p>Open a Bash window</p>
+</li>
+<li>
+<p>Paste the command into the Bash window and press Enter.</p>
+</li>
+<li>
+<p>The command will download the appropriate agent installer, install it, and set a default configuration. When finished, it will restart the agent service. The command has a unique key and is valid for 24 hours.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>In you have already installed an agent on this host, you can skip the previous step.</p>
+</li>
+<li>
+<p>Click <strong>Finish</strong> or <strong>Continue</strong></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>After the agent is installed, you can use the following commands to start/stop the service:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>sudo service telegraf start<br>
+sudo service telegraf stop</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>If your operating system is using systemd:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>sudo systemctl start telegraf<br>
+sudo systemctl stop telegraf</p>
+</div>
+</blockquote>
+</div>
+<div class="sect3">
+<h4 id="ubuntu-and-debian-configuration">Ubuntu and Debian Configuration</h4>
+<div class="paragraph">
+<p>To create a configuration file with default input and output plugins, run the following command. Every plugin is included in this file, but most are commented out:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>telegraf config &gt; telegraf.conf</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>To create a configuration file with specific inputs and outputs:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>telegraf --input-filter &lt;pluginname&gt;[:&lt;pluginname&gt;] --output-filter &lt;outputname&gt;[:&lt;outputname&gt;] config &gt; telegraf.conf</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect3">
+<h4 id="uninstalling-the-agent-2">Uninstalling the Agent</h4>
+<div class="paragraph">
+<p>To uninstall the agent on Ubuntu/Debian, in a Bash terminal, run the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Stop the Telegraf service using the following command:</p>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>systemctl stop telegraf (If your operating system is using systemd<br>
+/etc/init.d/telegraf stop (for systems without systemd support)</p>
+</div>
+</blockquote>
+</div>
+</li>
+<li>
+<p>Remove the Telegraf package:</p>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>dpkg -r telegraf</p>
+</div>
+</blockquote>
+</div>
+</li>
+<li>
+<p>Remove any configuration or log files that may be left behind:</p>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>rm -rf /etc/telegraf*<br>
+rm -rf /var/log/telegraf*</p>
+</div>
+</blockquote>
+</div>
+</li>
+</ol>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="install-telegraf-on-macos">Install Telegraf on MacOS</h3>
+<h3 id="macos">macOS</h3>
+<div class="paragraph">
+<div class="title">Pre-requisites:</div>
+<p>The "curl" command must be available.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If prompted, select macOS from the Platform drop-down.</p>
+</li>
+<li>
+<p>Choose an Agent Access Key.</p>
+</li>
+<li>
+<p>If you have not already installed an agent on this host:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Copy the command block from the agent installation dialog. You can click the clipboard icon to quickly copy the command to the clipboard.</p>
+</li>
+<li>
+<p>Open a Bash window</p>
+</li>
+<li>
+<p>Paste the command into the Bash window and press Enter.</p>
+</li>
+<li>
+<p>The command will download the appropriate agent installer, install it, and set a default configuration. When finished, it will restart the agent service. The command has a unique key and is valid for 24 hours.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>In you have already installed an agent on this host, you can skip the previous step.</p>
+</li>
+<li>
+<p>Click <strong>Finish</strong> or <strong>Continue</strong></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>After the agent is installed, you can use the following commands to start/stop the service:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>sudo service telegraf start<br>
+sudo service telegraf stop</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>If your operating system is using systemd:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>sudo systemctl start telegraf<br>
+sudo systemctl stop telegraf</p>
+</div>
+</blockquote>
+</div>
+<div class="sect3">
+<h4 id="macos-configuration">macOS Configuration</h4>
+<div class="paragraph">
+<p>To create a configuration file with default input and output plugins, run the following command. Every plugin is included in this file, but most are commented out:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>telegraf config &gt; telegraf.conf</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>To create a configuration file with specific inputs and outputs:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>telegraf --input-filter &lt;pluginname&gt;[:&lt;pluginname&gt;] --output-filter &lt;outputname&gt;[:&lt;outputname&gt;] config &gt; telegraf.conf</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect3">
+<h4 id="uninstalling-the-agent-3">Uninstalling the Agent</h4>
+<div class="paragraph">
+<p>To uninstall the agent on macOS, in a Bash terminal, run the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Stop the Telegraf service using the following command:</p>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>brew services stop telegraf</p>
+</div>
+</blockquote>
+</div>
+</li>
+<li>
+<p>Remove the Telegraf package:</p>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>brew remove telegraf</p>
+</div>
+</blockquote>
+</div>
+</li>
+<li>
+<p>Remove any configuration or log files that may be left behind:</p>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>rm -rf /usr/local/etc/telegraf*<br>
+rm -rf /usr/local/var/log/telegraf.*</p>
+</div>
+</blockquote>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="kubernetes">Kubernetes</h3>
 <div class="paragraph">
 <p>Coming Soon</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="install-telegraf-on-kubernetes">Install Telegraf on Kubernetes</h3>
-<div class="paragraph">
-<p>Coming Soon</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="uninstalling-an-agent">Uninstalling an Agent</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Platform:</th>
-<th class="tableblock halign-left valign-top">Instructions to uninstall:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Windows</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Open Settings and click on Apps. Locate and click on the Cloud Insights program, and select Uninstall.<br>
-If you have edited any configuration files in &lt;location TBD&gt;, those files will remain after uninstall. You can either save these for future reference, or delete them if they are no longer needed.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Debian / Ununtu</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Run the following command:  sudo apt-get remove telegraf<br>
-If you have edited any configuration files in the /etc/telegraf/telegraf.d folder, those files will remain after uninstall. You can either save these for future reference, or delete them if they are no longer needed.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Red Hat / CentOS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Run the following command:  sudo yum remove telegraf<br>
-If you have edited any configuration files in the /etc/telegraf/telegraf.d folder, those files will remain after uninstall. You can either save these for future reference, or delete them if they are no longer needed.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MacOS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TBD</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kubernetes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TBD</p></td>
-</tr>
-</tbody>
-</table>
 <div class="paragraph">
 <p>Additional information may be found from the <a href="concept_requesting_support.html">Support</a> page or in the <a href="https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf">Data Collector Support Matrix</a>.</p>
+</div>
 </div>
 </div>
 </div>
