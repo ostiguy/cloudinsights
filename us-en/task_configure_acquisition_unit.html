@@ -2,7 +2,7 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>Adding Acquisition Units | NetApp Cloud Docs</title>
+  <title>Configuring Acquisition Units | NetApp Cloud Docs</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +15,7 @@
   
 
   <meta name="description" content="">
-  <meta name="keywords" content=" Acquisition Unit, AU, install, configure, Linux">
+  <meta name="keywords" content=" Acquisition Unit, AU, install, configure, Linux, add, remove, uninstall, delete, deleting, move, moving">
 
   <!-- Icons -->
   <link rel="icon" href="/cloudinsights/us-en/images/favicon.ico" type="image/x-icon">
@@ -924,11 +924,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Adding Acquisition Units
+  <h1 class="n-doc__component-detail-heading">Configuring Acquisition Units
     <span>
       
         <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_configure_acquisition_unit.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Adding Acquisition Units](https://docs.netapp.com/us-en/cloudinsights/task_configure_acquisition_unit.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Configuring Acquisition Units](https://docs.netapp.com/us-en/cloudinsights/task_configure_acquisition_unit.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -936,28 +936,8 @@
 
 <p class="page-details">
 
-<time datetime="2019-02-20 20:49:31 +0000">02/20/2019</time>
+<time datetime="2019-03-19 14:14:00 +0000">03/19/2019</time>
 
-
-<span>Contributors
-  
-  <a target="_blank" href="https://github.com/dgracenetapp">
-    <img  class="avatar avatar-small"
-          alt="dgracenetapp"
-          width="20" height="20"
-          src="https://avatars0.githubusercontent.com/u/38116247?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-  <a target="_blank" href="https://github.com/netapp-alavoie">
-    <img  class="avatar avatar-small"
-          alt="netapp-alavoie"
-          width="20" height="20"
-          src="https://avatars0.githubusercontent.com/u/39956590?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-</span>
 
 </p>
 
@@ -1129,7 +1109,74 @@
 <li>
 <p>You can access the Acquisition Unit log in &lt;install dir&gt;\Cloud Insights\Acquisition Unit\log\acq.log</p>
 </li>
+<li>
+<p>Use the following script to control the Acquisition Unit:</p>
+<div class="literalblock">
+<div class="content">
+<pre> cloudinsights-service.sh (stop, start, restart, check the status)
+//* Use the following script to uninstall the Acquisition Unit:
+//** cloudinsights-uninstall.sh</pre>
+</div>
+</div>
+</li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="uninstalling-an-acquisition-unit">Uninstalling an Acquisition Unit</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To uninstall the Acquisition Unit software, do the following:</p>
+</div>
+<div class="paragraph">
+<p><strong>Windows:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>On the Acquisition Unit server/VM, open Control Panel and choose <strong>Uninstall a Program</strong>. Select the Cloud Insights Acquisition Unit program for removal.</p>
+</li>
+<li>
+<p>Click Uninstall and follow the prompts.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Linux:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>On the Acquisition Unit server/VM, run the following command:</p>
+<div class="literalblock">
+<div class="content">
+<pre>sudo cloudinsights-uninstall.sh -p</pre>
+</div>
+</div>
+</li>
+<li>
+<p>For help with uninstall, run:</p>
+<div class="literalblock">
+<div class="content">
+<pre>sudo cloudinsights-uninstall.sh --help</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Both:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After uninstalling the AU software, go to <strong>Admin &gt; Data Collectors</strong> and select the <strong>Acquisition Units</strong> tab.</p>
+</li>
+<li>
+<p>Click the Options button to the right of the Acquisition Unit you wish to uninstall, and select <em>Delete</em>. You can delete an Acquisition Unit only if there are no data collectors assigned to it.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
