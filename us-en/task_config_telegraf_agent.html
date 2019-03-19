@@ -936,7 +936,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-03-19 17:52:16 +0000">03/19/2019</time>
+<time datetime="2019-03-19 19:20:26 +0000">03/19/2019</time>
 
 
 <span>Contributors
@@ -1105,17 +1105,21 @@ Stop-Service telegraf</pre>
 <div class="paragraph">
 <p>To uninstall the agent on Windows, do the following in a PowerShell window:</p>
 </div>
-<div class="paragraph">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
 <p>Stop and Delete the Telegraf service:</p>
-</div>
 <div class="literalblock">
 <div class="content">
 <pre>Stop-Service telegraf
 sc.exe delete telegraf</pre>
 </div>
 </div>
-<div class="paragraph">
+</li>
+<li>
 <p>Delete the <em>C:\Program Files\telegraf</em> folder to remove the binary, logs, and configuration files</p>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect2">
@@ -1124,10 +1128,14 @@ sc.exe delete telegraf</pre>
 <div class="title">Steps to install agent on RHEL/CentOS:</div>
 <p><span class="image"><img src="./media/AgentInstallRHELCentOS.png" alt="RHEL/CentOS Agent Install"></span></p>
 </div>
-<div class="paragraph">
+<div class="ulist">
 <div class="title">Pre-requisites:</div>
-<p>The following commands must be available: curl, sudo, ping, and dmidecode.</p>
-</div>
+<ul>
+<li>
+<p>The following commands must be available: curl, sudo, ping, and dmidecode</p>
+</li>
+<li>
+<p>You must have at least one Agent Access Key configured</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1162,6 +1170,9 @@ sc.exe delete telegraf</pre>
 <p>Click <strong>Finish</strong> or <strong>Continue</strong></p>
 </li>
 </ol>
+</div>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>After the agent is installed, you can use the following commands to start/stop the service:</p>
@@ -1227,10 +1238,14 @@ rm -rf /var/log/telegraf*</pre>
 <div class="title">Steps to install agent on Ubuntu/Debian:</div>
 <p><span class="image"><img src="./media/AgentInstallUbuntuDebian.png" alt="Ubuntu/Debian Agent Install"></span></p>
 </div>
-<div class="paragraph">
+<div class="ulist">
 <div class="title">Pre-requisites:</div>
-<p>The following commands must be available: curl, sudo, ping, and dmidecode.</p>
-</div>
+<ul>
+<li>
+<p>The following commands must be available: curl, sudo, ping, and dmidecode</p>
+</li>
+<li>
+<p>You must have at least one Agent Access Key configured</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1266,6 +1281,9 @@ rm -rf /var/log/telegraf*</pre>
 </li>
 </ol>
 </div>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p>After the agent is installed, you can use the following commands to start/stop the service:</p>
 </div>
@@ -1296,34 +1314,28 @@ sudo service telegraf stop</pre>
 <ol class="arabic">
 <li>
 <p>Stop the Telegraf service using the following command:</p>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>systemctl stop telegraf (If your operating system is using systemd)<br>
-/etc/init.d/telegraf stop (for systems without systemd support)</p>
+<div class="literalblock">
+<div class="content">
+<pre>systemctl stop telegraf (If your operating system is using systemd)
+/etc/init.d/telegraf stop (for systems without systemd support)</pre>
 </div>
-</blockquote>
 </div>
 </li>
 <li>
 <p>Remove the Telegraf package:</p>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>dpkg -r telegraf</p>
+<div class="literalblock">
+<div class="content">
+<pre>dpkg -r telegraf</pre>
 </div>
-</blockquote>
 </div>
 </li>
 <li>
 <p>Remove any configuration or log files that may be left behind:</p>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>rm -rf /etc/telegraf*<br>
-rm -rf /var/log/telegraf*</p>
+<div class="literalblock">
+<div class="content">
+<pre>rm -rf /etc/telegraf*
+rm -rf /var/log/telegraf*</pre>
 </div>
-</blockquote>
 </div>
 </li>
 </ol>
@@ -1333,9 +1345,17 @@ rm -rf /var/log/telegraf*</p>
 <div class="sect2">
 <h3 id="macos">macOS</h3>
 <div class="paragraph">
-<div class="title">Pre-requisites:</div>
-<p>The "curl" command must be available.</p>
+<div class="title">Steps to install agent on macOS:</div>
+<p><span class="image"><img src="./media/AgentInstallMacOS.png" alt="MacOS Agent Install"></span></p>
 </div>
+<div class="ulist">
+<div class="title">Pre-requisites:</div>
+<ul>
+<li>
+<p>The "curl" command must be available</p>
+</li>
+<li>
+<p>You must have at least one Agent Access Key configured</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1370,6 +1390,9 @@ rm -rf /var/log/telegraf*</p>
 <p>Click <strong>Finish</strong> or <strong>Continue</strong></p>
 </li>
 </ol>
+</div>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>After the agent is installed, you can use the following commands to start/stop the service:</p>
@@ -1418,13 +1441,32 @@ rm -rf /usr/local/var/log/telegraf.*</pre>
 </div>
 <div class="sect2">
 <h3 id="kubernetes">Kubernetes</h3>
+<div class="paragraph">
+<div class="title">Steps to install agent on Kubernetes:</div>
+<p><span class="image"><img src="./media/AgentInstallKubernetes.png" alt="Kubernetes Agent Install"></span></p>
+</div>
 <div class="ulist">
 <div class="title">Pre-requisites:</div>
 <ul>
 <li>
+<p>The following commands must be available: curl and sudo</p>
+</li>
+<li>
+<p>You must have at least one Agent Access Key configured</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
 <p>The following commands must be available: curl, sudo</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
+<li>
+<p>If prompted, select macOS from the Platform drop-down.</p>
+</li>
+<li>
+<p>Choose an Agent Access Key.</p>
+</li>
 <li>
 <p>If prompted, select Kubernetes from the Platform drop-down.</p>
 </li>
@@ -1457,9 +1499,6 @@ rm -rf /usr/local/var/log/telegraf.*</pre>
 <p>Click <strong>Finish</strong> or <strong>Continue</strong></p>
 </li>
 </ol>
-</div>
-</li>
-</ul>
 </div>
 <div class="paragraph">
 <p>After the agent is installed, you can use the following commands:</p>
@@ -1523,9 +1562,6 @@ kubectl --namespace monitoring delete sa telegraf-user</pre>
 kubectl --namespace monitoring delete clusterrolebinding endpoint-access</pre>
 </div>
 </div>
-<div class="paragraph">
-<p>Additional information may be found from the <a href="concept_requesting_support.html">Support</a> page.</p>
-</div>
 </div>
 </div>
 </div>
@@ -1554,7 +1590,7 @@ kubectl --namespace monitoring delete clusterrolebinding endpoint-access</pre>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I already have an agent installed but not by using the Cloud Insights installer command</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I already have an agent installed but not by using the Cloud Insights installer</p></td>
 </tr>
 </tbody>
 </table>
