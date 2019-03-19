@@ -936,7 +936,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-03-18 21:19:03 +0000">03/18/2019</time>
+<time datetime="2019-03-19 17:52:16 +0000">03/19/2019</time>
 
 
 <span>Contributors
@@ -949,14 +949,6 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" href="https://github.com/dgracenetapp">
-    <img  class="avatar avatar-small"
-          alt="dgracenetapp"
-          width="20" height="20"
-          src="https://avatars0.githubusercontent.com/u/38116247?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
 </span>
 
 </p>
@@ -964,9 +956,6 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p><strong>This Topic Is Under Construction</strong></p>
-</div>
-<div class="paragraph">
 <p>The Cloud Insights Agent is a plugin-driven server agent that can be used to collect and report metrics, events, and logs. Input plugins are used to collect the desired information into the agent by accessing the system/OS directly, by calling third-party APIs, or by listening to configured streams (i.e. Kafka, statsD, etc). Output plugins are used to send the collected metric, events, and logs from the agent to Cloud Insights.</p>
 </div>
 <div class="paragraph">
@@ -983,19 +972,19 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Windows</p>
+<p><a href="#windows">Windows</a></p>
 </li>
 <li>
-<p>RHEL or CentOS</p>
+<p><a href="#rhel-and-centos">RHEL and CentOS</a></p>
 </li>
 <li>
-<p>Ubuntu or Debian</p>
+<p><a href="#debian-and-ubuntu">Debian and Ubuntu</a></p>
 </li>
 <li>
-<p>MacOS</p>
+<p><a href="#macos">macOS</a></p>
 </li>
 <li>
-<p>Kubernetes</p>
+<p><a href="#kubernetes">Kubernetes</a></p>
 </li>
 </ul>
 </div>
@@ -1015,7 +1004,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Host</strong> (Windows, Linux, MacOS, etc.)</p>
+<p><strong>Host</strong> (Windows, Linux, macOS, etc.)</p>
 </li>
 <li>
 <p><strong>Service</strong> (integration with a wide variety of agent-collected plugins). Agents are configured and run as a service for RHEL/CentOS, Ubuntu/Debian, macOS, and Windows. For Kubernetes platforms, the agent in configured as a DaemonSet.</p>
@@ -1027,7 +1016,7 @@
 </div>
 </li>
 <li>
-<p>Choose the appropriate platform for your host (Windows, Linux, MacOS, etc.)</p>
+<p>Choose the appropriate platform for your host (Windows, Linux, macOS, etc.)</p>
 </li>
 <li>
 <p>Follow the remaining steps for each platform below</p>
@@ -1106,9 +1095,27 @@ Once you have installed an agent on a host, you do not need to install an agent 
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>telegraf.exe --service start
-telegraf.exe --service stop</pre>
+<pre>Start-Service telegraf
+Stop-Service telegraf</pre>
 </div>
+</div>
+<div class="paragraph">
+<p>====Uninstalling the Agent</p>
+</div>
+<div class="paragraph">
+<p>To uninstall the agent on Windows, do the following in a PowerShell window:</p>
+</div>
+<div class="paragraph">
+<p>Stop and Delete the Telegraf service:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Stop-Service telegraf
+sc.exe delete telegraf</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Delete the <em>C:\Program Files\telegraf</em> folder to remove the binary, logs, and configuration files</p>
 </div>
 </div>
 <div class="sect2">
@@ -1159,12 +1166,6 @@ telegraf.exe --service stop</pre>
 <div class="paragraph">
 <p>After the agent is installed, you can use the following commands to start/stop the service:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>sudo service telegraf start
-sudo service telegraf stop</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>If your operating system is using systemd (CentOS 7+ and RHEL 7+):</p>
 </div>
@@ -1174,29 +1175,19 @@ sudo service telegraf stop</pre>
 sudo systemctl stop telegraf</pre>
 </div>
 </div>
-<div class="sect3">
-<h4 id="rhel-and-centos-configuration">RHEL and CentOS Configuration</h4>
 <div class="paragraph">
-<p>To create a configuration file with default input and output plugins, run the following command. Every plugin is included in this file, but most are commented out:</p>
+<p>If your operating system is not using systemd (CentOS 7+ and RHEL 7+):</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>telegraf config &gt; telegraf.conf</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To create a configuration file with specific inputs and outputs:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>telegraf --input-filter &lt;pluginname&gt;[:&lt;pluginname&gt;] --output-filter &lt;outputname&gt;[:&lt;outputname&gt;] config &gt; telegraf.conf</pre>
-</div>
+<pre>sudo service telegraf start
+sudo service telegraf stop</pre>
 </div>
 </div>
 <div class="sect3">
 <h4 id="uninstalling-the-agent">Uninstalling the Agent</h4>
 <div class="paragraph">
-<p>To uninstall the agent on RHEL/CentOS, in a Bash terminal, run the following:</p>
+<p>To uninstall the agent on RHEL/CentOS, in a Bash terminal, do the following:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1278,12 +1269,6 @@ rm -rf /var/log/telegraf*</pre>
 <div class="paragraph">
 <p>After the agent is installed, you can use the following commands to start/stop the service:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>sudo service telegraf start
-sudo service telegraf stop</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>If your operating system is using systemd:</p>
 </div>
@@ -1293,23 +1278,13 @@ sudo service telegraf stop</pre>
 sudo systemctl stop telegraf</pre>
 </div>
 </div>
-<div class="sect3">
-<h4 id="ubuntu-and-debian-configuration">Ubuntu and Debian Configuration</h4>
 <div class="paragraph">
-<p>To create a configuration file with default input and output plugins, run the following command. Every plugin is included in this file, but most are commented out:</p>
+<p>If your operating system is not using systemd:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>telegraf config &gt; telegraf.conf</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To create a configuration file with specific inputs and outputs:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>telegraf --input-filter &lt;pluginname&gt;[:&lt;pluginname&gt;] --output-filter &lt;outputname&gt;[:&lt;outputname&gt;] config &gt; telegraf.conf</pre>
-</div>
+<pre>sudo service telegraf start
+sudo service telegraf stop</pre>
 </div>
 </div>
 <div class="sect3">
@@ -1324,7 +1299,7 @@ sudo systemctl stop telegraf</pre>
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>systemctl stop telegraf (If your operating system is using systemd<br>
+<p>systemctl stop telegraf (If your operating system is using systemd)<br>
 /etc/init.d/telegraf stop (for systems without systemd support)</p>
 </div>
 </blockquote>
@@ -1401,36 +1376,8 @@ rm -rf /var/log/telegraf*</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>sudo service telegraf start
-sudo service telegraf stop</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If your operating system is using systemd:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>sudo systemctl start telegraf
-sudo systemctl stop telegraf</pre>
-</div>
-</div>
-<div class="sect3">
-<h4 id="macos-configuration">macOS Configuration</h4>
-<div class="paragraph">
-<p>To create a configuration file with default input and output plugins, run the following command. Every plugin is included in this file, but most are commented out:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>telegraf config &gt; telegraf.conf</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To create a configuration file with specific inputs and outputs:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>telegraf --input-filter &lt;pluginname&gt;[:&lt;pluginname&gt;] --output-filter &lt;outputname&gt;[:&lt;outputname&gt;] config &gt; telegraf.conf</pre>
-</div>
+<pre>brew services start telegraf
+brew services stop telegraf</pre>
 </div>
 </div>
 <div class="sect3">
@@ -1471,11 +1418,114 @@ rm -rf /usr/local/var/log/telegraf.*</pre>
 </div>
 <div class="sect2">
 <h3 id="kubernetes">Kubernetes</h3>
-<div class="paragraph">
-<p>Coming Soon</p>
+<div class="ulist">
+<div class="title">Pre-requisites:</div>
+<ul>
+<li>
+<p>The following commands must be available: curl, sudo</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If prompted, select Kubernetes from the Platform drop-down.</p>
+</li>
+<li>
+<p>Choose an Agent Access Key.</p>
+</li>
+<li>
+<p>If you have not already installed an agent on this host:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Copy the command block from the agent installation dialog. You can click the clipboard icon to quickly copy the command to the clipboard.</p>
+</li>
+<li>
+<p>Open a Bash window</p>
+</li>
+<li>
+<p>Paste the command into the Bash window and press Enter.</p>
+</li>
+<li>
+<p>The command will download the appropriate agent installer, install it, and set a default configuration. When finished, it will restart the agent service. The command has a unique key and is valid for 24 hours.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>In you have already installed an agent on this host, you can skip the previous step.</p>
+</li>
+<li>
+<p>Click <strong>Finish</strong> or <strong>Continue</strong></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Additional information may be found from the <a href="concept_requesting_support.html">Support</a> page or in the <a href="https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf">Data Collector Support Matrix</a>.</p>
+<p>After the agent is installed, you can use the following commands:</p>
+</div>
+<div class="paragraph">
+<p>Generate the Telegraf DaemonSet YAML:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>kubectl --namespace monitoring get ds telegraf-ds -o yaml &gt; /tmp/telegraf-ds.yaml</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Start/Stop the Telegraf service:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>kubectl --namespace monitoring apply -f /tmp/telegraf-ds.yaml
+kubectl --namespace monitoring delete ds telegraf-ds</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="uninstalling-the-agent-4">Uninstalling the Agent</h4>
+<div class="paragraph">
+<p>To uninstall the agent on Kubernetes, do the following:</p>
+</div>
+<div class="paragraph">
+<p>If the monitoring namespace is being used solely for Telegraf:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>kubectl delete ns monitoring</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the monitoring namespace is being used for other purposes in addition to Telegraf:</p>
+</div>
+<div class="paragraph">
+<p>Stop and delete the Telegraf service:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>kubectl --namespace monitoring delete ds telegraf-ds</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Delete the Telegraf ConfigMap and ServiceAccount:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>kubectl --namespace monitoring delete cm telegraf-conf
+kubectl --namespace monitoring delete sa telegraf-user</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Delete the Telegraf ClusterRole and ClusterERolebinding:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>kubectl --namespace monitoring delete clusterrole endpoint-access
+kubectl --namespace monitoring delete clusterrolebinding endpoint-access</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Additional information may be found from the <a href="concept_requesting_support.html">Support</a> page.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1499,8 +1549,12 @@ rm -rf /usr/local/var/log/telegraf.*</pre>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I already have an agent in my environment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I already installed an agent using Cloud Insights</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If you have already installed an agent on your host/VM, you do not need to install the agent again. In this case, simply choose the appropriate Platform and Key in the Agent Installation screen, and click on <strong>Continue</strong> or <strong>Finish</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I already have an agent installed but not by using the Cloud Insights installer command</p></td>
 </tr>
 </tbody>
 </table>
