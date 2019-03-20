@@ -8,8 +8,18 @@
     <language>en-us</language>
     <ttl>60</ttl>
     <atom:link href="https://docs.netapp.com/cloudinsights/us-en/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 20 Mar 2019 17:58:37 +0000</pubDate>
-    <lastBuildDate>Wed, 20 Mar 2019 17:58:37 +0000</lastBuildDate>
+    <pubDate>Wed, 20 Mar 2019 19:08:52 +0000</pubDate>
+    <lastBuildDate>Wed, 20 Mar 2019 19:08:52 +0000</lastBuildDate>
+    
+    
+    
+    <item>
+      <title>What&amp;#8217;s New with Cloud Insights</title>
+      <description>New features and functionlity in Cloud Insights.</description>
+      <pubDate>Wed, 20 Mar 2019 16:59:23 +0000</pubDate>
+      <link>https://docs.netapp.com/us-en/cloudinsights/concept_whats_new.html</link>
+    </item>
+    
     
   </channel>
 </rss>
