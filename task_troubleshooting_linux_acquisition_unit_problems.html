@@ -945,7 +945,7 @@
 
 <p class="page-details">
 
-<time datetime="2018-12-12 21:47:44 +0000">12/12/2018</time>
+<time datetime="2019-03-04 14:24:14 +0000">03/04/2019</time>
 
 
 <span>Contributors
@@ -982,6 +982,14 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Problem:</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Try this:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AU status on the <strong>Admin &gt; Data Collectors</strong> page in the <strong>Acquisition Units</strong> tab displays "Certificate Expired” or “Certificate Revoked” .</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Click on the menu to the right of the AU and select <strong>Restore Connection</strong>. Follow the instructions to restore your Acquisition Unit:<br>
+1. Issue the given command on the AU server/VM to stop the Acquisition Unit service. You can click the clipboard icon in the command window to quickly copy the command to the clipboard.<br>
+2. Copy the displayed token and paste it into a new file named "token".<br>
+3. Place this file in the /var/lib/netapp/cloudinsights/acq/conf/ folder.<br>
+4. Use the given command to start the Acquisition Unit service.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Installation fails on SELinux</p></td>
