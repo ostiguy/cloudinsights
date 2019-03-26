@@ -2,12 +2,12 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>Filtering for Objects In-Context | NetApp Cloud Docs</title>
+  <title>Alerts | NetApp Cloud Docs</title>
   <meta charset="utf-8">
-  <meta property="og:title" content="Filtering for Objects In-Context | NetApp Cloud Docs" />
+  <meta property="og:title" content="Alerts | NetApp Cloud Docs" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/cloudinsights/concept_in_context_filters.html" />
-	<meta property="og:description" content="You can filter for objects that are related directly to the current asset." />
+	<meta property="og:url" content="https://docs.netapp.com/cloudinsights/alert_data.html" />
+	<meta property="og:description" content="alert" />
   <meta property="og:image" content="https://docs.netapp.com/cloudinsights/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,8 +18,8 @@
   <meta http-equiv="nss-type" content="Product Documentation">
   <meta http-equiv="nss-subtype" content="User Guide">
   
-  <meta name="description" content="You can filter for objects that are related directly to the current asset.">
-  <meta name="keywords" content=" Assets, landing page, filtering, context, related">
+  <meta name="description" content="alert">
+  <meta name="keywords" content=" alert, Critical, Warning, Low, Synopsis, Time range, Start time, End time, user">
 
   <!-- Icons -->
   <link rel="icon" href="/cloudinsights/images/favicon.ico" type="image/x-icon">
@@ -838,7 +838,7 @@
   
 
   
-    <li class="active"><a href="concept_in_context_filters.html">In-Context Filtering for Objects</a></li>
+    <li><a href="concept_in_context_filters.html">In-Context Filtering for Objects</a></li>
   
 
   
@@ -933,11 +933,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Filtering for Objects In-Context
+  <h1 class="n-doc__component-detail-heading">Alerts
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/concept_in_context_filters.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Filtering for Objects In-Context](https://docs.netapp.com/zz/cloudinsights/concept_in_context_filters.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/alert_data.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Alerts](https://docs.netapp.com/zz/cloudinsights/alert_data.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -945,16 +945,16 @@
 
 <p class="page-details">
 
-<time datetime="2019-01-25 15:47:47 +0000">01/25/2019</time>
+<time datetime="2019-03-26 19:39:37 +0000">03/26/2019</time>
 
 
 <span>Contributors
   
-  <a target="_blank" href="https://github.com/netapp-alavoie">
+  <a target="_blank" href="https://github.com/dgracenetapp">
     <img  class="avatar avatar-small"
-          alt="netapp-alavoie"
+          alt="dgracenetapp"
           width="20" height="20"
-          src="https://avatars0.githubusercontent.com/u/39956590?v=4"
+          src="https://avatars0.githubusercontent.com/u/38116247?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -962,61 +962,243 @@
 
 </p>
 
-<div class="paragraph lead">
-<p>When configuring a widget on an asset&#8217;s landing page, you can set <em>in-context</em> filters to show only objects directly related to the current asset. By default, when you add a widget, <em>all</em> objects of the selected type in your environment are displayed. In-context filters allow you to display only the data relevant to your current asset.</p>
-</div>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>On most asset landing pages, widgets allow you to filter for objects related to the current asset. In filter drop-downs, object types that display a link icon <span class="image"><img src="./media/LinkIcon.png" alt="Link Icon"></span> can be filtered in-context to the current asset.</p>
+<p>The Alert page shows all alerts generated in Cloud Secure. Each alert provides the following information:</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>Detected</p>
 <div class="paragraph">
-<p>For example, on a Storage asset page, you can add a Bar Chart widget to show the top IOPS on internal volumes only on that storage. By default, when you add a widget, <em>all</em> internal volumes in your environment are displayed.</p>
+<p>The number of days since the alert was reported and the date and time of the alert.</p>
 </div>
+</li>
+<li>
+<p>Status shows the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>New - no action has been taken.</p>
+</li>
+<li>
+<p>In Progress - set by an administrator</p>
+</li>
+<li>
+<p>Resolved - set by an administrator</p>
+</li>
+<li>
+<p>Dismissed - set by an administrator</p>
 <div class="paragraph">
-<p>To show only internal volumes on the current storage asset, do the following:</p>
+<p>An administrator manages the status of an alert. To change an alert status:</p>
 </div>
 <div class="olist arabic">
-<div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Open an asset page for any <strong>Storage</strong> asset.</p>
+<p>Hover over the status</p>
 </li>
 <li>
-<p>Click <strong>Edit</strong> to open the asset page in Edit mode.</p>
+<p>Click the pencil icon</p>
 </li>
 <li>
-<p>Click <strong>Add Widget</strong> and select <em>Bar Chart</em>.</p>
+<p>Select the new status for the alert</p>
 </li>
 <li>
-<p>Select <strong>Internal Volume</strong> for the object type to display on the bar chart. Notice that the internal volume object type has a link icon <span class="image"><img src="./media/LinkIcon.png" alt="Link Icon"></span> beside it. The "linked" icon is enabled by default.</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/LinkingObjects.png" alt="bar chart volumes"></span></p>
+<p>Enter text into the Add a Note section</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
 </div>
 </li>
 <li>
-<p>Choose <em>IOPS - Total</em> and set any additional filters you like.</p>
+<p>Severity</p>
 </li>
-<li>
-<p>Collapse the <strong>Roll Up</strong> field by clicking the [X] beside it. The <strong>Show</strong> field is displayed.</p>
-</li>
-<li>
-<p>Choose to show Top 10.</p>
-</li>
-<li>
-<p>Save the widget.</p>
+</ul>
+</div>
 <div class="paragraph">
-<p>The bar chart shows only the internal volumes that reside on the current storage asset.</p>
+<p>The severity of a alert can be one of the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Critical</p>
+</li>
+<li>
+<p>Warning</p>
+</li>
+<li>
+<p>Low</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Synopsis</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Synopsis describes the activity that raised the alert and the user performing the activity.</p>
+</div>
+<div class="paragraph">
+<p>Click the Synopsis to get detailed information about the alert, including:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Alert details</p>
+</li>
+<li>
+<p>Impact of the alert showing Communities, Users, and Entities impacted.</p>
+</li>
+<li>
+<p>A link to the User&#8217;s User Activity log.</p>
+</li>
+<li>
+<p>Profile of the user performing the operation.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="filter-options">Filter options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Alert page shows the following for each alert:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Detected
+You can filter alerts, to define and monitor status, and to specify any action taken against the alert.</p>
+</li>
+<li>
+<p>Detected shows the time the alert was generated. The default filter shows all alerts in the past 31 days. This can be modified to show a date range of up to 31 days.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To modify the date range do the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click <strong>Filter by &gt; Detected</strong></p>
+</li>
+<li>
+<p>Click the blank Time/Date Range</p>
+</li>
+<li>
+<p>Select a date range in the Month dialog</p>
+</li>
+<li>
+<p>Enter a Start and End time</p>
+</li>
+<li>
+<p>Click <strong>Apply</strong></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="alert-severity">Alert Severity</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The severity of alerts you see in Cloud Secure are described in the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Critical</p>
+</li>
+<li>
+<p>Warning</p>
+</li>
+<li>
+<p>Low</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="alert-details">Alert Details</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Alert Details contains a description of the activity that raised the alert and a link to detailed user and alert information:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Alert Details provides the following information:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Date and time the activity was detected.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The severity of the violation</p>
+</li>
+<li>
+<p>The status of the violation. To change an alert status:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Hover over the status</p>
+</li>
+<li>
+<p>Click the pencil icon</p>
+</li>
+<li>
+<p>Select the new status for the alert</p>
+</li>
+<li>
+<p>Enter text into the Add a Note section</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Impact describes the action taken to resolve the alert, the number of communities, users, and entities affected, and a link to the <a href="&lt;forensic_user_actv_data&gt;.html">User activity data</a> of the specific user.</p>
+</li>
+<li>
+<p>User Profile providing the following user information:</p>
+</li>
+</ul>
 </div>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>The widget will be displayed on the asset pages for all storage objects. When the in-context link is enabled in the widget, the bar chart shows data for internal volumes related only to the currently-displayed storage asset.</p>
+</li>
+<li>
+<p>User name</p>
+</li>
+<li>
+<p>Email address</p>
+</li>
+<li>
+<p>Manager’s name</p>
+</li>
+<li>
+<p>Phone numbers</p>
+</li>
+<li>
+<p>Location of the user</p>
+</li>
+</ul>
 </div>
-<div class="paragraph">
-<p>To unlink the object data, edit the widget and click the link icon <span class="image"><img src="./media/LinkIconEnabled.png" alt="Link Icon Enabled"></span> next to the object type. The link becomes disabled <span class="image"><img src="./media/LinkIconDisabled.png" alt="Link Icon Disabled"></span> and the chart displays data for <em>all</em> objects in your environment.</p>
 </div>
-<div class="paragraph">
-<p>You can also use <a href="concept_dashboard_features.html#variables"><strong>special variables in widgets</strong></a> to display asset-related information on landing pages.</p>
 </div>
 
         </article>
