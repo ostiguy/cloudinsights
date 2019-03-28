@@ -2,12 +2,12 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>Vendor-Specific Reference | NetApp Cloud Docs</title>
+  <title>Red Hat Virtualization data collector | NetApp Cloud Docs</title>
   <meta charset="utf-8">
-  <meta property="og:title" content="Vendor-Specific Reference | NetApp Cloud Docs" />
+  <meta property="og:title" content="Red Hat Virtualization data collector | NetApp Cloud Docs" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/cloudinsights/en/concept_data_collector_reference.html" />
-	<meta property="og:description" content="Vendor-specific data collector reference information." />
+	<meta property="og:url" content="https://docs.netapp.com/cloudinsights/en/task_dc_redhat_virtualization.html" />
+	<meta property="og:description" content="Configuring Red Hat Virtualization data collector." />
   <meta property="og:image" content="https://docs.netapp.com/cloudinsights/en/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,8 +18,8 @@
   <meta http-equiv="nss-type" content="Product Documentation">
   <meta http-equiv="nss-subtype" content="User Guide">
   
-  <meta name="description" content="Vendor-specific data collector reference information.">
-  <meta name="keywords" content=" data collector, vendor, AWS, BROADCOM, Cisco, Dell, EMC, Hitachi, IBM, NetApp, OceanStor, OpenStack, Oracle, Pure Storage, Red Hat, redhat, VMWare">
+  <meta name="description" content="Configuring Red Hat Virtualization data collector.">
+  <meta name="keywords" content=" data collector, Red Hat Virtualization">
 
   <!-- Icons -->
   <link rel="icon" href="/cloudinsights/en/images/favicon.ico" type="image/x-icon">
@@ -366,7 +366,7 @@
         
 
   
-    <li class="active"><a href="concept_data_collector_reference.html">Vendor Reference Overview</a></li>
+    <li><a href="concept_data_collector_reference.html">Vendor Reference Overview</a></li>
   
 
   
@@ -646,7 +646,7 @@
   
 
   
-    <li><a href="task_dc_redhat_virtualization.html">Red Hat</a></li>
+    <li class="active"><a href="task_dc_redhat_virtualization.html">Red Hat</a></li>
   
 
   
@@ -933,11 +933,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Vendor-Specific Reference
+  <h1 class="n-doc__component-detail-heading">Red Hat Virtualization data collector
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/concept_data_collector_reference.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Vendor-Specific Reference](https://docs.netapp.com/en/cloudinsights/concept_data_collector_reference.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_dc_redhat_virtualization.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Red Hat Virtualization data collector](https://docs.netapp.com/en/cloudinsights/task_dc_redhat_virtualization.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -945,7 +945,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-02-01 19:30:15 +0000">02/01/2019</time>
+<time datetime="2019-03-27 20:32:31 +0000">03/27/2019</time>
 
 
 <span>Contributors
@@ -962,11 +962,141 @@
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
-<p>The topics in this section provide vendor-specific reference information. In most cases, configuring a data collector is straightforward. In some cases, you may need additional information or commands to properly configure the data collector.</p>
+<p>Cloud Insights uses the Red Hat Virtualization data collector to gather inventory data from virtualized Linux and Microsoft Windows workloads.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="terminology">Terminology</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Click on a <strong>vendor</strong> in the menu to the left to see information for their data collectors.</p>
+<p>For each asset type acquired by Cloud Insights, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Vendor/Model Term</th>
+<th class="tableblock halign-left valign-top">Cloud Insights Term</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Virtual Disk</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Host</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Host</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Virtual Machine</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Virtual Machine</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage Domain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data Store</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical Unit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LUN</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Note: These are common terminology mappings only and might not represent every case for this data collector.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="requirements">Requirements</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>IP address of the RHEV server over port 443 via REST API</p>
+</li>
+<li>
+<p>Read-only username and password</p>
+</li>
+<li>
+<p>RHEV Version 3.0+</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuration">Configuration</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RHEV Server IP Address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IP address of the storage system</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User name with admin privileges</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Password for the admin privileged account</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Password</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="advanced-configuration">Advanced configuration</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS Communication Port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Port used for HTTPS communication to RHEV</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inventory poll interval (min)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The default is 20 minutes.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Additional information on this Data Collector may be found from the <a href="concept_requesting_support.html">Support</a> page or in the <a href="https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf">Data Collector Support Matrix</a>.</p>
+</div>
+</div>
 </div>
 
         </article>
