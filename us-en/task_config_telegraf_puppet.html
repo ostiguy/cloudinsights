@@ -2,12 +2,12 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>Assigning multiple applications to or removing multiple applications from assets | NetApp Cloud Docs</title>
+  <title>Puppet Data Collector | NetApp Cloud Docs</title>
   <meta charset="utf-8">
-  <meta property="og:title" content="Assigning multiple applications to or removing multiple applications from assets | NetApp Cloud Docs" />
+  <meta property="og:title" content="Puppet Data Collector | NetApp Cloud Docs" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/cloudinsights/us-en/task_query_assign_multiple_applicationss.html" />
-	<meta property="og:description" content="Use a query to assign multiple applications or annotations to, or remove multiple applications or annotations from, objects." />
+	<meta property="og:url" content="https://docs.netapp.com/cloudinsights/us-en/task_config_telegraf_puppet.html" />
+	<meta property="og:description" content="Puppet data collector configuration" />
   <meta property="og:image" content="https://docs.netapp.com/cloudinsights/us-en/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,8 +18,8 @@
   <meta http-equiv="nss-type" content="Product Documentation">
   <meta http-equiv="nss-subtype" content="User Guide">
   
-  <meta name="description" content="Use a query to assign multiple applications or annotations to, or remove multiple applications or annotations from, objects.">
-  <meta name="keywords" content=" query, queries, application, annotation, multiple">
+  <meta name="description" content="Puppet data collector configuration">
+  <meta name="keywords" content=" telegraf, installation, install, Puppet">
 
   <!-- Icons -->
   <link rel="icon" href="/cloudinsights/us-en/images/favicon.ico" type="image/x-icon">
@@ -730,7 +730,7 @@
   
 
   
-    <li class="active"><a href="task_query_assign_multiple_applicationss.html">Assigning Multiple Applications/Annotations to Objects</a></li>
+    <li><a href="task_query_assign_multiple_applicationss.html">Assigning Multiple Applications/Annotations to Objects</a></li>
   
 
   
@@ -933,11 +933,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Assigning multiple applications to or removing multiple applications from assets
+  <h1 class="n-doc__component-detail-heading">Puppet Data Collector
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_query_assign_multiple_applications.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Assigning multiple applications to or removing multiple applications from assets](https://docs.netapp.com/us-en/cloudinsights/task_query_assign_multiple_applicationss.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_config_telegraf_puppet.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Puppet Data Collector](https://docs.netapp.com/us-en/cloudinsights/task_config_telegraf_puppet.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -945,7 +945,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-03-06 16:09:57 +0000">03/06/2019</time>
+<time datetime="2019-03-29 15:23:01 +0000">03/29/2019</time>
 
 
 <span>Contributors
@@ -962,8 +962,10 @@
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
-<p>You can assign multiple applications to or remove multiple applications from assets by using a query instead of having to manually assign or remove them.</p>
+<p>Cloud Insights uses this data collector to gather metrics from Puppet.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -972,61 +974,44 @@
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-You can use these steps to add or remove annotations in the same way.
+This topic is considered Preview documentation and is subject to change.
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<div class="title">Before you begin</div>
-<p>You must have already created a query that finds all the assets that you to edit.</p>
-</div>
 <div class="olist arabic">
-<div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Click <strong>Queries</strong> and select <strong>Show all queries</strong>.</p>
+<p>From <strong>Admin &gt; Data Collectors</strong>, click <strong>+Data Collector</strong>. Under <strong>Services</strong>, choose Puppet.</p>
 <div class="paragraph">
-<p>The Queries page displays.</p>
+<p>If you haven&#8217;t configured an Agent for collection, you are prompted to <a href="task_config_telegraf_agent.html">install an agent</a> in your environment.</p>
+</div>
+<div class="paragraph">
+<p>If you have an agent already configured, select the appropriate Operating System or Platform and click <strong>Continue</strong>.</p>
 </div>
 </li>
 <li>
-<p>Click the name of the query that finds the assets.</p>
-<div class="paragraph">
-<p>The list of assets associated with the query displays.</p>
-</div>
-</li>
-<li>
-<p>Select the desired assets in the list or click the top checkbox to select All.</p>
-<div class="paragraph">
-<p>The <span class="image"><img src="./media/BulkActions.png" alt="Actions"></span> button displays.</p>
-</div>
-</li>
-<li>
-<p>To add an application to the selected assets, click <span class="image"><img src="./media/BulkActions.png" alt="Actions"></span> and select <strong>Add Application</strong>.</p>
-</li>
-<li>
-<p>Select one or more applications.</p>
-<div class="paragraph">
-<p>You can select multiple applications for hosts, internal volumes, qtrees, and virtual machines; however, you can select only one application for a volume or a share.</p>
-</div>
-</li>
-<li>
-<p>Click <strong>Save</strong>.</p>
-</li>
-<li>
-<p>To remove an application assigned to the assets, click <span class="image"><img src="./media/BulkActions.png" alt="Actions"></span> and select <strong>Remove Application</strong>.</p>
-</li>
-<li>
-<p>Select the application or applications you want to remove.</p>
-</li>
-<li>
-<p>Click <strong>Delete</strong>.</p>
+<p>Follow the instructions in the Puppet Configuration screen to configure the data collector. The instructions vary depending on the type of Operating System or Platform you are using to collect data.</p>
 </li>
 </ol>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="setup">Setup</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Any new applications you assign override any applications on the asset that were derived from another asset. For example, volumes inherit applications from hosts, and when new applications are assigned to a volume, the new application takes precedence over the derived application.</p>
+<p>Information may be found in the <a href="https://puppet.com/docs">Puppet documentation</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Additional information may be found from the <a href="concept_requesting_support.html">Support</a> page.</p>
+</div>
+</div>
 </div>
 
         </article>
