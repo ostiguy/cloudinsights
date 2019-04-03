@@ -945,7 +945,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-03-26 15:54:02 +0000">03/26/2019</time>
+<time datetime="2019-04-03 14:01:09 +0000">04/03/2019</time>
 
 
 <span>Contributors
@@ -1051,6 +1051,189 @@ export KAFKA_JMX_OPTS="-javaagent:/opt/kafka/libs/jolokia-jvm-1.6.0-agent.jar=po
 <p>You can choose a different port for JMX (9999 above) and Jolokia (8778). If you have an internal IP to lock Jolokia onto you can replace the "catch all" 0.0.0.0 by your own IP. Notice this IP needs to be accessible from the telegraf plugin. You can use the option '-Dcom.sun.management.jmxremote.authenticate=false' if you don&#8217;t want to authenticate. Use at your own risk.</p>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="objects-and-counters">Objects and Counters</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following objects and their counters are collected:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Object:</th>
+<th class="tableblock halign-left valign-top">Identifiers:</th>
+<th class="tableblock halign-left valign-top">Attributes:</th>
+<th class="tableblock halign-left valign-top">Datapoints:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kafka Broker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster<br>
+Namespace<br>
+Broker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node Name<br>
+Node IP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Replica Manager Fetcher Max Lag<br>
+Zookeeper Client Connections<br>
+Zookeeper Client Connections (15m rate)<br>
+Zookeeper Client Connections (5m rate)<br>
+Zookeeper Client Connections (mean rate)<br>
+Zookeeper Client Connections (1m rate)<br>
+Replica Manager Partition Count<br>
+Thread Count Daemon<br>
+Thread Count Peak<br>
+Thread Count Current<br>
+Thread Count Total Started<br>
+Offline Partitions<br>
+Produce Requests Total Time (50th Percentile)<br>
+Produce Requests Total Time (75th Percentile)<br>
+Produce Requests Total Time (95th Percentile)<br>
+Produce Requests Total Time (98 Percentile)<br>
+Produce Requests Total Time (999th Percentile)<br>
+Produce Requests Total Time (99th Percentile)<br>
+Produce Requests Total Time<br>
+Produce Requests Total Time Max<br>
+Produce Requests Total Time Mean<br>
+Produce Requests Total Time Min<br>
+Produce Requests Total Time Stddev<br>
+Replica Manager ISR Shrinks<br>
+Replica Manager ISR Shrinks (15m rate)<br>
+Replica Manager ISR Shrinks (5m rate)<br>
+Replica Manager ISR Shrinks (mean rate)<br>
+Replica Manager ISR Shrinks (1m rate)<br>
+Request Handler Avg Idle<br>
+Request Handler Avg Idle (15m rate)<br>
+Request Handler Avg Idle (5m rate)<br>
+Request Handler Avg Idle (mean rate)<br>
+Request Handler Avg Idle (1m rate)<br>
+Garbage Collection G1 Old Generation Count<br>
+Garbage Collection G1 Old Generation Time<br>
+Garbage Collection G1 Young Generation Count<br>
+Garbage Collection G1 Young Generation Time<br>
+Zookeeper Read Only Connects<br>
+Zookeeper Read Only Connects (15m rate)<br>
+Zookeeper Read Only Connects (5m rate)<br>
+Zookeeper Read Only Connects (mean rate)<br>
+Zookeeper Read Only Connects (1m rate)<br>
+Network Processor Avg Idle<br>
+Requests Fetch Follower Total Time (50th percentile)<br>
+Requests Fetch Follower Total Time (75th percentile)<br>
+Requests Fetch Follower Total Time (95th percentile)<br>
+Requests Fetch Follower Total Time (98th percentile)<br>
+Requests Fetch Follower Total Time (999th percentile)<br>
+Requests Fetch Follower Total Time (99th percentile)<br>
+Requests Fetch Follower Total Time<br>
+Requests Fetch Follower Total Time Max<br>
+Requests Fetch Follower Total Time Mean<br>
+Requests Fetch Follower Total Time Min<br>
+Requests Fetch Follower Total Time Stddev<br>
+Requests Waiting in Produce Purgatory<br>
+Network Requests Fetch Consumer<br>
+Network Requests Fetch Consumer (5m rate)<br>
+Network Requests Fetch Consumer (15m rate)<br>
+Network Requests Fetch Consumer (mean rate)<br>
+Network Requests Fetch Consumer (1m rate)<br>
+Unclean Leader Elections<br>
+Unclean Leader Elections (15m rate)<br>
+Unclean Leader Elections (5m rate)<br>
+Unclean Leader Elections (mean rate)<br>
+Unclean Leader Elections (1m rate)<br>
+Active Controllers<br>
+Heap Memory Committed<br>
+Heap Memory Init<br>
+Heap Memory Max<br>
+Heap Memory Used<br>
+Zookeeper Session Expires<br>
+Zookeeper Session Expires (15m rate)<br>
+Zookeeper Session Expires (5m rate)<br>
+Zookeeper Session Expires (mean rate)<br>
+Zookeeper Session Expires (1m rate)<br>
+Zookeeper Authentication Failures<br>
+Zookeeper Authentication Failures (15m rate)<br>
+Zookeeper Authentication Failures (5m rate)<br>
+Zookeeper Authentication Failures (mean rate)<br>
+Zookeeper Authentication Failures (1m rate)<br>
+Leader Election Time (50th percentile)<br>
+Leader Election Time (75th percentile)<br>
+Leader Election Time (95th percentile)<br>
+Leader Election Time (98th percentile)<br>
+Leader Election Time (999th percentile)<br>
+Leader Election Time (99th percentile)<br>
+Leader Election Count<br>
+Leader Election Time (15m rate)<br>
+Leader Election Time (5m rate)<br>
+Leader Election Time Max<br>
+Leader Election Time Mean<br>
+Leader Election Time (mean rate)<br>
+Leader Election Time Min<br>
+Leader Election Time (1m rate)<br>
+Leader Election Time (stddev)<br>
+Network Requests Fetch Follower<br>
+Network Requests Fetch Follower (15m rate)<br>
+Network Requests Fetch Follower (5m rate)<br>
+Network Requests Fetch Follower (mean rate)<br>
+Network Requests Fetch Follower (1m rate)<br>
+Broker Topic Messages<br>
+Broker Topic Messages (15m rate)<br>
+Broker Topic Messages (5m rate)<br>
+Broker Topic Messages (mean rate)<br>
+Broker Topic Messages (1m rate)<br>
+Broker Topic Bytes In<br>
+Broker Topic Bytes In (15m rate)<br>
+Broker Topic Bytes In (5m rate)<br>
+Broker Topic Bytes In (mean rate)<br>
+Broker Topic Bytes In (1m rate)<br>
+Zookeeper Disconnects Count<br>
+Zookeeper Disconnects (15m rate)<br>
+Zookeeper Disconnects (5m rate)<br>
+Zookeeper Disconnects (mean rate)<br>
+Zookeeper Disconnects (1m rate)<br>
+Network Requests Fetch Consumer Total Time (50th percentile)<br>
+Network Requests Fetch Consumer Total Time (75th percentile)<br>
+Network Requests Fetch Consumer Total Time (95th percentile)<br>
+Network Requests Fetch Consumer Total Time (98th percentile)<br>
+Network Requests Fetch Consumer Total Time (999th percentile)<br>
+Network Requests Fetch Consumer Total Time (99th percentile)<br>
+Network Requests Fetch Consumer Total Time<br>
+Network Requests Fetch Consumer Total Time Max<br>
+Network Requests Fetch Consumer Total Time Mean<br>
+Network Requests Fetch Consumer Total Time Min<br>
+Network Requests Fetch Consumer Total Time Stddev<br>
+LeaderCount<br>
+Requests Waiting in Fetch Purgatory<br>
+Broker Topic Bytes Out<br>
+Broker Topic Bytes Out (15m rate)<br>
+Broker Topic Bytes Out (5m rate)<br>
+Broker Topic Bytes Out (mean rate)<br>
+Broker Topic Bytes Out (1m rate)<br>
+Zookeeper Authentications<br>
+Zookeeper Authentications (15m rate)<br>
+Zookeeper Authentications (5m rate)<br>
+Zookeeper Authentications (mean rate)<br>
+Zookeeper Authentications (1m rate)<br>
+Requests Produce Count<br>
+Requests Produce (15m rate)<br>
+Requests Produce (5m rate)<br>
+Requests Produce (mean rate)<br>
+Requests Produce (1m rate)<br>
+Replica Manager ISR Expands<br>
+Replica Manager ISR Expands (15m rate)<br>
+Replica Manager ISR Expands (5m rate)<br>
+Replica Manager ISR Expands (mean rate)<br>
+Replica Manager ISR Expands (1m rate)<br>
+Replica Manager Under Replicated Partitions</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">

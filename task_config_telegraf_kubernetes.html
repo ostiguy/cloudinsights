@@ -945,7 +945,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-04-02 20:20:33 +0000">04/02/2019</time>
+<time datetime="2019-04-03 14:12:52 +0000">04/03/2019</time>
 
 
 <span>Contributors
@@ -1145,6 +1145,82 @@ It is strongly recommended to deploy the Telegraf agent as a DaemonSet within th
 <p>By default, the Kubernetes input plugin configuration provided by CloudInsights is set up to look for the required access token file in the location used above. After performing the steps above, restart the Telegraf agent for the changes to take effect.</p>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="objects-and-counters">Objects and Counters</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following objects and their counters are collected:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Object:</th>
+<th class="tableblock halign-left valign-top">Identifiers:</th>
+<th class="tableblock halign-left valign-top">Attributes:</th>
+<th class="tableblock halign-left valign-top">Datapoints:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">K8s Container</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Namespace<br>
+Pod<br>
+Container<br>
+Cluster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">K8s Node</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CPU Nanoseconds<br>
+Memory Major Page Faults<br>
+Memory Resident Set Size (RSS)<br>
+Memory Working Set<br>
+Root Filesystem Available<br>
+Root Filesystem Capacity<br>
+Root Filesystem Used</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">K8s Node</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">K8s Node<br>
+Cluster</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CPU Used Nanocores<br>
+CPU Used Nanoseconds<br>
+Filesystem Available<br>
+Filesystem Total<br>
+Filesystem Used<br>
+Memory Available<br>
+Memory Major Page Faults<br>
+Memory Page Faults<br>
+Memory Resident Set Size (RSS)<br>
+Memory Working Set<br>
+Network RX Errors (per sec)<br>
+Network RX Bytes (per sec)<br>
+Network TX Errors (per sec)<br>
+Network TX Bytes (per sec)<br>
+Image Filesystem Available<br>
+Image Filesystem Used</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">K8s Pod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Namespace<br>
+Pod<br>
+Cluster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">K8s Node<br>
+Node Name<br>
+Node IP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Network TX Bytes (per sec)<br>
+Network TX Errors (per sec)<br>
+Network RX Bytes (per sec)<br>
+Network RX Errors (per sec)</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">

@@ -945,7 +945,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-03-28 15:49:03 +0000">03/28/2019</time>
+<time datetime="2019-04-03 14:41:35 +0000">04/03/2019</time>
 
 
 <span>Contributors
@@ -1126,6 +1126,442 @@ You can choose a different port for JMX (8005 above) and Jolokia (7805). If you 
 </div>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="objects-and-counters">Objects and Counters</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following objects and their counters are collected:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Object:</th>
+<th class="tableblock halign-left valign-top">Identifiers:</th>
+<th class="tableblock halign-left valign-top">Attributes:</th>
+<th class="tableblock halign-left valign-top">Datapoints:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hadoop Secondary NameNode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster<br>
+Namespace<br>
+Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node Name<br>
+Node IP<br>
+Compile Info<br>
+Version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GC Count<br>
+GC Copies Count<br>
+GC Marks Sweep Compact Count<br>
+GC Number Info Threshold Exceeded<br>
+GC Number Warning Threshold Exceeded<br>
+GC Time<br>
+GC Copy Time<br>
+GC Marks Sweep Compact Time<br>
+GC Total Extra Sleep Time<br>
+Logs Error Count<br>
+Logs Fatal Count<br>
+Logs Info Count<br>
+Logs Warn Count<br>
+Memory Heap Committed<br>
+Memory Heap Max<br>
+Memory Heap Used<br>
+Memory Max<br>
+Memory Non Heap Committed<br>
+Memory Non Heap Max<br>
+Memory Non Heap Used<br>
+Threads Blocked<br>
+Threads New<br>
+Threads Runnable<br>
+Threads Terminated<br>
+Threads Timed Waiting<br>
+Threads Waiting</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hadoop NodeManager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster<br>
+Namespace<br>
+Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node Name<br>
+Node IP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Containers Allocated<br>
+Memory Allocate<br>
+Memory Allocated Oportunistic<br>
+Virtual Cores Allocated Oportunistic<br>
+Virtual Cores Allocated<br>
+Memory Available<br>
+Virtual Cores Available<br>
+Directories Bad Local<br>
+Directories Bad Log<br>
+Cache Size Before Clean<br>
+Container Launch Duration Avg Time<br>
+Container Launch Duration Number Of Operations<br>
+Containers Completed<br>
+Containers Failed<br>
+Containers Initing<br>
+Containers Killed<br>
+Containers Launched<br>
+Containers Reiniting<br>
+ContaIners Rolled Back on Failure<br>
+Containers Running<br>
+Disk Utilization Good Local Directories<br>
+Disk Utilization Good Log Directories<br>
+Bytes Deleted Private<br>
+Bytes Deleted Public<br>
+Containers Running Opportunistic<br>
+Bytes Deleted Total<br>
+Shuffle Connections<br>
+Shuffle Output Bytes<br>
+Shuffle Outputs Failed<br>
+Shuffle Outputs Ok<br>
+GC Count<br>
+GC Copies Count<br>
+GC Marks Sweep Compact Count<br>
+GC Number Info Threshold Exceeded<br>
+GC Number Warning Threshold Exceeded<br>
+GC Time<br>
+GC Copy Time<br>
+GC Marks Sweep Compact Time<br>
+GC Total Extra Sleep Time<br>
+Logs Error Count<br>
+Logs Fatal Count<br>
+Logs Info Count<br>
+Logs Warn Count<br>
+Memory Heap Committed<br>
+Memory Heap Max<br>
+Memory Heap Used<br>
+Memory Max<br>
+Memory Non Heap Committed<br>
+Memory Non Heap Max<br>
+Memory Non Heap Used<br>
+Threads Blocked<br>
+Threads New<br>
+Threads Runnable<br>
+Threads Terminated<br>
+Threads Timed Waiting<br>
+Threads Waiting</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hadoop ResourceManager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster<br>
+Namespace<br>
+Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node Name<br>
+Node IP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ApplicationMaster Launch Delay Avg<br>
+ApplicationMaster Launch Delay Number<br>
+ApplicationMaster Register Delay Avg<br>
+ApplicationMaster Register Delay Number<br>
+NodeManager Active Number<br>
+NodeManager Decomissioned Number<br>
+NodeManager Decomissioning Number<br>
+NodeManager Lost Number<br>
+NodeManager Rebooted Number<br>
+NodeManager Shutdown Number<br>
+NodeManager Healthy Number<br>
+NodeManager Memory Limit<br>
+NodeManager Virtual Cores Limit<br>
+Used Capacity<br>
+Active Applications<br>
+Active Users<br>
+Aggregate Containers Allocated<br>
+Aggregate Containers Preempted<br>
+Aggregate Containers Released<br>
+Aggregate Memory Seconds Preempted<br>
+Aggregate Node Local Containers Allocated<br>
+Aggregate Off Switch Containers Allocated<br>
+Aggregate Ack Local Containers Allocated<br>
+Aggregate Virtual Cores Seconds Preempted<br>
+Containers Allocated<br>
+Memory Allocated<br>
+Virtual Cores Allocated<br>
+Application Attempt First Container Allocation Delay Avg Time<br>
+Application Attempt First Container Allocation Delay Number<br>
+Applications Completed<br>
+Applications Failed<br>
+Applications Killed<br>
+Applications Pending<br>
+Applications Running<br>
+Applications Submitted<br>
+Memory Available<br>
+Virtual Cores Available<br>
+Containers Pending<br>
+Memory Pending<br>
+Virtual Cores Pending<br>
+Containers Reserved<br>
+Memory Reserved<br>
+Virtual Cores Reserved<br>
+Memory ApplicationMaster Used<br>
+Virtual Cores ApplicationMaster Used<br>
+Capacity Used<br>
+GC Count<br>
+GC Copies Count<br>
+GC Marks Sweep Compact Count<br>
+GC Number Info Threshold Exceeded<br>
+GC Number Warning Threshold Exceeded<br>
+GC Time<br>
+GC Copy Time<br>
+GC Marks Sweep Compact Time<br>
+GC Total Extra Sleep Time<br>
+Logs Error Count<br>
+Logs Fatal Count<br>
+Logs Info Count<br>
+Logs Warn Count<br>
+Memory Heap Committed<br>
+Memory Heap Max<br>
+Memory Heap Used<br>
+Memory Max<br>
+Memory Non Heap Committed<br>
+Memory Non Heap Max<br>
+Memory Non Heap Used<br>
+Threads Blocked<br>
+Threads New<br>
+Threads Runnable<br>
+Threads Terminated<br>
+Threads Timed Waiting<br>
+Threads Waiting</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hadoop DataNode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster<br>
+Namespace<br>
+Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node Name<br>
+Node IP<br>
+Cluster ID<br>
+Version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transceiver Count<br>
+Transmits in Progress<br>
+Cache Capacity<br>
+Cache Used<br>
+Capacity<br>
+DFS Used<br>
+Estimated Capacity Lost Total<br>
+Last Volume Failure Rate<br>
+Blocks Number Cached<br>
+Blocks Number Failed to Cache<br>
+Blocks Number Failed to Uncache<br>
+Volumes Number Failed<br>
+Capacity Remaining<br>
+GC Count<br>
+GC Copies Count<br>
+GC Marks Sweep Compact Count<br>
+GC Number Info Threshold Exceeded<br>
+GC Number Warning Threshold Exceeded<br>
+GC Time<br>
+GC Copy Time<br>
+GC Marks Sweep Compact Time<br>
+GC Total Extra Sleep Time<br>
+Logs Error Count<br>
+Logs Fatal Count<br>
+Logs Info Count<br>
+Logs Warn Count<br>
+Memory Heap Committed<br>
+Memory Heap Max<br>
+Memory Heap Used<br>
+Memory Max<br>
+Memory Non Heap Committed<br>
+Memory Non Heap Max<br>
+Memory Non Heap Used<br>
+Threads Blocked<br>
+Threads New<br>
+Threads Runnable<br>
+Threads Terminated<br>
+Threads Timed Waiting<br>
+Threads Waiting</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hadoop NameNode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster<br>
+Namespace<br>
+Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node Name<br>
+Node IP<br>
+Transaction ID Last Written<br>
+Time Since Last Loaded Edits<br>
+HA State<br>
+File System State<br>
+Block Pool ID<br>
+Cluster ID<br>
+Compile Info<br>
+Distinct Version Count<br>
+Version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Block Capacity<br>
+Blocks Total<br>
+Capacity Total<br>
+Capacity Used<br>
+Capacity Used Non DFS<br>
+Blocks Corrupt<br>
+Estimated Capacity Lost Total<br>
+Blocks Excess<br>
+Heartbeats Expired<br>
+Files Total<br>
+File System Lock Queue Length<br>
+Blocks Missing<br>
+Blocks Missing Replication with Factor One<br>
+Clients Active<br>
+Data Nodes Dead<br>
+Data Nodes Decommissioning Dead<br>
+Data Nodes Decommissioning Live<br>
+Data Nodes Decomissioning<br>
+Encryption Zones Number<br>
+Data Nodes Entering Maintenance<br>
+Files Under Construction<br>
+Data Nodes Dead in Maintenance<br>
+Data Nodes Live in Maintenance<br>
+Data Nodes Live<br>
+Storages Stale<br>
+Replication Pending Timeouts<br>
+Data Node Message Pending<br>
+Blocks Pending Deletion<br>
+Blocks Pending Replication<br>
+Blocks Misreplicated Postponed<br>
+Blocks Scheduled Replication<br>
+Snapshots<br>
+Snapshottable Directories<br>
+Data Nodes Stale<br>
+Files Total<br>
+Load Total<br>
+Sync Count Total<br>
+Transactions Since Last Checkpoint<br>
+Transactions Since Last Log Roll<br>
+Blocks Underreplicated<br>
+Volume Failures Total<br>
+Sync Times Total<br>
+Objects Max<br>
+Operations Block Add<br>
+Operations Allow Snapshots<br>
+Operations Block Batched<br>
+Operations Block Queued<br>
+Operations Block Received and Deleted<br>
+Operations Report Avg Time<br>
+Operations Block Report Number<br>
+Cache Report Avg Time<br>
+Cache Report Number<br>
+Operations Create File<br>
+Operations Create Snapshots<br>
+Operations Create SymLink<br>
+Operations Delete File<br>
+Operations Delete Snapshot<br>
+Operations Disallow Snapshot<br>
+Operations File In/Out<br>
+Files Appended<br>
+Files Created<br>
+Files Deleted<br>
+Files Listing<br>
+Files Renamed<br>
+Files Truncated<br>
+File System Load Time<br>
+Operations Generate EDEK Avg Time<br>
+Operations Generate EDEK<br>
+Operations Get Additional Data Node<br>
+Blocks Get Locations<br>
+Get Edit Avg Time<br>
+Get Edit Number<br>
+Get Image Avg Time<br>
+Get Image Number<br>
+Operations Get Link Target<br>
+Operations Get Listing<br>
+Operations List Snapshottable Dir<br>
+Replication Not Scheduled Number<br>
+Put Image Avg Time<br>
+Put Image Number<br>
+Operations Rename Snapshots<br>
+Resource Check Time Avg Time<br>
+Resource Check Time Number<br>
+Safe Mode Time<br>
+Operations Snapshot Diff Report<br>
+Operations Storage Block Report<br>
+Replication Successful<br>
+Sync Avg Time<br>
+Operations Sync Number<br>
+Replication Timeout<br>
+Operations Total<br>
+Transaction Avg Time<br>
+Transaction Batchd In Sync<br>
+Transaction Number<br>
+EDEK Warmup Time Avg<br>
+EDEK Warmup Number<br>
+Block Pool Used Space<br>
+Cache Capacity<br>
+Cache Used<br>
+Capacity Free<br>
+Block Pool Used Percent<br>
+Percent Remaining<br>
+Percent Used<br>
+Threads<br>
+GC Count<br>
+GC Copies Count<br>
+GC Marks Sweep Compact Count<br>
+GC Number Info Threshold Exceeded<br>
+GC Number Warning Threshold Exceeded<br>
+GC Time<br>
+GC Copy Time<br>
+GC Marks Sweep Compact Time<br>
+GC Total Extra Sleep Time<br>
+Logs Error Count<br>
+Logs Fatal Count<br>
+Logs Info Count<br>
+Logs Warn Count<br>
+Memory Heap Committed<br>
+Memory Heap Max<br>
+Memory Heap Used<br>
+Memory Max<br>
+Memory Non Heap Committed<br>
+Memory Non Heap Max<br>
+Memory Non Heap Used<br>
+Threads Blocked<br>
+Threads New<br>
+Threads Runnable<br>
+Threads Terminated<br>
+Threads Timed Waiting<br>
+Threads Waiting</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hadoop JobHistoryServer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster<br>
+Namespace<br>
+Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node Name<br>
+Node IP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GC Count<br>
+GC Copies Count<br>
+GC Marks Sweep Compact Count<br>
+GC Number Info Threshold Exceeded<br>
+GC Number Warning Threshold Exceeded<br>
+GC Time<br>
+GC Copy Time<br>
+GC Marks Sweep Compact Time<br>
+GC Total Extra Sleep Time<br>
+Logs Error Count<br>
+Logs Fatal Count<br>
+Logs Info Count<br>
+Logs Warn Count<br>
+Memory Heap Committed<br>
+Memory Heap Max<br>
+Memory Heap Used<br>
+Memory Max<br>
+Memory Non Heap Committed<br>
+Memory Non Heap Max<br>
+Memory Non Heap Used<br>
+Threads Blocked<br>
+Threads New<br>
+Threads Runnable<br>
+Threads Terminated<br>
+Threads Timed Waiting<br>
+Threads Waiting</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">

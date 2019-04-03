@@ -945,7 +945,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-03-21 19:26:02 +0000">03/21/2019</time>
+<time datetime="2019-04-03 14:39:40 +0000">04/03/2019</time>
 
 
 <span>Contributors
@@ -1062,6 +1062,215 @@ The Flink plugin is based on the telegraf&#8217;s Jolokia plugin. As such as a r
 </div>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="objects-and-counters">Objects and Counters</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following objects and their counters are collected:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Object:</th>
+<th class="tableblock halign-left valign-top">Identifiers:</th>
+<th class="tableblock halign-left valign-top">Attributes:</th>
+<th class="tableblock halign-left valign-top">Datapoints:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flink Task Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster<br>
+Namespace<br>
+Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node Name<br>
+Task Manager ID<br>
+Node IP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Network Available Memory Segments<br>
+Network Total Memory Segments<br>
+Garbage Collection PS MarkSweep Count<br>
+Garbage Collection PS MarkSweep Time<br>
+Garbage Collection PS Scavenge Count<br>
+Garbage Collection PS Scavenge Time<br>
+Heap Memory Committed<br>
+Heap Memory Init<br>
+Heap Memory Max<br>
+Heap Memory Used<br>
+Thread Count Daemon<br>
+Thread Count Peak<br>
+Thread Count<br>
+Thread Count Total Started</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flink Job</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster<br>
+Namespace<br>
+server<br>
+Job ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node Name<br>
+Job Name<br>
+Node IP<br>
+Last Checkpoint External Path<br>
+Restarting Time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Downtime<br>
+Full Restarts<br>
+Last Checkpoint Alignment Buffered<br>
+Last Checkpoint Duration<br>
+Last Checkpoint Size<br>
+Number of Completed Checkpoints<br>
+Number of Failed Checkpoints<br>
+Number of in Progress Checkpoints<br>
+Number of Checkpoints<br>
+Uptime</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flink Job Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster<br>
+Namespace<br>
+Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node Name<br>
+Node IP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Garbage Collection PS MarkSweep Count<br>
+Garbage Collection PS MarkSweep Time<br>
+Garbage Collection PS Scavenge Count<br>
+Garbage Collection PS Scavenge Time<br>
+Heap Memory Committed<br>
+Heap Memory Init<br>
+Heap Memory Max<br>
+Heap Memory Used<br>
+Number Registered Task Managers<br>
+Number Running Jobs<br>
+Task Slots Available<br>
+Task Slots Total<br>
+Thread Count Daemon<br>
+Thread Count Peak<br>
+Thread Count<br>
+Thread Count Total Started</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flink Task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster<br>
+Namespace<br>
+Job ID<br>
+Task ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Server<br>
+Node Name<br>
+Job Name<br>
+Sub Task Index<br>
+Task Attempt ID<br>
+Task Attempt Number<br>
+Task Name<br>
+Task Manager ID<br>
+Node IP<br>
+Current Input Watermark</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Buffers In Pool Usage<br>
+Buffers In Queue Length<br>
+Buffers Out Pool Usage<br>
+Buffers Out Queue Length<br>
+Number Buffers In Local<br>
+Number Bufffers In Local Per Second Count<br>
+Number Buffers in Local Per Second Rate<br>
+Number Buffers In Remote<br>
+Number Buffers In Remote Per Second Count<br>
+Number Buffers In Remote Per Second Rate<br>
+Number Buffers Out<br>
+Number Buffers Out Per Second Count<br>
+Number Buffers Out Per Second Rate<br>
+Number Bytes In Local<br>
+Number Bytes In Local Per Second Count<br>
+Number Bytes In Local Per Second Rate<br>
+Number Bytes In Remote<br>
+Number Bytes In Remote Per Second Count<br>
+Number Bytes In Remote Per Second Rate<br>
+Number Bytes Out<br>
+Number Bytes Out Per Second Count<br>
+Number Bytes Out Per Second Rate<br>
+Number Records In<br>
+Number Records In Per Second Count<br>
+Number Records In Per Second Rate<br>
+Number Records Out<br>
+Number Records Out Per Second Count<br>
+Number Records Out Per Second Rate</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flink Task Operator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster<br>
+Namespace<br>
+Job ID<br>
+Operator ID<br>
+Task ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Server<br>
+Node Name<br>
+Job Name<br>
+Operator Name<br>
+Sub Task Index<br>
+Task Attempt ID<br>
+Task Attempt Number<br>
+Task Name<br>
+Task Manager ID<br>
+Node IP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Current Input Watermark<br>
+Current Output Watermark<br>
+Number Records In<br>
+Number Records In Per Second Count<br>
+Number Records In Per Second Rate<br>
+Number Records Out<br>
+Number Records Out Per Second Count<br>
+Number Records Out Per Second Rate<br>
+Number Late Records Dropped<br>
+Assigned Partitions<br>
+Bytes Consumed Rate<br>
+Commit Latency Avg<br>
+Commit Latency Max<br>
+Commit Rate<br>
+Commits Failed<br>
+Commits Succeeded<br>
+Connection Close Rate<br>
+Connection Count<br>
+Connection Creation Rate<br>
+Count<br>
+Fetch Latency Avg<br>
+Fetch Latency Max<br>
+Fetch Rate<br>
+Fetch Size Avg<br>
+Fetch Size Max<br>
+Fetch Throttle Time Avg<br>
+Fetch Throttle Time Max<br>
+Heartbeat Rate<br>
+Incoming Byte Rate<br>
+IO Ratio<br>
+IO Time Avg (ns)<br>
+IO Wait Ratio<br>
+IO Wait Time Avg (ns)<br>
+Join Rate<br>
+Join Time Avg<br>
+Last Heartbeat Ago<br>
+Network IO Rate<br>
+Outgoing Byte Rate<br>
+Records Consumed Rate<br>
+Records Lag Max<br>
+Records per Request Avg<br>
+Request Rate<br>
+Request Size Avg<br>
+Request Size Max<br>
+Response Rate<br>
+Select Rate<br>
+Sync Rate<br>
+Sync Time Avg<br>
+Heartbeat Response Time Max<br>
+Join Time Max<br>
+Sync Time Max</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
