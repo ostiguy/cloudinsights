@@ -945,7 +945,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-03-28 13:37:15 +0000">03/28/2019</time>
+<time datetime="2019-04-04 19:11:25 +0000">04/04/2019</time>
 
 
 <span>Contributors
@@ -1083,6 +1083,30 @@
 </ol>
 </div>
 </div>
+<div class="sect2">
+<h3 id="proxy-configuration">Proxy Configuration</h3>
+<div class="paragraph">
+<p>The Acquisition Unit uses 2-way/mutual authentication to connect to the Cloud Insights server. The client certificate must be passed to the Cloud Insights server to be authenticated. To accomplish this, the proxy must be set up to forward the http request to the Cloud Insights server without decrypting the data.</p>
+</div>
+<div class="paragraph">
+<p>The Acquisition Unit uses the following two endpoints to communicate with Cloud Insights. If you have a firewall between the Acquisition Unit server and Cloud Insights, you need these endpoints when configuring firewall rules:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>https://aulogin.&lt;Cloud Insights Domain&gt;
+https://&lt;your-tenant-ID&gt;.&lt;Cloud Insights Domain&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>https://aulogin.c01.cloudinsights.netapp.com
+https://cg0c586a-ee05-45rb-a5ac-333b5ae7718d7.c01.cloudinsights.netapp.com</pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1147,6 +1171,30 @@
 </div>
 </li>
 </ul>
+</div>
+<div class="sect2">
+<h3 id="proxy-configuration-2">Proxy Configuration</h3>
+<div class="paragraph">
+<p>The Acquisition Unit uses 2-way/mutual authentication to connect to the Cloud Insights server. The client certificate must be passed to the Cloud Insights server to be authenticated. To accomplish this, the proxy must be set up to forward the http request to the Cloud Insights server without decrypting the data.</p>
+</div>
+<div class="paragraph">
+<p>The Acquisition Unit uses the following two endpoints to communicate with Cloud Insights. If you have a firewall between the Acquisition Unit server and Cloud Insights, you need these endpoints when configuring firewall rules:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>https://aulogin.&lt;Cloud Insights Domain&gt;
+https://&lt;your-tenant-ID&gt;.&lt;Cloud Insights Domain&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>https://aulogin.c01.cloudinsights.netapp.com
+https://cg0c586a-ee05-45rb-a5ac-333b5ae7718d7.c01.cloudinsights.netapp.com</pre>
+</div>
+</div>
 </div>
 </div>
 </div>
