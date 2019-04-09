@@ -945,7 +945,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-04-03 14:12:52 +0000">04/03/2019</time>
+<time datetime="2019-04-09 17:34:00 +0000">04/09/2019</time>
 
 
 <span>Contributors
@@ -1259,6 +1259,12 @@ If there are errors related to SecurityContextConstraints, do the following:<br>
 3. Create the necessary SecurityContextConstraint (see "Configuring Agent to Collect Data" section)<br>
 <br>
 4. Re-create the Telegraf DaemonSet</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I configured Telegraf to obtain information about my Kubernetes cluster, but I don&#8217;t see any information in Cloud Insights. I see "invalid header field value" errors in the Telegraf log file pertaining to the kubernetes input plugin I configured.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ensure the referenced bearer_token file does not have a trailing newline. To verify, run the following command, and confirm that it returns 0:<br>
+<br>
+ tail -c1 &lt;bearer_token_file&gt;</p></td>
 </tr>
 </tbody>
 </table>
