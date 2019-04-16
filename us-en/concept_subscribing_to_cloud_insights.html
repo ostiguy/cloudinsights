@@ -945,7 +945,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-03-12 16:38:33 +0000">03/12/2019</time>
+<time datetime="2019-04-04 17:46:19 +0000">04/04/2019</time>
 
 
 <span>Contributors
@@ -1019,14 +1019,22 @@ If you need additional time to evaluate Cloud Insights and your trial is set to 
 <div class="paragraph">
 <p>If your free trial has expired and you have not yet subscribed to Cloud Insights, you will have limited functionality until you subscribe.</p>
 </div>
-<div class="paragraph">
-<p>To subscribe, go to <strong>Admin &gt; Subscription</strong>. In addition to the <strong>Subscribe</strong> buttons, you will be able to see your installed data collectors and calculate your estimated pricing. For a typical environment, you can click the self-serve AWS Marketplace <strong>Subscribe Now</strong> button. If your environment includes or is expected to include 1,000 or more Managed Units, you can <strong>Contact NetApp Sales</strong> to subscribe. See <a href="#how-do-i-subscribe">below</a> for more details.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="subscription-options">Subscription Options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To subscribe, go to <strong>Admin &gt; Subscription</strong>. In addition to the <strong>Subscribe</strong> buttons, you will be able to see your installed data collectors and calculate your estimated pricing. For a typical environment, you can click the self-serve AWS Marketplace <strong>Subscribe Now</strong> button. If your environment includes or is expected to include 1,000 or more Managed Units, you are eligible for Volume Pricing.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/Subscribe_Volume.png" alt="Subscription Options"></span></p>
 </div>
 <div class="sect2">
 <h3 id="pricing">Pricing</h3>
 <div class="paragraph">
-<p>Cloud Insights is priced per <strong>Managed Unit</strong>. Usage of your Managed Units is calculated based on the number of <strong>hosts</strong> and amount of <strong>unformatted capacity</strong> being managed in your infrastructure environment.</p>
+<p>Cloud Insights is priced per <strong>Managed Unit</strong>. Usage of your Managed Units is calculated based on the number of <strong>hosts or virtual machines</strong> and amount of <strong>unformatted capacity</strong> being managed in your infrastructure environment.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1038,11 +1046,14 @@ If you need additional time to evaluate Cloud Insights and your trial is set to 
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>If your environment includes or is expected to include 1,000 or more Managed Units, you are eligible for <strong>Volume Pricing</strong> and will be prompted to Contact NetApp Sales to subscribe. See <a href="#how-do-i-subscribe">below</a> for more details.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="estimate-your-subscription-cost">Estimate Your Subscription Cost</h3>
 <div class="paragraph">
-<p>The Subscription Calculator gives you an estimated list price monthly Cloud Insights cost based on the number of hosts and amount of unformatted capacity being reported by your data collectors. The current values are pre-populated in the <em>Hosts</em> and <em>Unformatted Capacity</em> fields. You can enter different values to assist you with planning for estimated future growth.</p>
+<p>The Subscription Calculator gives you an estimated list-price monthly Cloud Insights cost based on the number of hosts and amount of unformatted capacity being reported by your data collectors. The current values are pre-populated in the <em>Hosts</em> and <em>Unformatted Capacity</em> fields. You can enter different values to assist you with planning for estimated future growth.</p>
 </div>
 <div class="paragraph">
 <p>Your estimated list price cost will change based on whether you select a subscription term of 12 months or 36 months. The 36-month term includes a discounted cost per Managed Unit.</p>
@@ -1066,15 +1077,15 @@ The calculator is for estimation only. Your exact pricing will be set when you s
 <h2 id="how-do-i-subscribe">How Do I Subscribe?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Cloud Insights subscription is available via muliple channels:</p>
+<p>If your Managed Unit count is less than 1,000, you can subscribe via NetApp Sales, or <a href="#self-subscribe-via-aws-marketplace">self-subscribe</a> via AWS Marketplace.</p>
 </div>
 <div class="sect2">
 <h3 id="subscribe-via-netapp-sales-direct">Subscribe via NetApp Sales direct</h3>
 <div class="paragraph">
-<p>If your expected Managed Unit count is 1,000 or greater, you can click on the <a href="https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx"><strong>Contact Sales</strong></a> button to subscribe though the NetApp Sales Team.</p>
+<p>If your expected Managed Unit count is 1,000 or greater, click on the <a href="https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx"><strong>Contact Sales</strong></a> button to subscribe though the NetApp Sales Team.</p>
 </div>
 <div class="paragraph">
-<p>You must provide your Cloud Insights <strong>Serial Number</strong> to your NetApp sales representative so that your paid subscription can be applied to your Cloud Insights environment. The Serial Number uniquely identifies your Cloud Insights trial environment and can be found above the "Contact Sales" button on the <strong>Admin &gt; Subscription</strong> page..</p>
+<p>You must provide your Cloud Insights <strong>Serial Number</strong> to your NetApp sales representative so that your paid subscription can be applied to your Cloud Insights environment. The Serial Number uniquely identifies your Cloud Insights trial environment and can be found above the "Contact Sales" button on the <strong>Admin &gt; Subscription</strong> page.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1125,7 +1136,7 @@ After clicking on <strong>Set Up Your account</strong> on the AWS Marketplace pa
 <p>Once your subscription is active, you can view your subscription status and Managed Unit usage on the <strong>Admin &gt; Subscription</strong> page.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="./media/SubscriptionSummary.png" alt="Subscription Status"></span></p>
+<p><span class="image"><img src="./media/Subscription_Summary.png" alt="Subscription Status"></span></p>
 </div>
 <div class="paragraph">
 <p>The Subscription status page displays the following:</p>
@@ -1133,13 +1144,16 @@ After clicking on <strong>Set Up Your account</strong> on the AWS Marketplace pa
 <div class="ulist">
 <ul>
 <li>
-<p>Total subscribed Managed Unit count</p>
+<p>Current subscription (Trial or Standard Edition)</p>
 </li>
 <li>
-<p>Contract term (12 or 36 months), including expiration date</p>
+<p>Contract term (12 or 36 months) and expiration date</p>
 </li>
 <li>
 <p>Managed Unit current usage, including breakdown counts for hosts and capacity</p>
+</li>
+<li>
+<p>Link to modify your subscription</p>
 </li>
 </ul>
 </div>
@@ -1193,10 +1207,10 @@ The Unformatted Capacity Managed Unit count reflects a sum of the total raw capa
 <p>Click on the <strong>View Data Collectors</strong> button to expand the list of installed Data Collectors.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="./media/Subscription_Data_Collectors.png" alt="Data Collectors"></span></p>
+<p><span class="image"><img src="./media/Subscription_Installed_Data_Collectors.png" alt="Data Collectors"></span></p>
 </div>
 <div class="paragraph">
-<p>The Data Collectors section shows the Data Collectors installed in your environment and the count of Managed Units for each.</p>
+<p>The Data Collectors section shows the Data Collectors installed in your environment and the breakdown of Managed Units for each.</p>
 </div>
 <div class="admonitionblock note">
 <table>
