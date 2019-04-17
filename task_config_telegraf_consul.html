@@ -2,13 +2,13 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>IBM TotalStorage DS4000 data collector | NetApp Cloud Docs</title>
+  <title>Consul Data Collector | NetApp Cloud Docs</title>
   <meta charset="utf-8">
-  <meta property="og:title" content="IBM TotalStorage DS4000 data collector | NetApp Cloud Docs" />
+  <meta property="og:title" content="Consul Data Collector | NetApp Cloud Docs" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/cloudinsights/en/task_dc_ibm_ds4000.html" />
-	<meta property="og:description" content="IBM TotalStorage DS4000 data collector" />
-  <meta property="og:image" content="https://docs.netapp.com/cloudinsights/en/images/logo-tophat-social.png" />
+	<meta property="og:url" content="https://docs.netapp.com/cloudinsights/task_config_telegraf_consul.html" />
+	<meta property="og:description" content="Consul data collector configuration" />
+  <meta property="og:image" content="https://docs.netapp.com/cloudinsights/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no">
@@ -18,15 +18,15 @@
   <meta http-equiv="nss-type" content="Product Documentation">
   <meta http-equiv="nss-subtype" content="User Guide">
   
-  <meta name="description" content="IBM TotalStorage DS4000 data collector">
-  <meta name="keywords" content=" data collector, IBM, DS4000">
+  <meta name="description" content="Consul data collector configuration">
+  <meta name="keywords" content=" telegraf, installation, install, consul">
 
   <!-- Icons -->
-  <link rel="icon" href="/cloudinsights/en/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/cloudinsights/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed -->
   
-  <link rel="alternate" type="application/rss+xml" title="NetApp Cloud Docs" href="/cloudinsights/en/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="NetApp Cloud Docs" href="/cloudinsights/feed.xml">
   
 
   <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -35,23 +35,23 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
 
   <!-- LUCI CSS Content -->
-  <link rel="stylesheet" href="/cloudinsights/en/common/css/esb.min.css">
-  <link rel="stylesheet" href="/cloudinsights/en/common/css/netapp-library.min.css">
-  <link rel="stylesheet" href="/cloudinsights/en/common/css/doc.css">
-  <link rel="stylesheet" href="/cloudinsights/en/common/css/doc-components.css">
+  <link rel="stylesheet" href="/cloudinsights/common/css/esb.min.css">
+  <link rel="stylesheet" href="/cloudinsights/common/css/netapp-library.min.css">
+  <link rel="stylesheet" href="/cloudinsights/common/css/doc.css">
+  <link rel="stylesheet" href="/cloudinsights/common/css/doc-components.css">
 
-  <link rel="stylesheet" href='/cloudinsights/en/css/na-sidebar.css' type='text/css'>
-  <link rel='stylesheet' href='/cloudinsights/en/css/na-search.css' type='text/css'>
-  <link rel='stylesheet' href='/cloudinsights/en/css/clouddocs.css' type='text/css'>
+  <link rel="stylesheet" href='/cloudinsights/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/cloudinsights/css/na-search.css' type='text/css'>
+  <link rel='stylesheet' href='/cloudinsights/css/clouddocs.css' type='text/css'>
 
   <!-- Font awesome seems to affect our GitHub Icon and generic "arrow box" for external links. -->
-  <link rel="stylesheet" type="text/css" href="/cloudinsights/en/css/font-awesome.min.css">
-  <!-- <link rel="stylesheet" href="/cloudinsights/en/css/customstyles.css"> -->
+  <link rel="stylesheet" type="text/css" href="/cloudinsights/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="/cloudinsights/css/customstyles.css"> -->
   <!-- Controls the shadow effect for search dropdown menu -->
-  <link rel="stylesheet" href="/cloudinsights/en/css/boxshadowproperties.css">
+  <link rel="stylesheet" href="/cloudinsights/css/boxshadowproperties.css">
 
   <!-- NetApp CSS controls the technical content -->
-  <link rel='stylesheet' href='/cloudinsights/en/css/netapp.css' type='text/css'>
+  <link rel='stylesheet' href='/cloudinsights/css/netapp.css' type='text/css'>
 
   
 
@@ -60,23 +60,23 @@
   <!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
   
-    <script src='/cloudinsights/en/js/na-search.js'></script>
+    <script src='/cloudinsights/js/na-search.js'></script>
   
 
   
-  <link rel='stylesheet' href='/cloudinsights/en/css/na-pagenav.css' type='text/css' id="pagenav-css">
-  <script src='/cloudinsights/en/js/na-pagenav.js'></script>
+  <link rel='stylesheet' href='/cloudinsights/css/na-pagenav.css' type='text/css' id="pagenav-css">
+  <script src='/cloudinsights/js/na-pagenav.js'></script>
   
 
-  <link rel='stylesheet' href='/cloudinsights/en/css/prism.css' type='text/css'>
-  <link rel='stylesheet' href='/cloudinsights/en/css/prism-netapp.css' type='text/css'>
+  <link rel='stylesheet' href='/cloudinsights/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/cloudinsights/css/prism-netapp.css' type='text/css'>
 
-  <script src='/cloudinsights/en/js/clouddocs.js'></script>
-  <script src='/cloudinsights/en/js/s_code_impl.js'></script>
-  <script src='/cloudinsights/en/js/jquery.navgoco.min.js'></script>
+  <script src='/cloudinsights/js/clouddocs.js'></script>
+  <script src='/cloudinsights/js/s_code_impl.js'></script>
+  <script src='/cloudinsights/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script src='/cloudinsights/en/js/toc.js'></script>
-  <script src='/cloudinsights/en/js/customscripts.js'></script>
+  <script src='/cloudinsights/js/toc.js'></script>
+  <script src='/cloudinsights/js/customscripts.js'></script>
 
   <script>
       $(document).ready(function() {
@@ -161,7 +161,7 @@
       <div class="n-off-canvas-menu__property-title">NetApp Cloud Docs</div>
       <ul class="n-off-canvas-menu__property-navigation-list">
         <li class="n-off-canvas-menu__property-navigation-list-item ">
-          <a href="https://docs.netapp.com/en/" class="n-off-canvas-menu__property-navigation-link">
+          <a href="https://docs.netapp.com/zz/" class="n-off-canvas-menu__property-navigation-link">
             Home
           </a>
           <div class="n-off-canvas-menu__child-menu">
@@ -202,19 +202,19 @@
       <div class="n-property-bar__menu-toggle">
         <a href="#" class="n-property-bar__menu-toggle-link"><span class="n-property-bar__menu-toggle-text">Menu</span><svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
           <title>bars</title>
-          <use xlink:href="/cloudinsights/en/common/svg/sprite.svg#bars"></use>
+          <use xlink:href="/cloudinsights/common/svg/sprite.svg#bars"></use>
         </svg></a>
       </div>
       <div class="n-property-bar__property-mark n-property-bar__property-mark--has-property-name">
-        <a class="n-property-bar__property-link" href="https://docs.netapp.com/en/">
+        <a class="n-property-bar__property-link" href="https://docs.netapp.com/zz/">
           <div class="n-property-bar__logo">
             <svg class="n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
               <title>netapp-mark</title>
-              <use xlink:href="/cloudinsights/en/common/svg/sprite.svg#netapp-mark"></use>
+              <use xlink:href="/cloudinsights/common/svg/sprite.svg#netapp-mark"></use>
             </svg>
             <svg viewBox="0 0 1008 181.537" class="n-property-bar__logo-svg" aria-labelledby="title">
               <title>NetApp</title>
-              <use xlink:href="/cloudinsights/en/common/svg/sprite.svg#netapp-logo"></use>
+              <use xlink:href="/cloudinsights/common/svg/sprite.svg#netapp-logo"></use>
             </svg>
           </div>
           <h2 class="n-property-bar__property-name">Cloud Docs</h2>
@@ -234,7 +234,7 @@
             <a href="#" class="n-property-navigation-bar__utils-link n-property-navigation-bar__nav-link n-property-navigation-bar__language-selector-toggle" data-menu-id="n-property-navigation-bar__menu--language-selector">
               <svg class="n-icon-globe n-globe__icon" aria-labelledby="title">
                 <title>globe</title>
-                <use xlink:href="/cloudinsights/en/common/svg/sprite.svg#globe"></use>
+                <use xlink:href="/cloudinsights/common/svg/sprite.svg#globe"></use>
               </svg>
             </a>
           </li>
@@ -259,7 +259,7 @@
             </li>
           </ul>
           <div class="menu__footer">
-            <p>Current Language: en
+            <p>Current Language: zz
             </p>
           </div>
         </div>
@@ -933,11 +933,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">IBM TotalStorage DS4000 data collector
+  <h1 class="n-doc__component-detail-heading">Consul Data Collector
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_dc_ibm_ds4000.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[IBM TotalStorage DS4000 data collector](https://docs.netapp.com/en/cloudinsights/task_dc_ibm_ds4000.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_config_telegraf_consul.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Consul Data Collector](https://docs.netapp.com/zz/cloudinsights/task_config_telegraf_consul.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -945,7 +945,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-03-12 19:58:46 +0000">03/12/2019</time>
+<time datetime="2019-04-17 17:45:22 +0000">04/17/2019</time>
 
 
 <span>Contributors
@@ -958,14 +958,6 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" href="https://github.com/dgracenetapp">
-    <img  class="avatar avatar-small"
-          alt="dgracenetapp"
-          width="20" height="20"
-          src="https://avatars0.githubusercontent.com/u/38116247?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
 </span>
 
 </p>
@@ -973,132 +965,56 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>This data collector acquires inventory and performance information from the IBM DS4000 storage system. There are two possible configurations (firmware 6.x and firmware 7.x+), and they both have the same values.</p>
+<p>Cloud Insights uses this data collector to gather metrics from Consul.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This topic is considered Preview documentation and is subject to change.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="terminology">Terminology</h2>
+<h2 id="installation">Installation</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>From <strong>Admin &gt; Data Collectors</strong>, click <strong>+Data Collector</strong>. Under <strong>Services</strong>, choose Consul.</p>
+<div class="paragraph">
+<p>If you haven&#8217;t configured an Agent for collection, you are prompted to <a href="task_config_telegraf_agent.html">install an agent</a> in your environment.</p>
+</div>
+<div class="paragraph">
+<p>If you have an agent already configured, select the appropriate Operating System or Platform and click <strong>Continue</strong>.</p>
+</div>
+</li>
+<li>
+<p>Follow the instructions in the Consul Configuration screen to configure the data collector. The instructions vary depending on the type of Operating System or Platform you are using to collect data.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="setup">Setup</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Cloud Insightst acquires the following inventory information from the IBM DS4000 data collector. For each asset type acquired, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:</p>
+<p>Information may be found in the <a href="https://www.consul.io/docs/index.html">Consul documentation</a>.</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Vendor/Model Term</th>
-<th class="tableblock halign-left valign-top">Cloud Insights Term</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Disk</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Disk</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Volume Group</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Disk Group</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Storage Array</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Storage</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Controller</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Storage Node</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Volume Group</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Storage Pool</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Volume</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Volume</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Note: These are common terminology mappings only and might not represent every case for this data collector.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="requirements">Requirements</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>IP address of each DS5 or FAStT array</p>
-</li>
-<li>
-<p>Access validation by pinging the IP address of both controllers on the array</p>
-</li>
-<li>
-<p>Port requirements: 2463</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="configuration">Configuration</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Field</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma-separated list of Array SANtricity Controller IPs</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IP addresses and/or fully-qualified domain names for the array controllers</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="advanced-configuration">Advanced configuration</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Field</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Inventory Poll Interval (min)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Default is 30 minutes</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Performance Poll Interval up to 3600 seconds</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Default is 300 seconds</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 <div class="sect1">
 <h2 id="troubleshooting">Troubleshooting</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Additional information on this Data Collector may be found from the <a href="concept_requesting_support.html">Support</a> page or in the <a href="https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf">Data Collector Support Matrix</a>.</p>
+<p>Additional information may be found from the <a href="concept_requesting_support.html">Support</a> page.</p>
 </div>
 </div>
 </div>
@@ -1144,7 +1060,7 @@
                       <span class="n-footer__social-link-text">blog</span>
                       <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
                         <title>blog@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/en/common/svg/sprite.svg#blog"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/common/svg/sprite.svg#blog"></use>
                       </svg>
                     </a>
                   </li>
@@ -1153,7 +1069,7 @@
                       <span class="n-footer__social-link-text">community</span>
                       <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
                         <title>community@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/en/common/svg/sprite.svg#comments"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/common/svg/sprite.svg#comments"></use>
                       </svg>
                     </a>
                   </li>
@@ -1163,7 +1079,7 @@
                       <span class="n-footer__social-link-text">twitter</span>
                       <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
                         <title>twitter@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/en/common/svg/sprite.svg#twitter"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/common/svg/sprite.svg#twitter"></use>
                       </svg>
                     </a>
                   </li>
@@ -1172,7 +1088,7 @@
                       <span class="n-footer__social-link-text">youtube</span>
                       <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
                         <title>youtube@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/en/common/svg/sprite.svg#youtube"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/common/svg/sprite.svg#youtube"></use>
                       </svg>
                     </a>
                   </li>
@@ -1181,7 +1097,7 @@
             </div>
             <div class="n-footer__bottom-right">
               <div class="n-footer__copyright">
-                <a href="https://docs.netapp.com/en/contribute/" class="n-footer__copyright-link">Contribute</a>
+                <a href="https://docs.netapp.com/zz/contribute/" class="n-footer__copyright-link">Contribute</a>
               </div>
               <div class="n-footer__copyright">
                 <a target="_self" class="n-footer__copyright-link" href="javascript:netapp_mailto()">Email your feedback</a>
@@ -1193,15 +1109,15 @@
 
     </div>
 
-    <script src="/cloudinsights/en/common/js/components.js"></script>
-    <script src="/cloudinsights/en/common/js/doc-components.js"></script>
+    <script src="/cloudinsights/common/js/components.js"></script>
+    <script src="/cloudinsights/common/js/doc-components.js"></script>
 
     <!-- Elasticsearch JS -->
-    <script type="text/javascript" src='/cloudinsights/en/js/bundle.js'></script>
+    <script type="text/javascript" src='/cloudinsights/js/bundle.js'></script>
 
     <!-- Syntax Highlighting -->
-    <script type="text/javascript" src='/cloudinsights/en/js/prism.js'></script>
-    <script type="text/javascript" src='/cloudinsights/en/js/prism-curl.js'></script>
+    <script type="text/javascript" src='/cloudinsights/js/prism.js'></script>
+    <script type="text/javascript" src='/cloudinsights/js/prism-curl.js'></script>
 
   </body>
 
