@@ -945,7 +945,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-03-12 19:58:46 +0000">03/12/2019</time>
+<time datetime="2019-04-11 19:04:03 +0000">04/11/2019</time>
 
 
 <span>Contributors
@@ -981,22 +981,11 @@
 <h2 id="defining-annotations">Defining annotations</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Using annotations, you can add custom business-specific data that matches<br>
-your business needs to assets. While Cloud Insights provides a set of<br>
-default annotations, such as asset life cycle (birthday or end of life),<br>
-building or data center location, and tier you might find that you want to<br>
-view data in other ways.</p>
+<p>Using annotations, you can add custom business-specific data that matches your business needs to assets. While Cloud Insights provides a set of default annotations, such as asset life cycle (birthday or end of life), building or data center location, and tier, you might find that you want to view data in other ways.</p>
 </div>
 <div class="paragraph">
-<p>The data in custom annotations supplements device data already collected,<br>
-such as switch manufacturer, number of ports, and performance statistics.<br>
-The data you add using annotations is not discovered by Cloud Insights.</p>
+<p>The data in custom annotations supplements device data already collected, such as switch manufacturer, number of ports, and performance statistics. The data you add using annotations is not discovered by Cloud Insights.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="manually-assigning-annotations-to-assets">Manually assigning annotations to assets</h2>
-<div class="sectionbody">
 <div class="ulist">
 <div class="title">Before you begin</div>
 <ul>
@@ -1004,15 +993,13 @@ The data you add using annotations is not discovered by Cloud Insights.</p>
 <p>List any industry terminology to which environment data must be associated.</p>
 </li>
 <li>
-<p>List corporate terminology to which environment data must be associated, which<br>
-is not already being tracked using the business entities.</p>
+<p>List corporate terminology to which environment data must be associated.</p>
 </li>
 <li>
 <p>Identify any default annotation types that you might be able to use.</p>
 </li>
 <li>
-<p>Identify which custom annotations you need to create.<br>
-You need to create the annotation before it can be assigned to an asset.</p>
+<p>Identify which custom annotations you need to create. You need to create the annotation before it can be assigned to an asset.</p>
 </li>
 </ul>
 </div>
@@ -1031,25 +1018,86 @@ You need to create the annotation before it can be assigned to an asset.</p>
 <li>
 <p>Enter a Name, Description, and type for the new annotation.</p>
 <div class="paragraph">
-<p>For example, enter the following to create a text annotation that defines the<br>
-physical location of an asset in Data Center 4:</p>
+<p>For example, enter the following to create a text annotation that defines the physical location of an asset in Data Center 4:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Enter a name for the annotation, such as "Location"</p>
+</li>
+<li>
+<p>Enter a description of what the annotation is describing, such as "Physical location is Data Center 4"</p>
+</li>
+<li>
+<p>Enter the 'type' of annotation it is, such as "Text".</p>
+</li>
+</ul>
 </div>
 </li>
 </ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="manually-assigning-annotations-to-assets">Manually assigning annotations to assets</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Assigning annotations to assets helps you sort, group, and report on assets in ways that are relevant to your business. Although you can assign annotations to assets of a particular type automatically using annotation rules, you can assign annotations to an individual asset by using its asset page.</p>
+</div>
+<div class="ulist">
+<div class="title">Before you begin</div>
+<ul>
+<li>
+<p>You must have created the annotation you want to assign.</p>
+</li>
+</ul>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Enter a name for the annotation (Location)</p>
+<p>Log in to your Cloud Insights environment.</p>
 </li>
 <li>
-<p>Enter a description of what the annotation is describing (Physical location is Data Center 4)</p>
+<p>Locate the asset to which you want to apply the annotation.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>You can locate assets by querying, choosing from a dashoard widget, or search. When you have located the asset you want, click the link to open the asset&#8217;s landing page.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Enter the 'type' of annotation it is (Text).</p>
+<p>On the asset page, in the User Data section, click <strong>+ Annotation</strong>.</p>
+</li>
+<li>
+<p>The Add Annotation dialog box displays.</p>
+</li>
+<li>
+<p>Select an annotation from the list.</p>
+</li>
+<li>
+<p>Click Value and do either of the following, depending on type of annotation you selected:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If the annotation type is list, date, or Boolean, select a value from the list.</p>
+</li>
+<li>
+<p>If the annotation type is text, type a value.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>If you want to change the value of the annotation after you assign it, click the annotation field and select a different value.<br>
+If the annotation is of list type for which the <em>Add new values on the fly</em> option is selected, you can type a new value in addition to selecting an existing value.</p>
 </div>
 </div>
 </div>
@@ -1062,8 +1110,10 @@ physical location of an asset in Data Center 4:</p>
 <div class="sect2">
 <h3 id="default-storage-annotation-rules">Default storage annotation rules</h3>
 <div class="paragraph">
-<p>To expedite the assignment of storage annotations to your resources, Cloud Insights includes 21 default annotation rules, which associate a tier level with a storage tier model. All of your storage resources are automatically associated with a tier upon acquisition of the assets in your environment.<br>
-The default annotation rules apply a tier annotations in the following way:</p>
+<p>To expedite the assignment of storage annotations to your resources, Cloud Insights includes 21 default annotation rules, which associate a tier level with a storage tier model. All of your storage resources are automatically associated with a tier upon acquisition of the assets in your environment.</p>
+</div>
+<div class="paragraph">
+<p>The default annotation rules apply tier annotations in the following way:</p>
 </div>
 <div class="dlist">
 <dl>
