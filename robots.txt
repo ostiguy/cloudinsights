@@ -1,1 +1,1 @@
-Sitemap: https://docs.netapp.com/zz/cloudinsights/sitemap.xml
+Sitemap: https://docs.netapp.com/us-en/cloudinsights/sitemap.xml
