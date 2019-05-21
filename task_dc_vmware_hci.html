@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <title>IBM CS data collector | NetApp Cloud Docs</title>
+  <title>Configuring the NetApp HCI Virtual Center data collector | NetApp Cloud Docs</title>
   <meta charset="utf-8">
-  <meta property="og:title" content="IBM CS data collector | NetApp Cloud Docs" />
+  <meta property="og:title" content="Configuring the NetApp HCI Virtual Center data collector | NetApp Cloud Docs" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/cloudinsights/task_dc_ibm_cs.html" />
-	<meta property="og:description" content="Configuring IBM CS data collector." />
+	<meta property="og:url" content="https://docs.netapp.com/cloudinsights/task_dc_vmware_hci.html" />
+	<meta property="og:description" content="Configuring NetApp HCI Virtual Center data collector." />
   <meta property="og:image" content="https://docs.netapp.com/cloudinsights/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,8 +17,8 @@
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/>
   
-  <meta name="description" content="Configuring IBM CS data collector.">
-  <meta name="keywords" content=" data collector, IBM CS, CS Series">
+  <meta name="description" content="Configuring NetApp HCI Virtual Center data collector.">
+  <meta name="keywords" content=" data collector, VMware, hci">
   
 
   <!-- Icons -->
@@ -543,7 +543,7 @@
         
 
   
-    <li class="active"><a href="task_dc_ibm_cs.html">CS Series</a></li>
+    <li><a href="task_dc_ibm_cs.html">CS Series</a></li>
   
 
   
@@ -1047,11 +1047,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">IBM CS data collector
+  <h1 class="n-doc__component-detail-heading">Configuring the NetApp HCI Virtual Center data collector
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_dc_ibm_cs.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[IBM CS data collector](https://docs.netapp.com/us-en/cloudinsights/task_dc_ibm_cs.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_dc_vmware_hci.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Configuring the NetApp HCI Virtual Center data collector](https://docs.netapp.com/us-en/cloudinsights/task_dc_vmware_hci.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -1059,7 +1059,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-03-20 16:57:30 +0000">03/20/2019</time>
+<time datetime="2019-05-21 19:17:51 +0000">05/21/2019</time>
 
 
 <span>Contributors
@@ -1079,7 +1079,19 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Cloud Insights uses this data collector to discover inventory and performance data for IBM CS storage systems.</p>
+<p>The HCI Virtual Center data collector collects NetApp HCI Host information and requires read-only privileges on all objects within the Virtual Center.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This information is considered Preview documentation and is subject to change.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -1087,7 +1099,7 @@
 <h2 id="terminology">Terminology</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Cloud Insights acquires the following inventory information from the IBM CS data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:</p>
+<p>Cloud Insights acquires the following inventory information from this data collector. For each asset type acquired, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1102,44 +1114,104 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Storage Pool</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Storage Pool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Virtual disk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disk</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nutanix Container</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Internal Volume</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Host</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Host</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nutanix Container</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">File Share</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Virtual machine</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Virtual machine</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NFS Share</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Share</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data store</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data store</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LUN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LUN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fibre channel port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Port</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Note: These are common terminology mappings only and might not represent every case for this data collector.</p>
+<p>These are common terminology mappings only and might not represent every case for this data collector.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="requirements">Requirements</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The following information is required to configure this data collector:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>The external data services IP address for the cluster</p>
+<p>IP address of the Virtual Center server</p>
 </li>
 <li>
-<p>Administrator user name and password</p>
+<p>Read-only username and password in Virtual Center</p>
 </li>
 <li>
-<p>Port 9440</p>
+<p>We require read only privileges on all objects within Virtual Center.</p>
+</li>
+<li>
+<p>SDK access on the Virtual Center server – normally already setup.</p>
+</li>
+<li>
+<p>3rd party software installed on OnCommand Insight Server / RAU: none</p>
+</li>
+<li>
+<p>Port requirements: http-80 https-443</p>
+</li>
+<li>
+<p>Validate access:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Log into Virtual Center Client using above username and password</p>
+</li>
+<li>
+<p>Verify SDK enabled: telnet &lt;vc_ip&gt; 443</p>
 </li>
 </ul>
 </div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="setup-and-connection">Setup and connection</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique name for the data collector</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Acquisition unit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of acquisition unit</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
@@ -1158,16 +1230,16 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Prism External IP Address</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The external data services IP address for the cluster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HCI Management IP Address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IP address of the HCI Management server</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">User name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">User name for the Admin account</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User name used to access the HCI Management server</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Password</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Password for the Admin account</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Password used to access the HCI Management server</p></td>
 </tr>
 </tbody>
 </table>
@@ -1176,29 +1248,43 @@
 <div class="sect1">
 <h2 id="advanced-configuration">Advanced configuration</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>In the advanced configuration screen, check the <strong>VM Performance</strong> box to collect performance data. Inventory collection is enabled by default.<br>
+The following fields can be configured:</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Field</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TCP port</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TCP Port used to connect to the IBM CS array. The default is 9440.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Field</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inventory poll interval (min)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Interval between inventory polls. The default is 60 minutes.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deafult is 20</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Performance poll interval(sec)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Interval between performance polls. The default is 300 seconds.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter VMs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select CLUSTER, DATACENTER, or ESX HOST</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Choose 'Exclude' or 'Include' to Specify a List</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create a filter list (CLUSTER, DATACENTER, and/or ESX_HOST)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of retries</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default is 3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HCI Management port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default is 443</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Performance poll interval (sec)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default is 300</p></td>
 </tr>
 </tbody>
 </table>
@@ -1208,7 +1294,46 @@
 <h2 id="troubleshooting">Troubleshooting</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Additional information on this Data Collector may be found from the <a href="concept_requesting_support.html">Support</a> page or in the <a href="https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf">Data Collector Support Matrix</a>.</p>
+<p>Some things to try if you encounter problems with this data collector:</p>
+</div>
+<div class="sect3">
+<h4 id="inventory">Inventory</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Problem:</th>
+<th class="tableblock halign-left valign-top">Try this:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: Include list to filter VMs cannot be empty</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If Include List is selected, please list valid DataCenter, Cluster, or Host names to filter VMs</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: Failed to instantiate a connection to VirtualCenter at IP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Possible solutions:<br>
+<br>
+* Verify credentials and IP address entered.<br>
+* Try to communicate with Virtual Center using VMware Infrastructure Client.<br>
+* Try to communicate with Virtual Center using Managed Object Browser (e.g MOB).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error: VirtualCenter at IP has non-conform certificate that JVM requires</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Possible solutions:<br>
+<br>
+* Recommended: Re-generate certificate for Virtual Center by using stronger (e.g. 1024-bit) RSA key.<br>
+* Not Recommended: Modify the JVM java.security configuration to leverage the constraint jdk.certpath.disabledAlgorithms to allow 512-bit RSA key. See JDK 7 update 40 release notes at "http://www.oracle.com/technetwork/java/javase/7u40-relnotes-2004172.html"</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Additional information may be found from the <a href="concept_requesting_support.html">Support</a> page or in the <a href="https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf">Data Collector Support Matrix</a>.</p>
+</div>
 </div>
 </div>
 </div>
