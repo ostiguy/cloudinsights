@@ -1067,7 +1067,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-05-30 14:14:32 +0000">05/30/2019</time>
+<time datetime="2019-06-05 21:00:11 +0000">06/05/2019</time>
 
 
 <span>Contributors
@@ -1186,9 +1186,6 @@ Once you have installed an agent on a server/VM, Cloud Insights collects metrics
 <div class="sect2">
 <h3 id="windows">Windows</h3>
 <div class="paragraph">
-<p>To install the agent on a Windows host, you first install the agent software and then customize the configuration file as needed.</p>
-</div>
-<div class="paragraph">
 <p><span class="image"><img src="./media/AgentInstallWindows.png" alt="Windows Agent Install"></span></p>
 </div>
 <div class="ulist">
@@ -1196,9 +1193,6 @@ Once you have installed an agent on a server/VM, Cloud Insights collects metrics
 <ul>
 <li>
 <p>PowerShell must be installed</p>
-</li>
-<li>
-<p>You must have at least one Agent Access Key configured</p>
 </li>
 </ul>
 </div>
@@ -1212,10 +1206,6 @@ Once you have installed an agent on a server/VM, Cloud Insights collects metrics
 <p>Choose an Agent Access Key.</p>
 </li>
 <li>
-<p>If you have not already installed an agent on this host:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
 <p>Copy the command block from the agent installation dialog. You can click the clipboard icon to quickly copy the command to the clipboard.</p>
 </li>
 <li>
@@ -1227,11 +1217,8 @@ Once you have installed an agent on a server/VM, Cloud Insights collects metrics
 <li>
 <p>The command will download the appropriate agent installer, install it, and set a default configuration. When finished, it will restart the agent service. The command has a unique key and is valid for 24 hours.</p>
 </li>
-</ol>
-</div>
-</li>
 <li>
-<p>In you have already installed an agent on this host, you can skip the previous step.</p>
+<p>If you have already installed an agent on this host, you can skip the previous step.</p>
 </li>
 <li>
 <p>Click <strong>Finish</strong> or <strong>Continue</strong></p>
@@ -1273,7 +1260,6 @@ sc.exe delete telegraf</pre>
 <div class="sect2">
 <h3 id="rhel-and-centos">RHEL and CentOS</h3>
 <div class="paragraph">
-<div class="title">Steps to install agent on RHEL/CentOS:</div>
 <p><span class="image"><img src="./media/AgentInstallRHELCentOS.png" alt="RHEL/CentOS Agent Install"></span></p>
 </div>
 <div class="ulist">
@@ -1282,9 +1268,10 @@ sc.exe delete telegraf</pre>
 <li>
 <p>The following commands must be available: curl, sudo, ping, and dmidecode</p>
 </li>
-<li>
-<p>You must have at least one Agent Access Key configured</p>
+</ul>
+</div>
 <div class="olist arabic">
+<div class="title">Steps to install agent on RHEL/CentOS:</div>
 <ol class="arabic">
 <li>
 <p>If prompted, select RHEL/CentOS from the Platform drop-down.</p>
@@ -1292,10 +1279,6 @@ sc.exe delete telegraf</pre>
 <li>
 <p>Choose an Agent Access Key.</p>
 </li>
-<li>
-<p>If you have not already installed an agent on this host:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>Copy the command block from the agent installation dialog. You can click the clipboard icon to quickly copy the command to the clipboard.</p>
 </li>
@@ -1308,19 +1291,13 @@ sc.exe delete telegraf</pre>
 <li>
 <p>The command will download the appropriate agent installer, install it, and set a default configuration. When finished, it will restart the agent service. The command has a unique key and is valid for 24 hours.</p>
 </li>
-</ol>
-</div>
-</li>
 <li>
-<p>In you have already installed an agent on this host, you can skip the previous step.</p>
+<p>If you have already installed an agent on this host, you can skip the previous step.</p>
 </li>
 <li>
 <p>Click <strong>Finish</strong> or <strong>Continue</strong></p>
 </li>
 </ol>
-</div>
-</li>
-</ul>
 </div>
 <div class="paragraph">
 <p>After the agent is installed, you can use the following commands to start/stop the service:</p>
@@ -1383,7 +1360,6 @@ rm -rf /var/log/telegraf*</pre>
 <div class="sect2">
 <h3 id="ubuntu-and-debian">Ubuntu and Debian</h3>
 <div class="paragraph">
-<div class="title">Steps to install agent on Debian or Ubuntu:</div>
 <p><span class="image"><img src="./media/AgentInstallUbuntuDebian.png" alt="Ubuntu/Debian Agent Install"></span></p>
 </div>
 <div class="ulist">
@@ -1392,9 +1368,10 @@ rm -rf /var/log/telegraf*</pre>
 <li>
 <p>The following commands must be available: curl, sudo, ping, and dmidecode</p>
 </li>
-<li>
-<p>You must have at least one Agent Access Key configured</p>
+</ul>
+</div>
 <div class="olist arabic">
+<div class="title">Steps to install agent on Debian or Ubuntu:</div>
 <ol class="arabic">
 <li>
 <p>If prompted, select Ubuntu/Debian from the Platform drop-down.</p>
@@ -1402,10 +1379,6 @@ rm -rf /var/log/telegraf*</pre>
 <li>
 <p>Choose an Agent Access Key.</p>
 </li>
-<li>
-<p>If you have not already installed an agent on this host:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>Copy the command block from the agent installation dialog. You can click the clipboard icon to quickly copy the command to the clipboard.</p>
 </li>
@@ -1418,19 +1391,13 @@ rm -rf /var/log/telegraf*</pre>
 <li>
 <p>The command will download the appropriate agent installer, install it, and set a default configuration. When finished, it will restart the agent service. The command has a unique key and is valid for 24 hours.</p>
 </li>
-</ol>
-</div>
-</li>
 <li>
-<p>In you have already installed an agent on this host, you can skip the previous step.</p>
+<p>If you have already installed an agent on this host, you can skip the previous step.</p>
 </li>
 <li>
 <p>Click <strong>Finish</strong> or <strong>Continue</strong></p>
 </li>
 </ol>
-</div>
-</li>
-</ul>
 </div>
 <div class="paragraph">
 <p>After the agent is installed, you can use the following commands to start/stop the service:</p>
@@ -1493,7 +1460,6 @@ rm -rf /var/log/telegraf*</pre>
 <div class="sect2">
 <h3 id="macos">macOS</h3>
 <div class="paragraph">
-<div class="title">Steps to install agent on macOS:</div>
 <p><span class="image"><img src="./media/AgentInstallMacOS.png" alt="MacOS Agent Install"></span></p>
 </div>
 <div class="ulist">
@@ -1502,9 +1468,10 @@ rm -rf /var/log/telegraf*</pre>
 <li>
 <p>The "curl" command must be available</p>
 </li>
-<li>
-<p>You must have at least one Agent Access Key configured</p>
+</ul>
+</div>
 <div class="olist arabic">
+<div class="title">Steps to install agent on macOS:</div>
 <ol class="arabic">
 <li>
 <p>If prompted, select macOS from the Platform drop-down.</p>
@@ -1512,10 +1479,6 @@ rm -rf /var/log/telegraf*</pre>
 <li>
 <p>Choose an Agent Access Key.</p>
 </li>
-<li>
-<p>If you have not already installed an agent on this host:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>Copy the command block from the agent installation dialog. You can click the clipboard icon to quickly copy the command to the clipboard.</p>
 </li>
@@ -1528,27 +1491,21 @@ rm -rf /var/log/telegraf*</pre>
 <li>
 <p>The command will download the appropriate agent installer, install it, and set a default configuration. When finished, it will restart the agent service. The command has a unique key and is valid for 24 hours.</p>
 </li>
-</ol>
-</div>
-</li>
 <li>
-<p>In you have already installed an agent on this host, you can skip the previous step.</p>
+<p>If you previously installed a Telegraf agent using Homebrew, you will be prompted to uninstall it. Once the previously installed Telegraf agent is uninstalled, re-run the command in step 5 above.</p>
 </li>
 <li>
 <p>Click <strong>Finish</strong> or <strong>Continue</strong></p>
 </li>
 </ol>
 </div>
-</li>
-</ul>
-</div>
 <div class="paragraph">
 <p>After the agent is installed, you can use the following commands to start/stop the service:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>brew services start telegraf
-brew services stop telegraf</pre>
+<pre>sudo launchctl start telegraf
+sudo launchctl stop telegraf</pre>
 </div>
 </div>
 <div class="sect3">
@@ -1562,16 +1519,24 @@ brew services stop telegraf</pre>
 <p>Stop the Telegraf service using the following command:</p>
 <div class="literalblock">
 <div class="content">
-<pre>brew services stop telegraf</pre>
+<pre>sudo launchctl stop telegraf</pre>
 </div>
 </div>
 </li>
+</ol>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>Remove the Telegraf package:</p>
+<p>Copy the Uninstall command to /tmp and execute it:</p>
 <div class="literalblock">
 <div class="content">
-<pre>brew unpin telegraf
-brew remove telegraf</pre>
+<pre>cp /Applications/telegraf.app/scripts/uninstall /tmp</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sudo /tmp/uninstall</pre>
 </div>
 </div>
 </li>
@@ -1591,7 +1556,6 @@ rm -rf /usr/local/var/log/telegraf.*</pre>
 <div class="sect2">
 <h3 id="kubernetes">Kubernetes</h3>
 <div class="paragraph">
-<div class="title">Steps to install agent on Kubernetes:</div>
 <p><span class="image"><img src="./media/AgentInstallKubernetes.png" alt="Kubernetes Agent Install"></span></p>
 </div>
 <div class="ulist">
@@ -1599,9 +1563,6 @@ rm -rf /usr/local/var/log/telegraf.*</pre>
 <ul>
 <li>
 <p>The following commands must be available: curl and sudo</p>
-</li>
-<li>
-<p>You must have at least one Agent Access Key configured</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1610,10 +1571,6 @@ rm -rf /usr/local/var/log/telegraf.*</pre>
 <li>
 <p>Choose an Agent Access Key.</p>
 </li>
-<li>
-<p>If you have not already installed an agent on this host:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>Copy the command block from the agent installation dialog. You can click the clipboard icon to quickly copy the command to the clipboard.</p>
 </li>
@@ -1626,11 +1583,8 @@ rm -rf /usr/local/var/log/telegraf.*</pre>
 <li>
 <p>The command will download the appropriate agent installer, install it, and set a default configuration. When finished, it will restart the agent service. The command has a unique key and is valid for 24 hours.</p>
 </li>
-</ol>
-</div>
-</li>
 <li>
-<p>In you have already installed an agent on this host, you can skip the previous step.</p>
+<p>If you have already installed an agent on this host, you can skip the previous step.</p>
 </li>
 <li>
 <p>Click <strong>Finish</strong> or <strong>Continue</strong></p>
