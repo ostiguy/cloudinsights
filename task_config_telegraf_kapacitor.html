@@ -1067,7 +1067,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-05-22 15:24:57 +0000">05/22/2019</time>
+<time datetime="2019-05-30 18:06:31 +0000">05/30/2019</time>
 
 
 <span>Contributors
@@ -1077,6 +1077,14 @@
           alt="dgracenetapp"
           width="20" height="20"
           src="https://avatars0.githubusercontent.com/u/38116247?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/netapp-alavoie">
+    <img  class="avatar avatar-small"
+          alt="netapp-alavoie"
+          width="20" height="20"
+          src="https://avatars0.githubusercontent.com/u/39956590?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1099,16 +1107,22 @@
 <li>
 <p>From <strong>Admin &gt; Data Collectors</strong>, click <strong>+Data Collector</strong>. Under <strong>Services</strong>, choose Kapacitor.</p>
 <div class="paragraph">
-<p>If you haven&#8217;t configured an Agent for collection, you are prompted to <a href="task_config_telegraf_agent.html">install an agent</a> in your environment.</p>
-</div>
-<div class="paragraph">
-<p>If you have an agent already configured, select the appropriate Operating System or Platform and click <strong>Continue</strong>.</p>
+<p>Select the Operating System or Platform on which the Telegraf agent is installed.</p>
 </div>
 </li>
 <li>
-<p>Follow the instructions in the Kapacitor Configuration screen to configure the data collector. The instructions vary depending on the type of Operating System or Platform you are using to collect data.</p>
+<p>If you haven&#8217;t already installed an Agent for collection, or you wish to install an Agent for a different Operating System or Platform, click <em>Show Instructions</em> to expand the <a href="task_config_telegraf_agent.html">Agent installation</a> instructions.</p>
+</li>
+<li>
+<p>Select the Agent Access Key for use with this data collector. You can add a new Agent Access Key by clicking the <strong>+ Agent Access Key</strong> button. Best practice: Use a different Agent Access Key only when you want to group data collectors, for example, by OS/Platform.</p>
+</li>
+<li>
+<p>Follow the configuration steps to configure the data collector. The instructions vary depending on the type of Operating System or Platform you are using to collect data.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/KapacitorDCConfigWindows.png" alt="Kapacitor configuration"></span></p>
 </div>
 </div>
 </div>
