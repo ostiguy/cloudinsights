@@ -1067,7 +1067,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-05-07 14:26:52 +0000">05/07/2019</time>
+<time datetime="2019-06-11 18:12:04 +0000">06/11/2019</time>
 
 
 <span>Contributors
@@ -1282,6 +1282,49 @@ Packets Sent</p></td>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Setup and Troubleshooting information can be found on the <a href="task_config_telegraf_agent.html">Configuring an Agent</a> page.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="macos-memory-usage">MacOS Memory Usage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cloud Insights (via Telegraf) and macOS report different numbers for memory usage. Both Telegraf and the Mac activity monitor use metrics gathered from <em>vm_stat</em>, however the total memory usage is calculated differently for each.</p>
+</div>
+<div class="paragraph">
+<p><strong>Telegraf</strong> calculates <em>Memory Used Total</em> as follows:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Memory Used Total = Memory Total - Memory Available Total</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <em>Memory Available Total</em> is derived from the sum of "Pages free" and "Pages inactive" in <em>vm_stat</em>.</p>
+</div>
+<div class="paragraph">
+<p><strong>The Mac activity monitor</strong>, on the other hand, calculates Memory Used as follows:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Memory Used = App Memory + Wired Memory + Compressed</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>App Memory</em> is derived from the difference between “Anonymous pages” and “Pages purgeable” in <em>vm_stat</em>,</p>
+</li>
+<li>
+<p><em>Wired Memory</em> is derived from “Pages wired down” in <em>vm_stat</em>, and</p>
+</li>
+<li>
+<p><em>Compressed</em> is derived from “Pages occupied by compressor” in <em>vm_stat</em>.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
