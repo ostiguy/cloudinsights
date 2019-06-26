@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <title>Pure Storage FlashArray data collector | NetApp Cloud Docs</title>
+  <title>DC/OS Data Collector | NetApp Cloud Docs</title>
   <meta charset="utf-8">
-  <meta property="og:title" content="Pure Storage FlashArray data collector | NetApp Cloud Docs" />
+  <meta property="og:title" content="DC/OS Data Collector | NetApp Cloud Docs" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/cloudinsights/task_dc_pure_flasharray.html" />
-	<meta property="og:description" content="Configuring Pure Storage data collector." />
+	<meta property="og:url" content="https://docs.netapp.com/cloudinsights/task_config_telegraf_dcos.html" />
+	<meta property="og:description" content="dcos configuration" />
   <meta property="og:image" content="https://docs.netapp.com/cloudinsights/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,8 +17,8 @@
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/>
   
-  <meta name="description" content="Configuring Pure Storage data collector.">
-  <meta name="keywords" content=" data collector, Pure Storage, pure">
+  <meta name="description" content="dcos configuration">
+  <meta name="keywords" content=" telegraf, installation, install, dcos">
   
 
   <!-- Icons -->
@@ -642,7 +642,7 @@
   
 
   
-    <li class="active"><a href="task_dc_pure_flasharray.html">Pure</a></li>
+    <li><a href="task_dc_pure_flasharray.html">Pure</a></li>
   
 
   
@@ -1057,11 +1057,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Pure Storage FlashArray data collector
+  <h1 class="n-doc__component-detail-heading">DC/OS Data Collector
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_dc_pure_flasharray.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Pure Storage FlashArray data collector](https://docs.netapp.com/us-en/cloudinsights/task_dc_pure_flasharray.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_config_telegraf_dcos.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[DC/OS Data Collector](https://docs.netapp.com/us-en/cloudinsights/task_config_telegraf_dcos.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -1069,16 +1069,16 @@
 
 <p class="page-details">
 
-<time datetime="2019-04-11 19:58:53 +0000">04/11/2019</time>
+<time datetime="2019-06-26 14:14:07 +0000">06/26/2019</time>
 
 
 <span>Contributors
   
-  <a target="_blank" href="https://github.com/netapp-alavoie">
+  <a target="_blank" href="https://github.com/dgracenetapp">
     <img  class="avatar avatar-small"
-          alt="netapp-alavoie"
+          alt="dgracenetapp"
           width="20" height="20"
-          src="https://avatars0.githubusercontent.com/u/39956590?v=4"
+          src="https://avatars0.githubusercontent.com/u/38116247?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1089,138 +1089,103 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Cloud Insights uses the Pure Storage FlashArray data collector to gather inventory and performance data.</p>
+<p>Cloud Insights uses this data collector to gather metrics from DC/OS.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="terminology">Terminology</h2>
+<h2 id="installation">Installation</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>From <strong>Admin &gt; Data Collectors</strong>, click <strong>+Data Collector</strong>. Under <strong>Services</strong>, choose <strong>DC/OS</strong>.</p>
+<div class="paragraph">
+<p>If you haven&#8217;t configured an Agent for collection, you are prompted to <a href="task_config_telegraf_agent.html">install an agent</a> in your environment.</p>
+</div>
+<div class="paragraph">
+<p>If you have an agent already configured, select the appropriate Operating System or Platform and click <strong>Continue</strong>.</p>
+</div>
+</li>
+<li>
+<p>Follow the instructions in the DC/OS Configuration screen to configure the data collector. The instructions vary depending on the type of Operating System or Platform you are using to collect data.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="setup">Setup</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For each asset type acquired by Cloud Insights, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:</p>
+<p>Setup information can be found in the <a href="https://docs.mesosphere.com">DC/OS documentation</a>.</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Vendor/Model Term</th>
-<th class="tableblock halign-left valign-top">Cloud Insights Term</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Drive (SSD)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Disk</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Array</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Storage</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Controller</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Storage Node</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Volume</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Volume</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">LUN Map</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Volume Map</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Initiator,Target</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Volume Mask</p></td>
-</tr>
-</tbody>
-</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="objects-and-counters">Objects and Counters</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Note: These are common terminology mappings only and might not represent every case for this data collector.</p>
+<p>The following objects and their counters are collected:</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="requirements">Requirements</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Storage system IP address</p>
-</li>
-<li>
-<p>User name and password for the Administrator account of the Pure storage system.</p>
-</li>
-<li>
-<p>Port requirement: HTTP/HTTPS 80/443</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="configuration">Configuration</h2>
-<div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Field</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Object</th>
+<th class="tableblock halign-left valign-top">Identifiers</th>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Datapoints</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FlashArray Host IP Address</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IP address of the storage system</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">User name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">User name with admin privileges</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Password for the admin privileged account</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Password</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="advanced-configuration">Advanced configuration</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Field</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Connection type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Choose HTTP or HTTPS. Also displays the default port.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Override TCP port</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If blank, use the default port in the Connection Type field, otherwise enter the connection port to use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Inventory poll interval (min)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The default is 60 minutes</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Performance Poll Interval (sec)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The default is 300</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dcos_node</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dcos_container<br>
+dcos_app</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cluster<br>
+hostname<br>
+path (filesystem fields only)<br>
+interface (network fields only)<br>
+container_id<br>
+task_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">system_uptime (float)<br>
+cpu_cores (float)<br>
+cpu_total (float)<br>
+cpu_user (float)<br>
+cpu_system (float)<br>
+cpu_idle (float)<br>
+cpu_wait (float)<br>
+load_1min (float)<br>
+load_5min (float)<br>
+load_15min (float)<br>
+filesystem_capacity_total_bytes (int)<br>
+filesystem_capacity_used_bytes (int)<br>
+filesystem_capacity_free_bytes (int)<br>
+filesystem_inode_total (float)<br>
+filesystem_inode_used (float)<br>
+filesystem_inode_free (float)<br>
+memory_total_bytes (int)<br>
+memory_free_bytes (int)<br>
+memory_buffers_bytes (int)<br>
+memory_cached_bytes (int)<br>
+swap_total_bytes (int)<br>
+swap_free_bytes (int)<br>
+swap_used_bytes (int)<br>
+network_in_bytes (int)<br>
+network_out_bytes (int)<br>
+network_in_packets (float)<br>
+network_out_packets (float)<br>
+network_in_dropped (float)<br>
+network_out_dropped (float)<br>
+network_in_errors (float)<br>
+network_out_errors (float)<br>
+process_count (float)</p></td>
 </tr>
 </tbody>
 </table>
@@ -1230,31 +1195,7 @@
 <h2 id="troubleshooting">Troubleshooting</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Some things to try if you encounter problems with this data collector:</p>
-</div>
-<div class="sect3">
-<h4 id="inventory">Inventory</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Problem:</th>
-<th class="tableblock halign-left valign-top">Try this:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Invalid login credentials" with error messages “Policy doesn&#8217;t allow” or “You are not authorized”</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validate Pure user account and password via Pure http interface</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Additional information may be found from the <a href="concept_requesting_support.html">Support</a> page or in the <a href="https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf">Data Collector Support Matrix</a>.</p>
-</div>
+<p>Additional information may be found in the <a href="concept_requesting_support.html">Support</a> page.</p>
 </div>
 </div>
 </div>
