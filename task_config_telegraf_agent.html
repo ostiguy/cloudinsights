@@ -1069,7 +1069,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-06-28 19:42:41 +0000">06/28/2019</time>
+<time datetime="2019-07-01 18:24:42 +0000">07/01/2019</time>
 
 
 <span>Contributors
@@ -1597,7 +1597,7 @@ rm -rf /usr/local/var/log/telegraf.*</pre>
 </ul>
 </div>
 <div class="paragraph">
-<p>After the agent is installed, you can use the following commands:</p>
+<p>After the agent is installed, run the following commands to ensure proper collection of data:</p>
 </div>
 <div class="paragraph">
 <p>Generate the Telegraf DaemonSet YAML:</p>
@@ -1608,12 +1608,12 @@ rm -rf /usr/local/var/log/telegraf.*</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Start/Stop the Telegraf service:</p>
+<p>Stop and Start the Telegraf service:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>kubectl --namespace monitoring apply -f /tmp/telegraf-ds.yaml
-kubectl --namespace monitoring delete ds telegraf-ds</pre>
+<pre>kubectl --namespace monitoring delete ds telegraf-ds
+kubectl --namespace monitoring apply -f /tmp/telegraf-ds.yaml</pre>
 </div>
 </div>
 <div class="sect3">
