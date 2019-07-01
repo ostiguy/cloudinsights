@@ -1069,7 +1069,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-07-01 18:24:42 +0000">07/01/2019</time>
+<time datetime="2019-07-01 19:22:43 +0000">07/01/2019</time>
 
 
 <span>Contributors
@@ -1220,9 +1220,6 @@ Once you have installed an agent on a server/VM, Cloud Insights collects metrics
 <p>The command will download the appropriate agent installer, install it, and set a default configuration. When finished, it will restart the agent service. The command has a unique key and is valid for 24 hours.</p>
 </li>
 <li>
-<p>If you have already installed an agent on this host, you can skip the previous step.</p>
-</li>
-<li>
 <p>Click <strong>Finish</strong> or <strong>Continue</strong></p>
 </li>
 </ol>
@@ -1292,9 +1289,6 @@ sc.exe delete telegraf</pre>
 </li>
 <li>
 <p>The command will download the appropriate agent installer, install it, and set a default configuration. When finished, it will restart the agent service. The command has a unique key and is valid for 24 hours.</p>
-</li>
-<li>
-<p>If you have already installed an agent on this host, you can skip the previous step.</p>
 </li>
 <li>
 <p>Click <strong>Finish</strong> or <strong>Continue</strong></p>
@@ -1392,9 +1386,6 @@ rm -rf /var/log/telegraf*</pre>
 </li>
 <li>
 <p>The command will download the appropriate agent installer, install it, and set a default configuration. When finished, it will restart the agent service. The command has a unique key and is valid for 24 hours.</p>
-</li>
-<li>
-<p>If you have already installed an agent on this host, you can skip the previous step.</p>
 </li>
 <li>
 <p>Click <strong>Finish</strong> or <strong>Continue</strong></p>
@@ -1565,7 +1556,11 @@ rm -rf /usr/local/var/log/telegraf.*</pre>
 <ul>
 <li>
 <p>The following commands must be available: curl and sudo</p>
+</li>
+</ul>
+</div>
 <div class="olist arabic">
+<div class="title">Steps to install agent on Kubernetes:</div>
 <ol class="arabic">
 <li>
 <p>If prompted, select Kubernetes from the Platform drop-down.</p>
@@ -1586,15 +1581,9 @@ rm -rf /usr/local/var/log/telegraf.*</pre>
 <p>The command will download the appropriate agent installer, install it, and set a default configuration. When finished, it will restart the agent service. The command has a unique key and is valid for 24 hours.</p>
 </li>
 <li>
-<p>If you have already installed an agent on this host, you can skip the previous step.</p>
-</li>
-<li>
 <p>Click <strong>Finish</strong> or <strong>Continue</strong></p>
 </li>
 </ol>
-</div>
-</li>
-</ul>
 </div>
 <div class="paragraph">
 <p>After the agent is installed, run the following commands to ensure proper collection of data:</p>
