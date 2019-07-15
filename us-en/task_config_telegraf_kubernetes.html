@@ -1069,7 +1069,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-07-01 18:23:52 +0000">07/01/2019</time>
+<time datetime="2019-07-11 20:54:53 +0000">07/11/2019</time>
 
 
 <span>Contributors
@@ -1133,7 +1133,7 @@ It is strongly recommended to deploy the Telegraf agent as a DaemonSet within th
 </ol>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="./media/KubernetesDCConfigKube.png" alt="Kubernetes configuration"></span></p>
+<p><span class="image"><img src="./media/kubernetesdatacollectorConfig.png" alt="Kubernetes Configuration"></span></p>
 </div>
 </div>
 </div>
@@ -1282,31 +1282,42 @@ It is strongly recommended to deploy the Telegraf agent as a DaemonSet within th
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">K8s Container</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kubernetes Container</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Namespace<br>
 Pod<br>
 Container<br>
 Cluster</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">K8s Node</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kubernetes Node<br>
+Node Name<br>
+Node OS<br>
+Node UUID<br>
+Node IP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CPU Nanoseconds<br>
+CPU Usage Nanocores<br>
 Memory Major Page Faults<br>
 Memory Resident Set Size (RSS)<br>
 Memory Working Set<br>
+Memory Page Faults<br>
+Memory Usage<br>
 Root Filesystem Available<br>
 Root Filesystem Capacity<br>
 Root Filesystem Used</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">K8s Node</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">K8s Node<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kubernetes Node</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kubernetes Node<br>
 Cluster</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CPU Used Nanocores<br>
-CPU Used Nanoseconds<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node Name<br>
+Node OS<br>
+Node UUID<br>
+Node IP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CPU Usage Nanocores<br>
+CPU Usage Nanoseconds<br>
 Filesystem Available<br>
 Filesystem Total<br>
 Filesystem Used<br>
 Memory Available<br>
+Memory Usage<br>
 Memory Major Page Faults<br>
 Memory Page Faults<br>
 Memory Resident Set Size (RSS)<br>
@@ -1315,24 +1326,91 @@ Network RX Errors (per sec)<br>
 Network RX Bytes (per sec)<br>
 Network TX Errors (per sec)<br>
 Network TX Bytes (per sec)<br>
-Image Filesystem Available<br>
-Image Filesystem Used</p></td>
+Runtime Image Filesystem Available<br>
+Runtime Image Filesystem Used<br>
+Runtime Image Filesystem Capacity</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">K8s Pod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kubernetes Pod</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Namespace<br>
 Pod<br>
 Cluster</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">K8s Node<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kubernetes Node<br>
 Node Name<br>
-Node IP</p></td>
+Node IP<br>
+Node OS<br>
+Node UUID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Network TX Bytes (per sec)<br>
 Network TX Errors (per sec)<br>
 Network RX Bytes (per sec)<br>
 Network RX Errors (per sec)</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kubernetes Pod Volume</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume<br>
+Pod<br>
+Cluster<br>
+Namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kubernetes Node<br>
+Node Name<br>
+Node UUID<br>
+Node IP<br>
+Node OS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Available<br>
+Capacity<br>
+Used</p></td>
+</tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing-the-kube-state-metrics-server">Installing the kube-state-metrics server</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When you install the kube-state-metrics server you can enable colletction of the following Kubernetes objects: StatefulSet, DaemonSet, Deployment, PV, PVC, ReplicaSet, Service, Namespace, Secret, ConfigMap, Pod Volume, and Ingress.</p>
+</div>
+<div class="paragraph">
+<p>Use the following steps to install the kube-state-metrics server:</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Create a temporary folder (for example, <em>/tmp/kube-state-yaml-files/</em>) and copy the .yaml files from <a href="https://github.com/kubernetes/kube-state-metrics/tree/master/kubernetes" class="bare">https://github.com/kubernetes/kube-state-metrics/tree/master/kubernetes</a> to this folder.</p>
+</li>
+<li>
+<p>Run the following command to apply the .yaml files needed for installing kube-state-metrics:</p>
+<div class="literalblock">
+<div class="content">
+<pre>kubectl apply -f /tmp/kube-state-yaml-files/</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="kube-state-metrics-counters">kube-state-metrics Counters</h3>
+<div class="paragraph">
+<p>Use the following links to access information for the kube state metrics counters:<br>
+. <a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/cronjob-metrics.md">cronjob Metrics</a><br>
+. <a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/daemonset-metrics.md">DaemonSet Metrics</a><br>
+. <a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/deployment-metrics.md">Deployment Metrics</a><br>
+. <a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/endpoint-metrics.md">Endpoint Metrics</a><br>
+. <a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/horizontalpodautoscaler-metrics.md">Horizontal Pod Autoscaler Metrics</a><br>
+. <a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/ingress-metrics.md">Ingress Metrics</a><br>
+. <a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/ingress-metrics.md">Job Metrics</a><br>
+. <a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/limitrange-metrics.md">LimitRange Metrics</a><br>
+. <a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/namespace-metrics.md">Namespace Metrics</a><br>
+. <a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/node-metrics.md">Node Metrics</a><br>
+. <a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/persistentvolume-metrics.md">Persistent Volume Metrics</a><br>
+. <a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/persistentvolumeclaim-metrics.md">Persistant Volume Claim Metrics</a><br>
+. <a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/pod-metrics.md">Pod Metrics</a><br>
+. <a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/poddisruptionbudget-metrics.md">Pod Disruption Budget Metrics</a><br>
+. <a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/replicaset-metrics.md">ReplicaSet metrics</a><br>
+. <a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/replicationcontroller-metrics.md">ReplicationController Metrics</a></p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
