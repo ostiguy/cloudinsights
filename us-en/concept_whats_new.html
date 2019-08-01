@@ -1069,7 +1069,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-07-09 19:12:07 +0000">07/09/2019</time>
+<time datetime="2019-07-31 18:37:32 +0000">07/31/2019</time>
 
 
 <span>Contributors
@@ -1105,6 +1105,25 @@
 </div>
 <div class="sect2">
 <h3 id="july-2019"><strong>July 2019</strong></h3>
+<div class="sect3">
+<h4 id="dashboard-improvements">Dashboard Improvements</h4>
+<div class="paragraph">
+<p>Dashboards and Widgets have been improved with the following changes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In addition to Sum, Min, Max, and Avg, <strong>Count</strong> is now an option for roll up in Single-Value widgets. When rolling up by “Count”, Cloud Insights checks if an object is active or not, and only adds the active ones to the count. The resulting number is subject to aggregation and filters.</p>
+</li>
+<li>
+<p>In the Single-Value widget, you now have a choice to display the resulting number with 0, 1, 2, 3, or 4 decimal places.</p>
+</li>
+<li>
+<p><strong>Transform</strong> option is available for Services integration data now in all time-series widgets for all metrics. For any services integration (telegraf) counter or metric in time-series widgets (Line, Spline, Area, Stacked Area), you are given a choice of how you want to <a href="telegraf-data-display-options">Transform</a> the values: None (display value as-is), Sum, Delta, Cumulative, etc.</p>
+</li>
+</ul>
+</div>
+</div>
 <div class="sect3">
 <h4 id="collecting-kube-state-metrics">Collecting Kube-State-Metrics</h4>
 <div class="paragraph">

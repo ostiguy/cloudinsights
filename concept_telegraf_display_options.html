@@ -1069,7 +1069,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-05-07 14:27:59 +0000">05/07/2019</time>
+<time datetime="2019-07-31 18:37:02 +0000">07/31/2019</time>
 
 
 <span>Contributors
@@ -1117,25 +1117,20 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>All metrics gathered by Telegraf data collectors can be used in dashboard widgets. In the case of "Guess" metrics, you are given a choice of how to display the values for each metric you include (As-Is, Sum, Delta, etc.). These <a href="telegraf-data-display-options">display options</a> are explained below.</p>
+<p>All metrics gathered by Telegraf data collectors can be used in dashboard widgets. In Time-Series widgets (Line, Spline, Area, Stacked Area), you are given a choice of how you want to <strong>Transform</strong> the values: None, Sum, Delta, etc.. These <a href="telegraf-data-display-options">display options</a> are explained below.</p>
 </div>
 <div class="paragraph">
-<p>Widget example with <em>Stable</em> metrics:<br>
-<span class="image"><img src="./media/ElasticNodeWidgetExample.png" alt="Stable Metrics Example"></span></p>
-</div>
-<div class="paragraph">
-<p>Widget example with <em>Guess</em> metrics:<br>
-<span class="image"><img src="./media/NetstatGuessWidgetExample.png" alt="Guess Metrics Example"></span></p>
+<p><span class="image"><img src="./media/TransformOptions.png" alt="Transform Options"></span></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="telegraf-data-display-options">Telegraf Data Display Options</h3>
 <div class="paragraph">
-<p>Cloud Insights provides different display options for <em>Guess</em> metrics collected using Telegraf. When adding these metrics to a widget, you are presented with a drop-down giving the data display choices:</p>
+<p>Cloud Insights provides different transform options for metrics collected using Telegraf. When adding these metrics to a widget, you are presented with a drop-down giving the transform choices:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">As Is</dt>
+<dt class="hdlist1">None</dt>
 <dd>
 <p>Data is displayed as is, with no manipulation.</p>
 </dd>
