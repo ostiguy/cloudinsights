@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <title>Troubleshooting Acquisition Unit Problems on Linux | NetApp Cloud Docs</title>
+  <title>HPE Nimble data collector | NetApp Cloud Docs</title>
   <meta charset="utf-8">
-  <meta property="og:title" content="Troubleshooting Acquisition Unit Problems on Linux | NetApp Cloud Docs" />
+  <meta property="og:title" content="HPE Nimble data collector | NetApp Cloud Docs" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/cloudinsights/task_troubleshooting_linux_acquisition_unit_problems.html" />
-	<meta property="og:description" content="Troubleshooting tips for Acquisition Unit problems." />
-  <meta property="og:image" content="https://docs.netapp.com/cloudinsights/images/logo-tophat-social.png" />
+	<meta property="og:url" content="https://docs.netapp.com/cloudinsights/us-en/task_dc_hpe_nimble.html" />
+	<meta property="og:description" content="Configuring HPE Nimble data collector." />
+  <meta property="og:image" content="https://docs.netapp.com/cloudinsights/us-en/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no">
@@ -17,16 +17,16 @@
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/>
   
-  <meta name="description" content="Troubleshooting tips for Acquisition Unit problems.">
-  <meta name="keywords" content=" AU, acquisition unit, trioubleshooting">
+  <meta name="description" content="Configuring HPE Nimble data collector.">
+  <meta name="keywords" content=" data collector, HP Nimble, HP, HPE">
   
 
   <!-- Icons -->
-  <link rel="icon" href="/cloudinsights/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/cloudinsights/us-en/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed -->
   
-  <link rel="alternate" type="application/rss+xml" title="NetApp Cloud Docs" href="/cloudinsights/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="NetApp Cloud Docs" href="/cloudinsights/us-en/feed.xml">
   
 
   <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -35,23 +35,23 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
 
   <!-- LUCI CSS Content -->
-  <link rel="stylesheet" href="/cloudinsights/common/css/esb.min.css">
-  <link rel="stylesheet" href="/cloudinsights/common/css/netapp-library.min.css">
-  <link rel="stylesheet" href="/cloudinsights/common/css/doc.css">
-  <link rel="stylesheet" href="/cloudinsights/common/css/doc-components.css">
+  <link rel="stylesheet" href="/cloudinsights/us-en/common/css/esb.min.css">
+  <link rel="stylesheet" href="/cloudinsights/us-en/common/css/netapp-library.min.css">
+  <link rel="stylesheet" href="/cloudinsights/us-en/common/css/doc.css">
+  <link rel="stylesheet" href="/cloudinsights/us-en/common/css/doc-components.css">
 
-  <link rel="stylesheet" href='/cloudinsights/css/na-sidebar.css' type='text/css'>
-  <link rel='stylesheet' href='/cloudinsights/css/na-search.css' type='text/css'>
-  <link rel='stylesheet' href='/cloudinsights/css/clouddocs.css' type='text/css'>
+  <link rel="stylesheet" href='/cloudinsights/us-en/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/cloudinsights/us-en/css/na-search.css' type='text/css'>
+  <link rel='stylesheet' href='/cloudinsights/us-en/css/clouddocs.css' type='text/css'>
 
   <!-- Font awesome seems to affect our GitHub Icon and generic "arrow box" for external links. -->
-  <link rel="stylesheet" type="text/css" href="/cloudinsights/css/font-awesome.min.css">
-  <!-- <link rel="stylesheet" href="/cloudinsights/css/customstyles.css"> -->
+  <link rel="stylesheet" type="text/css" href="/cloudinsights/us-en/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="/cloudinsights/us-en/css/customstyles.css"> -->
   <!-- Controls the shadow effect for search dropdown menu -->
-  <link rel="stylesheet" href="/cloudinsights/css/boxshadowproperties.css">
+  <link rel="stylesheet" href="/cloudinsights/us-en/css/boxshadowproperties.css">
 
   <!-- NetApp CSS controls the technical content -->
-  <link rel='stylesheet' href='/cloudinsights/css/netapp.css' type='text/css'>
+  <link rel='stylesheet' href='/cloudinsights/us-en/css/netapp.css' type='text/css'>
 
   
 
@@ -60,23 +60,23 @@
   <!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
   
-    <script src='/cloudinsights/js/na-search.js'></script>
+    <script src='/cloudinsights/us-en/js/na-search.js'></script>
   
 
   
-  <link rel='stylesheet' href='/cloudinsights/css/na-pagenav.css' type='text/css' id="pagenav-css">
-  <script src='/cloudinsights/js/na-pagenav.js'></script>
+  <link rel='stylesheet' href='/cloudinsights/us-en/css/na-pagenav.css' type='text/css' id="pagenav-css">
+  <script src='/cloudinsights/us-en/js/na-pagenav.js'></script>
   
 
-  <link rel='stylesheet' href='/cloudinsights/css/prism.css' type='text/css'>
-  <link rel='stylesheet' href='/cloudinsights/css/prism-netapp.css' type='text/css'>
+  <link rel='stylesheet' href='/cloudinsights/us-en/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/cloudinsights/us-en/css/prism-netapp.css' type='text/css'>
 
-  <script src='/cloudinsights/js/clouddocs.js'></script>
-  <script src='/cloudinsights/js/s_code_impl.js'></script>
-  <script src='/cloudinsights/js/jquery.navgoco.min.js'></script>
+  <script src='/cloudinsights/us-en/js/clouddocs.js'></script>
+  <script src='/cloudinsights/us-en/js/s_code_impl.js'></script>
+  <script src='/cloudinsights/us-en/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script src='/cloudinsights/js/toc.js'></script>
-  <script src='/cloudinsights/js/customscripts.js'></script>
+  <script src='/cloudinsights/us-en/js/toc.js'></script>
+  <script src='/cloudinsights/us-en/js/customscripts.js'></script>
 
   <script>
       $(document).ready(function() {
@@ -193,7 +193,7 @@
       <div class="n-property-bar__menu-toggle">
         <a href="#" class="n-property-bar__menu-toggle-link"><span class="n-property-bar__menu-toggle-text">Menu</span><svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
           <title>bars</title>
-          <use xlink:href="/cloudinsights/common/svg/sprite.svg#bars"></use>
+          <use xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#bars"></use>
         </svg></a>
       </div>
       <div class="n-property-bar__property-mark n-property-bar__property-mark--has-property-name">
@@ -201,11 +201,11 @@
           <div class="n-property-bar__logo">
             <svg class="n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
               <title>netapp-mark</title>
-              <use xlink:href="/cloudinsights/common/svg/sprite.svg#netapp-mark"></use>
+              <use xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#netapp-mark"></use>
             </svg>
             <svg class="n-property-bar__logo-svg" aria-labelledby="title">
               <title>NetApp</title>
-              <use xlink:href="/cloudinsights/common/svg/sprite.svg#netapp-logo"></use>
+              <use xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#netapp-logo"></use>
             </svg>
           </div>
           <h2 class="n-property-bar__property-name">Cloud Docs</h2>
@@ -225,7 +225,7 @@
               <span class="ie-i18n-lang">English</span>
               <svg class="ie-i18n-icon-container" class="n-property-bar__logo-svg" aria-labelledby="title">
                 <title>globe</title>
-                <use xlink:href="/cloudinsights/common/svg/sprite.svg#globe" class="n-icon-globe n-globe__icon"></use>
+                <use xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#globe" class="n-icon-globe n-globe__icon"></use>
               </svg>
             </a>
           </li>
@@ -1002,7 +1002,7 @@
   
 
   
-    <li class="active"><a href="task_troubleshooting_linux_acquisition_unit_problems.html">Troubleshooting Linux Acquisition Unit Problems</a></li>
+    <li><a href="task_troubleshooting_linux_acquisition_unit_problems.html">Troubleshooting Linux Acquisition Unit Problems</a></li>
   
 
   
@@ -1057,11 +1057,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Troubleshooting Acquisition Unit Problems on Linux
+  <h1 class="n-doc__component-detail-heading">HPE Nimble data collector
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_troubleshooting_linux_acquisition_unit_problems.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Troubleshooting Acquisition Unit Problems on Linux](https://docs.netapp.com/us-en/cloudinsights/task_troubleshooting_linux_acquisition_unit_problems.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_dc_hpe_nimble.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[HPE Nimble data collector](https://docs.netapp.com/us-en/cloudinsights/task_dc_hpe_nimble.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -1069,7 +1069,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-05-07 15:37:51 +0000">05/07/2019</time>
+<time datetime="2019-07-26 15:35:13 +0000">07/26/2019</time>
 
 
 <span>Contributors
@@ -1082,21 +1082,128 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" href="https://github.com/dgracenetapp">
-    <img  class="avatar avatar-small"
-          alt="dgracenetapp"
-          width="20" height="20"
-          src="https://avatars0.githubusercontent.com/u/38116247?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
 </span>
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
-<p>Here you will find suggestions for troubleshooting problems with Acquisition Units on a Linux server.</p>
+<p>The HPE Nimble data collector supports inventory and performance data for HPE Nimble storage arrays.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="terminology">Terminology</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cloud Insights acquires the following inventory information from the HPE Nimble data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Vendor/Model Term</th>
+<th class="tableblock halign-left valign-top">Cloud Insights Term</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Array</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disk</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage Pool</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Initiator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage Host Alias</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Controller</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage Node</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fibre Channel Interface</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Controller</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Note: These are common terminology mappings only and might not represent every case for this data collector.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="requirements">Requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You must have the following in order to collect data from the Nimble storage array:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The array must be installed and configured, and reachable from the client through its fully qualified domain name (FQDN) or array management IP address.</p>
+</li>
+<li>
+<p>The array must be running NimbleOS 2.3.x or later.</p>
+</li>
+<li>
+<p>You must have a valid user name and password to the array.</p>
+</li>
+<li>
+<p>Port 5392 must be open on the array.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuration">Configuration</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Array Management IP Address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fully qualified domain name (FQDN) or array management IP address.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User name for the Nimble array</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Password for the Nimble array</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="advanced-configuration">Advanced configuration</h2>
+<div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -1104,52 +1211,24 @@
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Problem:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Try this:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Field</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AU status on the <strong>Admin &gt; Data Collectors</strong> page in the <strong>Acquisition Units</strong> tab displays "Certificate Expired” or “Certificate Revoked” .</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Click on the menu to the right of the AU and select <strong>Restore Connection</strong>. Follow the instructions to restore your Acquisition Unit:<br>
-1. Issue the given command on the AU server/VM to stop the Acquisition Unit service. You can click the clipboard icon in the command window to quickly copy the command to the clipboard.<br>
-2. Copy the displayed token and paste it into a new file named "token".<br>
-3. Place this file in the /var/lib/netapp/cloudinsights/acq/conf/ folder.<br>
-4. Use the given command to start the Acquisition Unit service.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Port used by Nimble REST API. The default is 5392.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Installation fails on SELinux</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">When the AU is installed on SELinux, SE should be either disabled or set to permissive mode. Once the installation is complete, enforcing mode can be enabled.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Server Requirements not met</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ensure that your Acquisition Unit server or VM meets minimum <a href="concept_acquisition_unit_requirements.html">requirements</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Network Requirements not met</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ensure that your Acquisition Unit server/VM can access your Cloud Insights environment (&lt;environment-name&gt;.c01.cloudinsights.netapp.com) through SSL connection over port 443</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Proxy Server not configured properly</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Follow the <a href="task_configure_acquisition_unit.html#Setting_proxy_environment_variables">instructions</a> under “Have a Proxy Server?” in the Add an Acquisition Unit box.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Linux: missing library / file not found</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ensure that your Linux Acquisition Unit server/VM has all necessary libraries. For example, you must have the <em>unzip</em> library installed on the server. To install the <em>unzip</em> library, run the command <em>*sudo yum install unzip*</em> before running the Acquisition Unit install script</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Permission issues</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Be sure you are logged in as a user with <em>sudo</em> permissions</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Acquisition Not Running:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Gather the acq.log from /opt/netapp/cloudinsights/acq/logs (Linux)<br>
-Restart the Acquisition Service: sudo cloudinsights-service.sh restart acquisition</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Data Collection Issues:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get an Error Report from the Data Collector landing page, go to the drop down next to the “Edit” icon and select “Error Report”</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inventory Poll Interval (min)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interval between inventory polls. The default is 60 minutes.</p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>Note: The default performance poll interval is 300 seconds and can not be changed. This is the only interval supported by Nimble.</p>
+</div>
+</div>
+</div>
 
         </article>
         <!-- Page Container -->
@@ -1189,7 +1268,7 @@ Restart the Acquisition Service: sudo cloudinsights-service.sh restart acquisiti
                       <span class="n-footer__social-link-text">blog</span>
                       <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
                         <title>blog@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/common/svg/sprite.svg#blog"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#blog"></use>
                       </svg>
                     </a>
                   </li>
@@ -1198,7 +1277,7 @@ Restart the Acquisition Service: sudo cloudinsights-service.sh restart acquisiti
                       <span class="n-footer__social-link-text">community</span>
                       <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
                         <title>community@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/common/svg/sprite.svg#comments"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#comments"></use>
                       </svg>
                     </a>
                   </li>
@@ -1208,7 +1287,7 @@ Restart the Acquisition Service: sudo cloudinsights-service.sh restart acquisiti
                       <span class="n-footer__social-link-text">twitter</span>
                       <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
                         <title>twitter@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/common/svg/sprite.svg#twitter"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#twitter"></use>
                       </svg>
                     </a>
                   </li>
@@ -1217,7 +1296,7 @@ Restart the Acquisition Service: sudo cloudinsights-service.sh restart acquisiti
                       <span class="n-footer__social-link-text">youtube</span>
                       <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
                         <title>youtube@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/common/svg/sprite.svg#youtube"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#youtube"></use>
                       </svg>
                     </a>
                   </li>
@@ -1238,15 +1317,15 @@ Restart the Acquisition Service: sudo cloudinsights-service.sh restart acquisiti
 
     </div>
 
-    <script src="/cloudinsights/common/js/components.js"></script>
-    <script src="/cloudinsights/common/js/doc-components.js"></script>
+    <script src="/cloudinsights/us-en/common/js/components.js"></script>
+    <script src="/cloudinsights/us-en/common/js/doc-components.js"></script>
 
     <!-- Elasticsearch JS -->
-    <script type="text/javascript" src='/cloudinsights/js/bundle.js'></script>
+    <script type="text/javascript" src='/cloudinsights/us-en/js/bundle.js'></script>
 
     <!-- Syntax Highlighting -->
-    <script type="text/javascript" src='/cloudinsights/js/prism.js'></script>
-    <script type="text/javascript" src='/cloudinsights/js/prism-curl.js'></script>
+    <script type="text/javascript" src='/cloudinsights/us-en/js/prism.js'></script>
+    <script type="text/javascript" src='/cloudinsights/us-en/js/prism-curl.js'></script>
 
   </body>
 
