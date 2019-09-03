@@ -1073,7 +1073,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-08-27 21:03:50 +0000">08/27/2019</time>
+<time datetime="2019-09-03 14:05:45 +0000">09/03/2019</time>
 
 
 <span>Contributors
@@ -1669,7 +1669,88 @@ kubectl --namespace monitoring apply -f /tmp/telegraf-ds.yaml</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="uninstalling-the-agent-5">Uninstalling the Agent</h4>
+<h4 id="installing-the-kube-state-metrics-server">Installing the kube-state-metrics server</h4>
+<div class="paragraph">
+<p>When you install the kube-state-metrics server you can enable colletction of the following Kubernetes objects: StatefulSet, DaemonSet, Deployment, PV, PVC, ReplicaSet, Service, Namespace, Secret, ConfigMap, Pod Volume, and Ingress.</p>
+</div>
+<div class="paragraph">
+<p>Use the following steps to install the kube-state-metrics server:</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Create a temporary folder (for example, <em>/tmp/kube-state-yaml-files/</em>) and copy the .yaml files from <a href="https://github.com/kubernetes/kube-state-metrics/tree/master/kubernetes" class="bare">https://github.com/kubernetes/kube-state-metrics/tree/master/kubernetes</a> to this folder.</p>
+</li>
+<li>
+<p>Run the following command to apply the .yaml files needed for installing kube-state-metrics:</p>
+<div class="literalblock">
+<div class="content">
+<pre>kubectl apply -f /tmp/kube-state-yaml-files/</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="kube-state-metrics-counters">kube-state-metrics Counters</h4>
+<div class="paragraph">
+<p>Use the following links to access information for the kube state metrics counters:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/cronjob-metrics.md">Cronjob Metrics</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/daemonset-metrics.md">DaemonSet Metrics</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/deployment-metrics.md">Deployment Metrics</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/endpoint-metrics.md">Endpoint Metrics</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/horizontalpodautoscaler-metrics.md">Horizontal Pod Autoscaler Metrics</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/ingress-metrics.md">Ingress Metrics</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/ingress-metrics.md">Job Metrics</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/limitrange-metrics.md">LimitRange Metrics</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/namespace-metrics.md">Namespace Metrics</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/node-metrics.md">Node Metrics</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/persistentvolume-metrics.md">Persistent Volume Metrics</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/persistentvolumeclaim-metrics.md">Persistant Volume Claim Metrics</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/pod-metrics.md">Pod Metrics</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/poddisruptionbudget-metrics.md">Pod Disruption Budget Metrics</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/replicaset-metrics.md">ReplicaSet metrics</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/replicationcontroller-metrics.md">ReplicationController Metrics</a><br>
+==== Uninstalling the Agent</p>
+</li>
+</ol>
+</div>
 <div class="paragraph">
 <p>To uninstall the agent on Kubernetes, do the following:</p>
 </div>
