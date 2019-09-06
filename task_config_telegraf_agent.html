@@ -1073,7 +1073,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-09-03 14:38:09 +0000">09/03/2019</time>
+<time datetime="2019-09-06 17:20:02 +0000">09/06/2019</time>
 
 
 <span>Contributors
@@ -1590,11 +1590,16 @@ rm -rf /usr/local/var/log/telegraf.*</pre>
 </ol>
 </div>
 <div class="paragraph">
-<p>After the agent is installed, generate the Telegraf DaemonSet YAML:</p>
+<p>After the agent is installed, generate the Telegraf DaemonSet YAML and ReplicaSet YAML:</p>
 </div>
 <div class="literalblock">
 <div class="content">
 <pre>kubectl --namespace monitoring get ds telegraf-ds -o yaml &gt; /tmp/telegraf-ds.yaml</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>kubectl --namespace monitoring get rs telegraf-rs -o yaml &gt; /tmp/telegraf-rs.yaml</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1603,13 +1608,19 @@ rm -rf /usr/local/var/log/telegraf.*</pre>
 <div class="literalblock">
 <div class="content">
 <pre>kubectl --namespace monitoring delete ds telegraf-ds
-kubectl --namespace monitoring apply -f /tmp/telegraf-ds.yaml</pre>
+kubectl --namespace monitoring delete ds telegraf-rs</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>kubectl --namespace monitoring apply -f /tmp/telegraf-ds.yaml
+kubectl --namespace monitoring apply -f /tmp/telegraf-rs.yaml</pre>
 </div>
 </div>
 <div class="sect3">
 <h4 id="configuring-the-agent-to-collect-data-from-kubernetes">Configuring the Agent to Collect Data from Kubernetes</h4>
 <div class="paragraph">
-<p>For Kubernetes environments, Cloud Insights deploys the Telegraf agent as a DaemonSet. The pods in which the agents run need to have access to the following:</p>
+<p>For Kubernetes environments, Cloud Insights deploys the Telegraf agent as a DaemonSet and a ReplicaSet. The pods in which the agents run need to have access to the following:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1772,7 +1783,8 @@ kubectl --namespace monitoring apply -f /tmp/telegraf-ds.yaml</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>kubectl --namespace monitoring delete ds telegraf-ds</pre>
+<pre>kubectl --namespace monitoring delete ds telegraf-ds
+kubectl --namespace monitoring delete rs telegraf-rs</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1781,6 +1793,7 @@ kubectl --namespace monitoring apply -f /tmp/telegraf-ds.yaml</pre>
 <div class="literalblock">
 <div class="content">
 <pre>kubectl --namespace monitoring delete cm telegraf-conf
+kubectl --namespace monitoring delete cm telegraf-conf-rs
 kubectl --namespace monitoring delete sa telegraf-user</pre>
 </div>
 </div>
