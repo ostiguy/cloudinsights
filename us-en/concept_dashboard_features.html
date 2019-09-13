@@ -1077,7 +1077,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-08-27 13:32:09 +0000">08/27/2019</time>
+<time datetime="2019-09-05 18:30:20 +0000">09/05/2019</time>
 
 
 <span>Contributors
@@ -1113,6 +1113,8 @@
 <li><a href="#primary-and-secondary-axis">Primary and Secondary Axis</a></li>
 <li><a href="#expressions-in-widgets">Expressions in widgets</a></li>
 <li><a href="#variables">Variables</a></li>
+<li><a href="#formatting-gauge-widgets">Formatting Gauge Widgets</a></li>
+<li><a href="#formatting-single-value-widget">Formatting Single-Value Widget</a></li>
 </ul>
 </div>
 </div>
@@ -1952,6 +1954,51 @@ To use the "$this" variables in widgets on your asset&#8217;s landing page, foll
 <div class="paragraph">
 <p>You can also apply <a href="concept_in_context_filters.html"><strong>in-context filters</strong></a> to asset page widgets to accomplish a similar result.</p>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="formatting-gauge-widgets">Formatting Gauge Widgets</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Solid and Bullet Gauge widgets allow you to set thresholds for <em>Warning</em> and/or <em>Critical</em> levels, providing clear representation of the data you specify.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/Gauge%20Widget%20Formatting.png" alt="Format settings for Gauge Widget"></span></p>
+</div>
+<div class="paragraph">
+<p>To set formatting for these widgets, follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Choose  whether you want to highlight values greater than (&gt;) or less than (&lt;) your thresholds. In this example, we will highlight values greater than (&gt;) the threshold levels.</p>
+</li>
+<li>
+<p>Choose a value for the "Warning" threshold. When the widget displays values greater than this level, it displays the gauge in orange.</p>
+</li>
+<li>
+<p>Choose a value for the "Critical" threshold. Values greater than this level will cause the gauge to display in red.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You can optionally choose a minimum and maximum value for the gauge. Values below minimum will not display the gauge. Values above maximum will display a full gauge. If you do not choose minimum or maximum values, the widget selects optimal min and max based on the widget&#8217;s value.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/Gauge-Solid.png" alt="Solid/Traditional Gauge" width="374"></span><br>
+<span class="image"><img src="./media/Gauge-Bullet.png" alt="Bullet Gauge" width="374"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="formatting-single-value-widget">Formatting Single-Value Widget</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>in the Single-Value widget, in addition to setting Warning (orange) and Critical (red) thresholds, you can choose to have "In Range" values (those below Warning level) shown with either green or white background.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/Single-Value%20Widgets.png" alt="Single-Value Widget with and without Formatting"></span></p>
 </div>
 </div>
 </div>
