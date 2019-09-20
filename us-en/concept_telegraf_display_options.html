@@ -1077,7 +1077,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-07-31 18:37:02 +0000">07/31/2019</time>
+<time datetime="2019-09-20 18:50:43 +0000">09/20/2019</time>
 
 
 <span>Contributors
@@ -1102,37 +1102,9 @@
 
 </p>
 
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph lead">
 <p>The Cloud Insights Telegraf data collectors are powerful tools for gathering source-reported metrics from your data sources.</p>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="categorizing-telegraf-data">Categorizing Telegraf Data</h3>
-<div class="paragraph">
-<p>Because of the varied nature of the ingested data, Cloud Insights makes its best attempt to categorize the data in meaningful ways. To do this, it examines the meta-data (data about the data) that is gathers.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>For meta-data that it knows, Cloud Insights attaches a meaningful name and categorizes the metric or counter as "Stable". Stable metrics will have names that use "Title Case", with individual words separated by space ( ), such as <em>IOs In Progress</em>.</p>
-</li>
-<li>
-<p>For data that it might know but isn&#8217;t 100% certain, it keeps the source-determined name and assigns it to the "Guess" category. Guess metrics will appear with lower-case names, with individual words separated by an underscore (<em>_</em>), such as <em>virtual_machine_io</em>. "Guess" data cannot be used in filters or grouping.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>All metrics gathered by Telegraf data collectors can be used in dashboard widgets. In Time-Series widgets (Line, Spline, Area, Stacked Area), you are given a choice of how you want to <strong>Transform</strong> the values: None, Sum, Delta, etc.. These <a href="telegraf-data-display-options">display options</a> are explained below.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="./media/TransformOptions.png" alt="Transform Options"></span></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="telegraf-data-display-options">Telegraf Data Display Options</h3>
 <div class="paragraph">
 <p>Cloud Insights provides different transform options for metrics collected using Telegraf. When adding these metrics to a widget, you are presented with a drop-down giving the transform choices:</p>
 </div>
@@ -1163,7 +1135,6 @@
 <p>Cumulative value divided by the time range since the previous observation.</p>
 </dd>
 </dl>
-</div>
 </div>
 
         </article>
