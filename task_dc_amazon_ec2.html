@@ -1078,7 +1078,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-09-03 15:50:21 +0000">09/03/2019</time>
+<time datetime="2019-09-30 17:07:37 +0000">09/30/2019</time>
 
 
 <span>Contributors
@@ -1164,7 +1164,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IAM Role</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AWS IAM Role if running on EC2 instance to retrieve IAM temporary access key, secret and token. Required if you do not use IAM Access Key ID and Secret Access Key fields.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AWS IAM Role if running on EC2 instance to retrieve IAM temporary access key, secret and token. Required if you do not use IAM Access Key ID and Secret Access Key fields. See below for more information on <a href="iam_role">IAM Roles</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AWS IAM Access Key ID</p></td>
@@ -1286,6 +1286,26 @@ If the <strong>Include extra regions</strong> field is empty, the data collector
 </div>
 <div class="paragraph">
 <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html">Creating a Role to Delegate Permissions to an IAM User</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="iam-roles">IAM Roles</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When using <em>IAM Role</em> security, you must ensure that the role you create or specify has the appropriate permissions needed to access your resources.</p>
+</div>
+<div class="paragraph">
+<p>For example, if you create an IAM role named <em>InstanceEc2ReadOnly</em>, you must set up the policy to grant EC2 read-only list access permission to all EC2 resources for this IAM role. Additionally, you must grant STS (Security Token Service) access so that this role is allowed to assume roles cross accounts.</p>
+</div>
+<div class="paragraph">
+<p>After you create an IAM role, you can attach it when you create a new EC2 instance or any existing EC2 instance.</p>
+</div>
+<div class="paragraph">
+<p>After you attach the IAM role <em>InstanceEc2ReadOnly</em> to an EC2 instance, you will be able to retrieve the temporary credential through instance metadata by IAM role name and use it to access AWS resources by any application running on this EC2 instance.</p>
+</div>
+<div class="paragraph">
+<p>Note: IAM role can be used only when the Acquisition Unit is running in an AWS instance.</p>
 </div>
 </div>
 </div>
