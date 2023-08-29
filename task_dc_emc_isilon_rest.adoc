@@ -63,6 +63,7 @@ You need the following information to configure this data collector:
 |ISI_PRIV_STATISTICS|Statistics|r
 |ISI_PRIV_SWIFT|Swift|r
 |ISI_PRIV_JOB_ENGINE|Job Engine|r
+|ISI_PRIV_SNAPSHOT|Snapshot|r
 |===
 
 == Configuration
