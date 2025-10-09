@@ -13,7 +13,7 @@ keywords: support, knowledgebase, documentation, community, videos, help, contac
 :imagesdir: ./media/
 
 [.lead]
-You can access available support options in Data Infrastructure Insights by selecting *Help > Support*. 
+Data Infrastructure Insights provides comprehensive support options including self-service resources, community forums, documentation, and technical support. Access these support resources by selecting *Help > Support*, and consider activating your support entitlement to unlock full technical assistance via web tickets and phone support. 
 
 image:SupportPageExample.png[Support page, width=600]
 

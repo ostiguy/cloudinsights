@@ -2,29 +2,21 @@
 sidebar: sidebar
 permalink: task_system_monitors.html
 keywords: monitors, alerts, log, metric
-summary: Create monitors to alert on performance or inventory thresholds, as well as metric or log conditions.
+summary: System-defined monitors provide pre-configured alerting for common performance, infrastructure, and log conditions across your environment.
 ---
 
 = System Monitors
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Data Infrastructure Insights includes a number of system-defined monitors for both metrics and logs. The system monitors available are dependent on the data collectors present on your tenant. Because of that, the monitors available in Data Infrastructure Insights may change as data collectors are added or their configurations changed.
+Data Infrastructure Insights provides pre-configured system monitors that automatically alert on common performance, infrastructure, and log conditions. These monitors come with predefined thresholds, descriptions, and corrective actions to help you quickly identify and resolve issues. The available monitors depend on your configured data collectors.
 
 NOTE: Many System Monitors are in _Paused_ state by default. You can enable a system monitor by selecting the _Resume_ option for the monitor. Ensure that _Advanced Counter Data Collection_ and _Enable ONTAP EMS log collection_ are enabled in the Data Collector. These options can be found in the ONTAP Data Collector under _Advanced Configuration_: 
 image:Enable_Log_Monitor_Collection.png[Enabling Advanced Counter and EMS Log collection for ONTAP]
-
-
-[#top]
-
-toc:[]
-
-
 
 
 
@@ -38,11 +30,12 @@ The following system-defined monitors are available, in the noted groups.
 
 * *ONTAP Infrastructure* includes monitors for infrastructure-related issues in ONTAP clusters. 
 * *ONTAP Workload Examples* includes monitors for workload-related issues. 
-* Monitors in both group default to _Paused_ state.
+* Monitors in both groups default to _Paused_ state.
 
 
 
-Below are the system monitors currently included with Data Infrastructure Insights:
+Below are the system monitors included with Data Infrastructure Insights:
+Note that this list is subject to change.
 
 === Metric Monitors
 
@@ -186,8 +179,6 @@ When warning threshold is breached, then consider increasing the space of the vo
 
 |===
 
-<<top,Back to Top>>
-
 === Log Monitors 
 
 |===
@@ -262,8 +253,6 @@ wafl readdir notice show.…Check if directories are indicated as sparse or not:
 |===
 
 
-<<top,Back to Top>>
-
 === Anti-Ransomware Log Monitors
 
 |===
@@ -286,9 +275,6 @@ Your system generates and transmits an AutoSupport or "call home" message to Net
 
 
 
-<<top,Back to Top>>
-
-
 === FSx for NetApp ONTAP Monitors
 
 |===
@@ -309,8 +295,6 @@ Your system generates and transmits an AutoSupport or "call home" message to Net
 
 |===
 
-
-<<top,Back to Top>>
 
 === K8s Monitors
 
@@ -604,7 +588,6 @@ Right-size pods to free up CPU on nodes.
 ////
 
 
-<<top,Back to Top>>
 
 === Change Log Monitors
 
@@ -622,7 +605,6 @@ Right-size pods to free up CPU on nodes.
 |===
 
 
-<<top,Back to Top>>
 
 
 === Data Collection Monitors
@@ -637,7 +619,6 @@ Note that the monitor for Collector Warning can send more alerts than other moni
 |===
 
 
-<<top,Back to Top>>
 
 === Security Monitors
 
@@ -666,7 +647,6 @@ To disable Telnet on a cluster, run the following ONTAP command in advanced priv
 |===
 
 
-<<top,Back to Top>>
 
 === Data Protection Monitors
 
@@ -689,7 +669,6 @@ If warning threshold is breached, plan to take the following immediate actions:
 
 
 
-<<top,Back to Top>>
 
 === Cloud Volume (CVO) Monitors 
 
@@ -829,7 +808,6 @@ Client access to the file is denied. The Vscan server might, depending on its se
 
 
 
-<<top,Back to Top>>
 
 === SnapMirror for Business Continuity (SMBC) Mediator Log Monitors
 
@@ -852,7 +830,6 @@ Note: UM doesn't have this one|CRITICAL|This message occurs when a SnapMirror fo
 
 |===
 
-<<top,Back to Top>>
 
 === Additional Power, Heartbeat, and Miscellaneous System Monitors
 
@@ -908,7 +885,6 @@ Note: UM doesn't have this one|CRITICAL|This message occurs when a SnapMirror fo
 
 |===
 
-<<top,Back to Top>>
 
 
 == More Information
