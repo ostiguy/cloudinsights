@@ -1,20 +1,19 @@
 ---
 sidebar: sidebar
 permalink: cs_notifications_email.html
-summary: Adding email addresses for notifications of Workload Security Alerts.
+summary: Configure email notifications for Workload Security alerts, warnings, agent health monitoring, and system upgrades to ensure timely awareness of security threats and system status.
 keywords: email, notifications, alerts, warnings, attacks
 ---
 
 = Configuring Email Notifications for Alerts, Warnings, and Agent/Data Source Collector health
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-To configure Workload Security alert recipients, click on *Admin > Notifications* and enter an email addresses in the appropriate section(s) for each recipient.
+Stay informed about security threats and system health with comprehensive email notifications from Workload Security. Configure recipients for attack alerts, warnings, agent health monitoring, and upgrade notifications to ensure your team responds promptly to critical events and maintains optimal system performance.
 
 
 == Potential Attack Alerts and Warnings

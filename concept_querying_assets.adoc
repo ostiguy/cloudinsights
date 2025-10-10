@@ -1,20 +1,19 @@
 ---
 sidebar: sidebar
 permalink: concept_querying_assets.html
-summary: Querying Overview
+summary: Query physical and virtual infrastructure assets as well as integration metrics to monitor performance, troubleshoot issues, and create targeted views of your environment using granular search criteria.
 keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, Host, Internal Volume, iSCSI, Network, Portal, Path, Port, Qtree, Quota, Share, Storage, Node, Pool, SVM, Switch, Tape, VMDK, Virtual Machine, VM, Volume, Zone, Member
 ---
 
 = Assets used in queries
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Queries enable you to monitor and troubleshoot your network by searching the assets and metrics on your tenant at a granular level based on user-selected criteria (for example, annotations). 
+Use queries to search and analyze your infrastructure assets and metrics at a granular level. Query physical and virtual inventory assets, integration data from Kubernetes and ONTAP, and performance metrics to monitor your environment, troubleshoot issues, and create targeted views based on your specific criteria. 
 
 Note that annotation rules, which automatically assign annotations to assets, _require_ a query.
 

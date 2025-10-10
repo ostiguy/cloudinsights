@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: cs_restrict_user_access.html
 keywords: alert, snapshot,  attack
-summary: With Workload Security, you can restrict user access in the event of suspected sabotage
+summary: Protect your environment by automatically or manually blocking user access when attacks are detected, with configurable time periods and support for SMB and NFS protocols.
 ---
 
 = Blocking User Access
@@ -13,7 +13,7 @@ summary: With Workload Security, you can restrict user access in the event of su
 :imagesdir: ./media/
 
 [.lead]
-Once an attack is detected, Workload Security can stop the attack by blocking user access to the file system. Access can be blocked automatically, using Automated Response Policies or manually from the alert or user details pages.
+Respond immediately to security threats with Workload Security's user access blocking capability. When attacks are detected, automatically block user access through Automated Response Policies or manually restrict access from alert and user detail pages to stop attacks and protect your file systems.
 
 
 When blocking user access, you should define a blocking time period. After the selected time period ends, user access is automatically restored.
