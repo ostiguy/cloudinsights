@@ -1,8 +1,13 @@
 ---
 sidebar: sidebar
 permalink: cs_automated_response_policies.html
+<<<<<<< HEAD
 keywords: alert, snapshot, ransomware, attack
 summary: Configure automated response policies to take action during security incidents, including snapshots, user access restriction, and webhook notifications for ransomware and other attacks.
+=======
+keywords: alert, snapshot, ransomware, attack, tampering
+summary: Configure automated response policies to take immediate action during security incidents, including snapshots, user access restriction, and webhook notifications for threats and suspicious behavior.
+>>>>>>> ebbce31788f37dd07655cf430074e27924c7c079
 ---
 
 = Automated Response Policies
@@ -19,7 +24,7 @@ Response Policies trigger actions such as taking a snapshot or restricting user 
 You can set policies on specific devices or all devices. To set a response policy, select *Admin > Automated Response Policies* and click the appropriate *+Policy* button. You can create policies for Attacks or for Warnings.
 
 //image:Automated_Response_Screenshot.png[Create Attack Policy]
-image:ws_add_attack_policy.png[Add an Attack Policy dialog showing webhook dropdown]
+image:ws_add_attack_policy.png[Add an Attack Policy dialog showing webhook dropdown, width=300]
 
 You must save the policy with a unique name. 
 

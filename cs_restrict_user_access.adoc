@@ -2,10 +2,14 @@
 sidebar: sidebar
 permalink: cs_restrict_user_access.html
 keywords: alert, snapshot,  attack
+<<<<<<< HEAD
 summary: Protect your environment by automatically or manually blocking user access when attacks are detected, with configurable time periods and support for SMB and NFS protocols.
+=======
+summary: Stop detected attacks immediately by restricting compromised user access automatically or manually, preventing further damage to file systems across multiple storage volumes.
+>>>>>>> ebbce31788f37dd07655cf430074e27924c7c079
 ---
 
-= Blocking User Access
+= Blocking User Access to Stop Attacks
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,11 +17,15 @@ summary: Protect your environment by automatically or manually blocking user acc
 :imagesdir: ./media/
 
 [.lead]
+<<<<<<< HEAD
 Respond immediately to security threats with Workload Security's user access blocking capability. When attacks are detected, automatically block user access through Automated Response Policies or manually restrict access from alert and user detail pages to stop attacks and protect your file systems.
 
 
 When blocking user access, you should define a blocking time period. After the selected time period ends, user access is automatically restored.
 Access blocking is supported for both SMB and NFS protocols.
+=======
+Immediately halt detected attacks by blocking compromised user access to prevent further data damage or exfiltration. Workload Security enables both automatic blocking through Automated Response Policies and manual intervention from alert or user details pages, giving you flexible control over your security response. Access restrictions apply automatically across all monitored storage volumes and are time-limited for automatic restoration.
+>>>>>>> ebbce31788f37dd07655cf430074e27924c7c079
 
 User is directly blocked for SMB and IP address of the host machines causing the attack will be blocked for NFS. Those machine IP addresses will be blocked from accessing any of the Storage Virtual Machines (SVMs) monitored by Workload Security.
 

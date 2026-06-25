@@ -41,6 +41,9 @@ When you add a new monitor, you are prompted to create a Metric Monitor or a Log
 
 * _Metric_ monitors alert on infrastructure- or performance-related triggers
 * _Log_ monitors alert on log-related activity
+* _Anomaly Detection_ monitors alert on changes in the patterns of your data
+* _Attribute_ monitors alert on changes to an object's attributes, such as moving an object to a new data center
+
 
 +
 After you choose your monitor type, the Monitor Configuration dialog is displayed. Configuration varies depending on which type of monitor you are creating.
@@ -56,14 +59,12 @@ image:MonitorMetricFilter.png[Metrics Filtering]
 
 When working with integration data (Kubernetes, ONTAP Advanced Data, etc.), metric filtering removes the individual/unmatched data points from the plotted data series, unlike infrastructure data (storage, VM, ports etc.) where filters work on the aggregated value of the data series and potentially remove the entire object from the chart.
 
+Metric monitors apply to Inventory objects such as storage, switch, host, vm, etc., as well as integration metrics such as ONTAP Advanced or Kubernetes data. When monitoring inventory objects, note that you cannot select a "Group By" method. However, grouping _is_ allowed when monitoring integration data.
+
 
 ==== Multi-Condition monitors
 
-You may choose to further refine your metric monitor by adding a second condition. Simply expand the "+Add Secondary Metric Condition" prompt... 
-
-image:multi-condition_monitor_choose.png[expand the second condition]
-
-...and configure the additional condition: 
+You may choose to further refine your metric monitor by adding a second condition. Simply expand the "+Add Secondary Metric Condition" prompt and configure the additional condition.
 
 image:multi-condition_monitor_second_condition.png[set the second condition]
 
@@ -79,7 +80,7 @@ Note that you can only "AND" a second condition; you cannot choose to alert on o
 +
 The graph displays historical data. The Warning and Critical level lines on the graph are a visual representation of the Monitor, so you can easily see when the Monitor might trigger an alert in each case. 
 
-. For the occurence interval, choose _Continuously_ for a period of _15 Minutes_.
+. For the occurrence interval, choose _Continuously_ for a period of _15 Minutes_.
 +
 You can choose to trigger an alert the moment a threshold is breached, or wait until the threshold has been in continuous breach for a period of time. In our example, we do not want to be alerted every time the Total IOPS peaks above the Warning or Critical level, but only when a monitored object continuously exceeds one of these levels for at least 15 minutes.
 +
@@ -153,21 +154,14 @@ image:AnomalyDetectionMonitorMetricChoosing.png[Metrics Filtering for anomaly de
 image:AnomalyDetectionMonitorDefineConditions.png[Defining the conditions to trigger an anomaly detection]
 
 
-////
-==== Define the alert resolution behavior
-
-You can choose how a metric monitor alert is resolved. You are presented with two choices:
-
-* Resolve when the metric returns to the acceptable range. 
-* Resolve when the metric is within the acceptable range for a specified amount of time, from 1 minute to 7 days.
-
-////
+=== Attribute Monitor
 
 
+Attribute Monitors automatically alert your team when assets move between data centers, a storage pool is not encrypted, or any attribute modifications occur. This helps to maintain configuration baselines and helps ensure nothing slips through the cracks during new deployments or changes.
 
+image:attribute_monitor_in_list.png[attribute monitors are added to monitor types]
 
-
-
+Simply choose the object type and select which attributes you want to monitor for changes.
 
 
 === Select notification type and recipients
