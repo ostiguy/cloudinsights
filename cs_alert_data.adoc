@@ -13,11 +13,7 @@ summary: Workload Security creates alerts in the event of abnormal user activity
 :imagesdir: ./media/
 
 [.lead]
-<<<<<<< HEAD
-The Workload Security Alerts page provides a comprehensive timeline of potential attacks and warnings with detailed investigation tools. View alert details, manage status updates, filter by criteria, and track user activities to efficiently investigate and respond to security incidents. 
-=======
 The Workload Security Alerts page provides a comprehensive timeline of detected threats and warnings with detailed investigation tools. View alert details, manage status updates, filter by criteria, and track user activities to efficiently investigate and respond to security incidents.
->>>>>>> ebbce31788f37dd07655cf430074e27924c7c079
 
 
 image:CloudSecureAlertsListPage.png[Alerts list]
