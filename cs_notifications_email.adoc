@@ -1,11 +1,7 @@
 ---
 sidebar: sidebar
 permalink: cs_notifications_email.html
-<<<<<<< HEAD
-summary: Configure email notifications for Workload Security alerts, warnings, agent health monitoring, and system upgrades to ensure timely awareness of security threats and system status.
-=======
 summary: Configure email notifications to receive alerts about potential attacks, security warnings, and Agent/Data Collector health status in real-time.
->>>>>>> ebbce31788f37dd07655cf430074e27924c7c079
 keywords: email, notifications, alerts, warnings, attacks
 ---
 
@@ -17,11 +13,7 @@ keywords: email, notifications, alerts, warnings, attacks
 :imagesdir: ./media/
 
 [.lead]
-<<<<<<< HEAD
-Stay informed about security threats and system health with comprehensive email notifications from Workload Security. Configure recipients for attack alerts, warnings, agent health monitoring, and upgrade notifications to ensure your team responds promptly to critical events and maintains optimal system performance.
-=======
 Email notifications enable you to stay informed about potential attacks, security warnings, and infrastructure health issues as they occur. Configure recipient email addresses in the Admin > Notifications settings to receive real-time alerts tailored to each recipient's responsibilities.
->>>>>>> ebbce31788f37dd07655cf430074e27924c7c079
 
 
 == Potential Attack Alerts and Warnings
