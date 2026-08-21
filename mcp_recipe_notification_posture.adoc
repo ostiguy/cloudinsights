@@ -6,9 +6,11 @@ keywords: MCP, DII, Data Infrastructure Insights, AI assistant
 ---
 
 = Review notification posture
-:icons: font
+:hardbreaks:
 :nofooter:
+:icons: font
 :linkattrs:
+:imagesdir: ./media/
 
 [.lead]
 Use this recipe to understand how DII alerts are routed and suppressed without exposing webhook endpoint addresses.

@@ -6,9 +6,11 @@ keywords: MCP, DII, Data Infrastructure Insights, AI assistant
 ---
 
 = DII MCP operational recipes
-:icons: font
+:hardbreaks:
 :nofooter:
+:icons: font
 :linkattrs:
+:imagesdir: ./media/
 
 [.lead]
 Recipes combine multiple read-only DII tools into repeatable infrastructure workflows. Use them as starting points and replace fictional resource names with values from your tenant.

@@ -6,9 +6,11 @@ keywords: MCP, DII, Data Infrastructure Insights, AI assistant
 ---
 
 = DII MCP tool reference
-:icons: font
+:hardbreaks:
 :nofooter:
+:icons: font
 :linkattrs:
+:imagesdir: ./media/
 
 [.lead]
 The DII MCP Server currently exposes 26 read-only product tools across nine domains. A separate +mcp_auth+ helper may appear when the connected client needs to authenticate.

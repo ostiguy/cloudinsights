@@ -6,9 +6,11 @@ keywords: MCP, DII, Data Infrastructure Insights, AI assistant
 ---
 
 = DII MCP Server
-:icons: font
+:hardbreaks:
 :nofooter:
+:icons: font
 :linkattrs:
+:imagesdir: ./media/
 
 [.lead]
 Connect AI assistants to Data Infrastructure Insights (DII) so they can investigate infrastructure inventory, telemetry, alerts, and collection health using natural language.

@@ -6,9 +6,11 @@ keywords: MCP, DII, Data Infrastructure Insights, AI assistant
 ---
 
 = Identify capacity risk
-:icons: font
+:hardbreaks:
 :nofooter:
+:icons: font
 :linkattrs:
+:imagesdir: ./media/
 
 [.lead]
 Use this recipe to identify storage pools or equivalent capacity domains approaching pressure and to find potential rebalance candidates.

@@ -6,9 +6,11 @@ keywords: MCP, DII, Data Infrastructure Insights, AI assistant
 ---
 
 = Security and privacy
-:icons: font
+:hardbreaks:
 :nofooter:
+:icons: font
 :linkattrs:
+:imagesdir: ./media/
 
 [.lead]
 The DII MCP Server gives an AI client access to tenant infrastructure context. Treat that context with the same care as the DII user interface and APIs.

@@ -1,14 +1,16 @@
 ---
 sidebar: sidebar
 permalink: mcp_troubleshooting.html
-summary: Check:
+summary: Common solutions for MCP server connection issues, authentication errors, query rejections, and API rate limiting.
 keywords: MCP, DII, Data Infrastructure Insights, AI assistant
 ---
 
 = Troubleshoot DII MCP
-:icons: font
+:hardbreaks:
 :nofooter:
+:icons: font
 :linkattrs:
+:imagesdir: ./media/
 
 [.lead]
 == The server does not connect
