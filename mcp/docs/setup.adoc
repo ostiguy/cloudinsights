@@ -1,0 +1,123 @@
+---
+sidebar: sidebar
+permalink: docs/setup.html
+summary: Use this guide to connect an MCP-compatible AI client to DII.
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant
+---
+
+= Set up the DII MCP Server
+:icons: font
+:nofooter:
+:linkattrs:
+
+[.lead]
+Use this guide to connect an MCP-compatible AI client to DII.
+
+== Before you begin
+
+You need:
+
+* Access to a DII tenant.
+* A DII user or service identity authorized to read the resources you intend to query.
+* The remote MCP endpoint supplied for your DII environment.
+* An MCP client that supports remote HTTP servers and your organization's authentication method.
+
+The examples use +{lt}DII_MCP_SERVER_URL{gt}+ as a placeholder. Do not paste access tokens into source-controlled files.
+
+== Cursor
+
+. Open Cursor settings.
+. Go to *Tools & MCP* and add a new MCP server.
+. Configure a remote HTTP server using the endpoint supplied by your DII administrator:
++
+[source,json]
+----
+{
+  "mcpServers": {
+    "dii": {
+      "type": "http",
+      "url": "{lt}DII_MCP_SERVER_URL{gt}"
+    }
+  }
+}
+----
+. Save the configuration.
+. Complete the browser-based authentication flow if prompted.
+. Verify that the DII server reports a connected or ready status.
+. Test the connection:
++
+[example]
+====
+List the DII object types available to me.
+====
+
+== Claude Code
+
+Add the remote server using the Claude Code MCP configuration flow supported by your installed version. Use +{lt}DII_MCP_SERVER_URL{gt}+ as the server URL and complete interactive authentication when prompted.
+
+After connecting, test with:
+
+[example]
+====
+List my DII acquisition units and summarize their connection status.
+====
+
+Store non-interactive credentials in your organization's approved secret store. Do not place bearer tokens in shell history or project files.
+
+== VS Code and GitHub Copilot
+
+. Open the MCP configuration for your VS Code profile or workspace.
+. Add a remote HTTP server named `dii`.
+. Set its URL to +{lt}DII_MCP_SERVER_URL{gt}+.
+. Authenticate and start the server.
+. Ask Copilot to list the available DII log types.
+
+Exact menu names depend on the installed VS Code and Copilot versions.
+
+== Codex
+
+Register a remote MCP server named `dii` with the endpoint supplied by your administrator, then use the client's MCP login command to complete authentication. If your deployment requires headers, supply them through a secure credential mechanism rather than a checked-in configuration file.
+
+Test with:
+
+[example]
+====
+Use DII to list configured data sources and count them by status.
+====
+
+== Other MCP clients
+
+Configure a streamable remote HTTP server with:
+
+* *Name:* `dii`
+* *URL:* +{lt}DII_MCP_SERVER_URL{gt}+
+* *Authentication:* the method approved for your DII deployment
+
+The client must support the MCP authorization flow used by the server.
+
+== Verify access
+
+Run these low-cost discovery prompts:
+
+. `List the DII object types available to me.`
+. `List the DII log types available to me.`
+. `List my acquisition units without displaying IP addresses or UUIDs.`
+
+Successful discovery confirms connectivity, but it does not guarantee access to every underlying resource. Tenant features, collectors, and permissions determine what data is returned.
+
+== Credential safety
+
+* Prefer interactive OAuth or another short-lived credential flow where available.
+* Use a dedicated service identity for unattended clients.
+* Grant only the DII permissions required for the intended workflows.
+* Do not put tokens in prompts, screenshots, examples, issue descriptions, or source control.
+* Do not ask the agent to display complete webhook addresses.
+
+For additional guidance, see link:security.adoc[Security and privacy].
+
+== Next steps
+
+* link:concepts.adoc[Understand the DII data model]
+* link:tools/index.adoc[Browse the tool reference]
+* link:recipes/environment-inventory.adoc[Run the environment inventory recipe]
+* link:troubleshooting.adoc[Troubleshoot connection and query errors]

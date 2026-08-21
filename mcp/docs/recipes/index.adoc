@@ -1,0 +1,51 @@
+---
+sidebar: sidebar
+permalink: docs/recipes/index.html
+summary: Recipes combine multiple read-only DII tools into repeatable infrastructure workflows. Use them as starting points and replace fictional resource names with values from your tenant.
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant
+---
+
+= DII MCP operational recipes
+:icons: font
+:nofooter:
+:linkattrs:
+
+[.lead]
+Recipes combine multiple read-only DII tools into repeatable infrastructure workflows. Use them as starting points and replace fictional resource names with values from your tenant.
+
+== Choose a workflow
+
+[options="header"]
+|===
+|Goal |Recipe |Primary DII surfaces
+|Validate collection coverage and freshness |link:environment-inventory.adoc[Inventory environment and collection health] |Acquisition units, data sources
+|Prioritize active infrastructure issues |link:storage-health.adoc[Assess storage health] |Alerts, monitors, logs, objects
+|Find pools approaching capacity pressure |link:capacity-risk.adoc[Identify capacity risk] |Object metadata, grouping, time series
+|Check Kubernetes collection component versions |link:kubernetes-collector-currency.adoc[Check Kubernetes collector currency] |Kubernetes collectors
+|Investigate a slow volume or workload |link:performance-rca.adoc[Troubleshoot performance] |Object metrics, alerts, logs
+|Review routing and suppression safely |link:notification-posture.adoc[Review notification posture] |Rules, targets, maintenance windows
+|===
+
+== Standard investigation pattern
+
+. Clarify the resource scope and time range.
+. Discover available types.
+. Retrieve metadata before using dynamic fields.
+. Query a bounded time window.
+. Correlate independent signals.
+. Distinguish observed facts from inferences.
+. Report limitations and recommended follow-up.
+
+== Safety
+
+* These recipes use read-only tools.
+* Keep time windows to 30 days or less.
+* Omit credentials, private addresses, UUIDs, raw webhook endpoints, and unnecessary log payloads.
+* Confirm high-impact operational actions outside the MCP workflow.
+
+== Related documentation
+
+* link:../index.adoc[DII MCP overview]
+* link:../concepts.adoc[Concepts and data model]
+* link:../tools/index.adoc[Tool reference]
+* link:../security.adoc[Security and privacy]

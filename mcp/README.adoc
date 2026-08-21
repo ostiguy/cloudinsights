@@ -1,0 +1,36 @@
+---
+sidebar: sidebar
+permalink: README.html
+summary: This project contains customer-facing documentation for connecting AI assistants to the Data Infrastructure Insights (DII) MCP Server.
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant
+---
+
+= DII MCP Server documentation
+:icons: font
+:nofooter:
+:linkattrs:
+
+[.lead]
+This project contains customer-facing documentation for connecting AI assistants to the Data Infrastructure Insights (DII) MCP Server.
+
+== Start here
+
+* link:docs/index.adoc[DII MCP Server overview]
+* link:docs/setup.adoc[Set up the DII MCP Server]
+* link:docs/concepts.adoc[Concepts and data model]
+* link:docs/tools/index.adoc[Tool reference]
+* link:docs/recipes/index.adoc[Operational recipes]
+* link:docs/security.adoc[Security and privacy]
+* link:docs/troubleshooting.adoc[Troubleshooting]
+
+== Documentation principles
+
+* Lead with the operational outcome, not the internal service name.
+* Treat MCP access as tenant-scoped and read-only unless a page explicitly says otherwise.
+* Discover metadata before constructing object, log, or alert queries.
+* Never place access tokens, credentials, private addresses, or complete webhook endpoints in prompts or examples.
+* Use fictional resource names in all published examples.
+
+== Publishing
+
+The files use AsciiDoc and relative links so they can be imported into a documentation platform or rendered by a static-site generator. Replace placeholders such as +{lt}DII_MCP_SERVER_URL{gt}+ only in a secure deployment-specific publishing pipeline.
