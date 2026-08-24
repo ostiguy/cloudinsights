@@ -57,8 +57,10 @@ sidebar:
           
     - title: AI Assistant
       url: /ai_for_dii_overview.html
+      
+    - title: Working with the DII MCP
       entries:
-        - title: DII MCP
+        - title: DII MCP Overview
           url: /mcp_overview.html
           entries:
             - title: DII MCP Server
