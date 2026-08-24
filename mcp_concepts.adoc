@@ -113,4 +113,4 @@ Use the exact field name and compatible value type declared in metadata. For `EX
 * Object and alert queries generally use `limit` and `offset`.
 * Log event queries use a returned cursor for the next page.
 
-For errors and recovery steps, see link:troubleshooting.adoc[Troubleshooting].
+For errors and recovery steps, see link:mcp_troubleshooting.html[Troubleshooting].

@@ -111,4 +111,4 @@ Group pool capacity by storage system and identify systems with both a critical 
 Correlate the highest-risk pools with active capacity monitors and alerts.
 ====
 
-link:index.adoc[Back to recipes]
+link:mcp_recipe_overview.html[Back to recipes]

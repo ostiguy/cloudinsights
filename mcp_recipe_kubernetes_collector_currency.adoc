@@ -95,4 +95,4 @@ Separate clusters with an outdated Change Analysis component from clusters where
 For stale clusters, check whether the associated DII collection infrastructure is healthy.
 ====
 
-link:index.adoc[Back to recipes]
+link:mcp_recipe_overview.html[Back to recipes]

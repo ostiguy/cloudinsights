@@ -118,4 +118,4 @@ Group related workloads by host or storage pool and identify whether the slowdow
 Show the platform events within 15 minutes of the first latency increase.
 ====
 
-link:index.adoc[Back to recipes]
+link:mcp_recipe_overview.html[Back to recipes]

@@ -20,12 +20,12 @@ Recipes combine multiple read-only DII tools into repeatable infrastructure work
 [options="header"]
 |===
 |Goal |Recipe |Primary DII surfaces
-|Validate collection coverage and freshness |link:environment-inventory.adoc[Inventory environment and collection health] |Acquisition units, data sources
-|Prioritize active infrastructure issues |link:storage-health.adoc[Assess storage health] |Alerts, monitors, logs, objects
-|Find pools approaching capacity pressure |link:capacity-risk.adoc[Identify capacity risk] |Object metadata, grouping, time series
-|Check Kubernetes collection component versions |link:kubernetes-collector-currency.adoc[Check Kubernetes collector currency] |Kubernetes collectors
-|Investigate a slow volume or workload |link:performance-rca.adoc[Troubleshoot performance] |Object metrics, alerts, logs
-|Review routing and suppression safely |link:notification-posture.adoc[Review notification posture] |Rules, targets, maintenance windows
+|Validate collection coverage and freshness |link:mcp_recipe_environment_inventory.html[Inventory environment and collection health] |Acquisition units, data sources
+|Prioritize active infrastructure issues |link:mcp_recipe_storage_health.html[Assess storage health] |Alerts, monitors, logs, objects
+|Find pools approaching capacity pressure |link:mcp_recipe_capacity_risk.html[Identify capacity risk] |Object metadata, grouping, time series
+|Check Kubernetes collection component versions |link:mcp_recipe_kubernetes_collector_currency.html[Check Kubernetes collector currency] |Kubernetes collectors
+|Investigate a slow volume or workload |link:mcp_recipe_performance_rca.html[Troubleshoot performance] |Object metrics, alerts, logs
+|Review routing and suppression safely |link:mcp_recipe_notification_posture.html[Review notification posture] |Rules, targets, maintenance windows
 |===
 
 == Standard investigation pattern
@@ -47,7 +47,7 @@ Recipes combine multiple read-only DII tools into repeatable infrastructure work
 
 == Related documentation
 
-* link:../index.adoc[DII MCP overview]
-* link:../concepts.adoc[Concepts and data model]
-* link:../tools/index.adoc[Tool reference]
-* link:../security.adoc[Security and privacy]
+* link:mcp_overview.html[DII MCP overview]
+* link:mcp_concepts.html[Concepts and data model]
+* link:mcp_tools_overview.html[Tool reference]
+* link:mcp_security.html[Security and privacy]

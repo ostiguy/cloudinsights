@@ -65,7 +65,7 @@ Complete webhook addresses can contain:
 
 Never display, quote, summarize, persist, or forward the address field. A masked suffix is also unnecessary for this workflow.
 
-If a complete endpoint appears in a transcript or shared artifact, follow the incident steps in link:../security.adoc[Security and privacy].
+If a complete endpoint appears in a transcript or shared artifact, follow the incident steps in link:mcp_security.html[Security and privacy].
 
 == Interpretation
 
@@ -107,4 +107,4 @@ List current and upcoming maintenance windows and explain which alert scopes the
 Count notification targets by integration type and identify targets with unknown status. Do not display addresses.
 ====
 
-link:index.adoc[Back to recipes]
+link:mcp_recipe_overview.html[Back to recipes]

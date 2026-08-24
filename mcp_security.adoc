@@ -85,7 +85,7 @@ If a credential or credential-bearing endpoint appears in an MCP result, prompt,
 
 == Related documentation
 
-* link:setup.adoc[Set up the DII MCP Server]
-* link:concepts.adoc[Concepts and data model]
-* link:recipes/notification-posture.adoc[Notification posture recipe]
-* link:troubleshooting.adoc[Troubleshooting]
+* link:mcp_setup.html[Set up the DII MCP Server]
+* link:mcp_concepts.html[Concepts and data model]
+* link:mcp_recipe_notification_posture.html[Notification posture recipe]
+* link:mcp_troubleshooting.html[Troubleshooting]

@@ -109,4 +109,4 @@ Group active storage alerts by affected system and impact area. Which system nee
 Check whether the highest-priority alert is still supported by current object metrics.
 ====
 
-link:index.adoc[Back to recipes]
+link:mcp_recipe_overview.html[Back to recipes]

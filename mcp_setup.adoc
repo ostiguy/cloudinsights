@@ -115,11 +115,11 @@ Successful discovery confirms connectivity, but it does not guarantee access to 
 * Do not put tokens in prompts, screenshots, examples, issue descriptions, or source control.
 * Do not ask the agent to display complete webhook addresses.
 
-For additional guidance, see link:security.adoc[Security and privacy].
+For additional guidance, see link:mcp_security.html[Security and privacy].
 
 == Next steps
 
-* link:concepts.adoc[Understand the DII data model]
-* link:tools/index.adoc[Browse the tool reference]
-* link:recipes/environment-inventory.adoc[Run the environment inventory recipe]
-* link:troubleshooting.adoc[Troubleshoot connection and query errors]
+* link:mcp_concepts.html[Understand the DII data model]
+* link:mcp_tools_overview.html[Browse the tool reference]
+* link:mcp_recipe_environment_inventory.html[Run the environment inventory recipe]
+* link:mcp_troubleshooting.html[Troubleshoot connection and query errors]

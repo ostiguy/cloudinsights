@@ -333,7 +333,7 @@ The connected server validates fields against metadata. If a query is rejected, 
 
 == Related documentation
 
-* link:../index.adoc[DII MCP overview]
-* link:../concepts.adoc[Concepts and data model]
-* link:../recipes/index.adoc[Operational recipes]
-* link:../troubleshooting.adoc[Troubleshooting]
+* link:mcp_overview.html[DII MCP overview]
+* link:mcp_concepts.html[Concepts and data model]
+* link:mcp_recipe_overview.html[Operational recipes]
+* link:mcp_troubleshooting.html[Troubleshooting]

@@ -97,4 +97,4 @@ Which acquisition units have not reported within the last 30 minutes, and which 
 Compare configured collector vendors with the DII supported data source type catalog.
 ====
 
-link:index.adoc[Back to recipes]
+link:mcp_recipe_overview.html[Back to recipes]
