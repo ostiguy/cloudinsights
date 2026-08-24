@@ -57,6 +57,7 @@ sidebar:
           
     - title: AI Assistant
       url: /ai_for_dii_overview.html
+    - title: DII MCP
       entries:
         - title: DII MCP Overview
           url: /mcp_overview.html
@@ -70,9 +71,11 @@ sidebar:
           url: /mcp_troubleshooting.html
         - title: Tools
           url: /mcp_tools_overview.html
-        - title: Recipes
-          url: /mcp_recipe_overview.html
+
+        - title: MCP Example Use Cases
           entries:
+            - title: Use Cases Overview
+              url: /mcp_recipe_overview.html
             - title: Capacity Risk Analysis
               url: /mcp_recipe_capacity_risk.html
             - title: Environment Inventory
