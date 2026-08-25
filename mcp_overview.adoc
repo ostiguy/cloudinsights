@@ -13,7 +13,7 @@ keywords: MCP, DII, Data Infrastructure Insights, AI assistant
 :imagesdir: ./media/
 
 [.lead]
-Connect AI assistants to Data Infrastructure Insights (DII) so they can investigate infrastructure inventory, telemetry, alerts, and collection health using natural language.
+Connect AI assistants/agents to Data Infrastructure Insights (DII) so they can investigate infrastructure inventory, telemetry, alerts, and collection health using natural language.
 
 The DII MCP Server implements the Model Context Protocol (MCP) and exposes tenant-scoped tools to supported AI clients. The current product toolset is *read-only*: it retrieves and analyzes DII data but does not modify infrastructure or DII resources.
 
