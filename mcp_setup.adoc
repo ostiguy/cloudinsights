@@ -24,86 +24,33 @@ You need:
 * The remote MCP endpoint supplied for your DII environment.
 * An MCP client that supports remote HTTP servers and your organization's authentication method.
 
-The examples use +{lt}DII_MCP_SERVER_URL{gt}+ as a placeholder. Do not paste access tokens into source-controlled files.
+The examples use +<DII_HOST_URL>+ as a placeholder. Do not paste access tokens into source-controlled files. For example, the URL used by Cursor is: 
 
-== Cursor
+ https://<DII_HOST_URL>/api/v1/mcp
 
-. Open Cursor settings.
-. Go to *Tools & MCP* and add a new MCP server.
-. Configure a remote HTTP server using the endpoint supplied by your DII administrator:
-+
-[source,json]
-----
-{
-  "mcpServers": {
-    "dii": {
-      "type": "http",
-      "url": "{lt}DII_MCP_SERVER_URL{gt}"
-    }
-  }
-}
-----
-. Save the configuration.
-. Complete the browser-based authentication flow if prompted.
-. Verify that the DII server reports a connected or ready status.
-. Test the connection:
-+
-[example]
-====
-List the DII object types available to me.
-====
+See the specific code snippets for your connection.
 
-== Claude Code
+== Configure the MCP client
 
-Add the remote server using the Claude Code MCP configuration flow supported by your installed version. Use +{lt}DII_MCP_SERVER_URL{gt}+ as the server URL and complete interactive authentication when prompted.
+. Navigate to Admin > API Access and select the "MCP Configuration" tab.
+. Select the client you wish to configure. 
+. Provide a meaningful name and an expiration, and select _Generate Token_.
+. *Copy the code snippet* You will only be able to copy this during this step. The token is hidden in the snippet but will paste correctly into your client app.
+. In the client settings, enter the correct DII Host URL in the "url" field.
+. Save the configuration. 
 
-After connecting, test with:
-
-[example]
-====
-List my DII acquisition units and summarize their connection status.
-====
-
-Store non-interactive credentials in your organization's approved secret store. Do not place bearer tokens in shell history or project files.
-
-== VS Code and GitHub Copilot
-
-. Open the MCP configuration for your VS Code profile or workspace.
-. Add a remote HTTP server named `dii`.
-. Set its URL to +{lt}DII_MCP_SERVER_URL{gt}+.
-. Authenticate and start the server.
-. Ask Copilot to list the available DII log types.
-
-Exact menu names depend on the installed VS Code and Copilot versions.
-
-== Codex
-
-Register a remote MCP server named `dii` with the endpoint supplied by your administrator, then use the client's MCP login command to complete authentication. If your deployment requires headers, supply them through a secure credential mechanism rather than a checked-in configuration file.
-
-Test with:
-
-[example]
-====
-Use DII to list configured data sources and count them by status.
-====
-
-== Other MCP clients
-
-Configure a streamable remote HTTP server with:
-
-* *Name:* `dii`
-* *URL:* +{lt}DII_MCP_SERVER_URL{gt}+
-* *Authentication:* the method approved for your DII deployment
-
-The client must support the MCP authorization flow used by the server.
+IMPORTANT: Do not place bearer tokens in shell history, prompts, screenshots, project files, or source control.
 
 == Verify access
 
-Run these low-cost discovery prompts:
+After the client reports that the server is connected, you can start sending requests like the following:
 
-. `List the DII object types available to me.`
-. `List the DII log types available to me.`
-. `List my acquisition units without displaying IP addresses or UUIDs.`
+[example]
+====
+List the DII object types available to me.
+List the DII log types available to me.
+List my acquisition units without displaying IP addresses or UUIDs.
+====
 
 Successful discovery confirms connectivity, but it does not guarantee access to every underlying resource. Tenant features, collectors, and permissions determine what data is returned.
 
@@ -111,7 +58,6 @@ Successful discovery confirms connectivity, but it does not guarantee access to 
 
 * Prefer interactive OAuth or another short-lived credential flow where available.
 * Use a dedicated service identity for unattended clients.
-* Grant only the DII permissions required for the intended workflows.
 * Do not put tokens in prompts, screenshots, examples, issue descriptions, or source control.
 * Do not ask the agent to display complete webhook addresses.
 
