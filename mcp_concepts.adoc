@@ -15,6 +15,8 @@ keywords: MCP, DII, Data Infrastructure Insights, AI assistant
 [.lead]
 Understanding these concepts helps an AI assistant select the right tools and construct valid queries.
 
+NOTE: The DII MCP is a link:concept_preview_features.html[Preview] feature and is therefore subject to change.
+
 == Tenant scope
 
 Every DII MCP request runs within the authenticated user's DII tenant and permissions. A tool can only return data that exists in that tenant and is visible to that identity.

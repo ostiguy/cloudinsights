@@ -1,0 +1,33 @@
+---
+sidebar: sidebar
+permalink: ai_assistant_mcp_overview.html
+summary: Working with the AI Assistant MCP gives you access to DII data from your IDE or other AI interface.
+keywords: mAI, Assistant, MCP
+---
+
+= Getting Started with the AI Assistant MCP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The AI Assistant MCP (Model Context Protocol) connects an external agent to DII AI, enabling:
+
+Access to Real-Time Data: Query APIs, databases, files, and metrics directly
+Multi-Source Integration: Pull information from multiple systems simultaneously
+Grounded Responses: DII AI uses your actual data, not just training knowledge
+Context-Aware: Understands your specific environment and current state
+
+To configure the AI Assistant MCP in your environment:
+*TBD*
+
+Examples:
+Query: "Which storage systems are over 80% capacity?"
+
+MCP queries DII API for live capacity metrics and returns current data with time-to-full predictions.
+
+Analysis: "Why is alert #12345 triggering?"
+
+MCP retrieves alert details and recent changes, correlates with documentation, and suggests fixes.

@@ -13,6 +13,8 @@ keywords: MCP, DII, Data Infrastructure Insights, AI assistant
 :imagesdir: ./media/
 
 [.lead]
+NOTE: The DII MCP is a link:concept_preview_features.html[Preview] feature and is therefore subject to change.
+
 == The server does not connect
 
 Check:

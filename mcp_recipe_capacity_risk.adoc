@@ -15,6 +15,8 @@ keywords: MCP, DII, Data Infrastructure Insights, AI assistant
 [.lead]
 Use this recipe to identify storage pools or equivalent capacity domains approaching pressure and to find potential rebalance candidates.
 
+NOTE: The DII MCP is a link:concept_preview_features.html[Preview] feature and is therefore subject to change.
+
 == Prerequisites
 
 * A storage scope or permission to review all visible storage pools.

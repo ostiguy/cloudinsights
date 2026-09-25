@@ -15,6 +15,8 @@ keywords: MCP, DII, Data Infrastructure Insights, AI assistant
 [.lead]
 Use this recipe to investigate a slow volume, datastore, virtual machine, Kubernetes workload, or other DII object by correlating performance metrics, alerts, and platform logs.
 
+NOTE: The DII MCP is a link:concept_preview_features.html[Preview] feature and is therefore subject to change.
+
 == Prerequisites
 
 * The affected resource name and approximate incident time.
